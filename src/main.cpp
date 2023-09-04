@@ -10,15 +10,16 @@
 // ---- START VEXCODE CONFIGURED DEVICES ----
 // Robot Configuration:
 // [Name]               [Type]        [Port(s)]
-// Controller1          controller                    
-// FrontLeft            motor         12              
-// FrontRight           motor         18              
+// FrontLeft            motor         20              
+// FrontRight           motor         11              
 // MiddleLeft           motor         13              
-// MiddleRight          motor         19              
-// BackRight            motor         16              
-// BackLeft             motor         15              
-// Inertial             inertial      21              
-// Intake               motor         14              
+// MiddleRight          motor         14              
+// BackRight            motor         15              
+// BackLeft             motor         19              
+// Controller1          controller                    
+// Inertial21           inertial      21              
+// Intake               motor         2               
+// Catapult             digital_out   A               
 // ---- END VEXCODE CONFIGURED DEVICES ----
 
 #include "vex.h"
@@ -43,12 +44,14 @@ competition Competition;
 void pre_auton(void) {
   // Initializing Robot Configuration. DO NOT REMOVE!
   vexcodeInit();
-  FrontLeft.setVelocity(30, percent);
-  MiddleLeft.setVelocity(30, percent);
-  BackLeft.setVelocity(30, percent);
-  FrontRight.setVelocity(30, percent);
-  MiddleRight.setVelocity(30, percent);
-  BackRight.setVelocity(30, percent);
+  FrontLeft.setVelocity(10, percent);
+  MiddleLeft.setVelocity(10, percent);
+  BackLeft.setVelocity(10, percent);
+  FrontRight.setVelocity(10, percent);
+  MiddleRight.setVelocity(10, percent);
+  BackRight.setVelocity(10, percent);
+  
+  Catapult.set(bool (false));
   // All activities that occur before the competition starts
   // Example: clearing encoders, setting servo positions, ...
 }
@@ -186,20 +189,31 @@ void autonomous(void) {
 void usercontrol(void) {
   // User control code here, inside the loop
   while (1) {
-    FrontLeft.spin(forward, Controller1.Axis3.value() + Controller1.Axis1.value(), percent);
-    MiddleLeft.spin(forward, Controller1.Axis3.value() + Controller1.Axis1.value(), percent);
-    BackLeft.spin(forward, Controller1.Axis3.value() + Controller1.Axis1.value(), percent);
-    FrontRight.spin(forward, Controller1.Axis3.value() - Controller1.Axis1.value(), percent);
-    MiddleRight.spin(forward, Controller1.Axis3.value() - Controller1.Axis1.value(), percent);
-    BackRight.spin(forward, Controller1.Axis3.value() - Controller1.Axis1.value(), percent);
+    double rightspeed = (Controller1.Axis3.position()) + (Controller1.Axis1.position() * -1);
+    double leftspeed = (Controller1.Axis3.position()) - (Controller1.Axis1.position() * -1);
+    FrontLeft.spin(fwd,leftspeed,pct);
+    MiddleLeft.spin(fwd,leftspeed,pct);
+    BackLeft.spin(fwd,leftspeed,pct);
+    FrontRight.spin(fwd,rightspeed,pct);
+    MiddleRight.spin(fwd,rightspeed,pct);
+    BackRight.spin(fwd,rightspeed,pct);
+
+
 
     //Intake code
-    Intake.setVelocity(75, percent);
-    while (Controller1.ButtonR1.pressing()){
+    Intake.setVelocity(100, percent);
+    if (Controller1.ButtonR1.pressing()){
       Intake.spin(forward);
     }
-    while(Controller1.ButtonR2.pressing()){
+    else if(Controller1.ButtonR2.pressing()){
       Intake.spin(reverse);
+    }
+    else {
+      Intake.stop();
+    }
+
+    if (Controller1.ButtonL1.pressing()){
+      Catapult.set(bool (true));
     }
 
   
