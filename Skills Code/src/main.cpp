@@ -46,6 +46,8 @@ void pre_auton(void) {
   // All activities that occur before the competition starts
   // Example: clearing encoders, setting servo positions, ...
 }
+// Function that moves and turns robot
+
 void moveDistance(double inches){
   double omniCircumfrence = 3.1415 * 2 * 3.5;
   int greenCartridgeTicks = 900;
