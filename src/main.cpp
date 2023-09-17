@@ -364,8 +364,8 @@ void usercontrol(void) {
 
   
 
-    wait(10, msec); // Sleep the task for a short amount of time to
-                    // prevent wasted resources.
+    wait(10, msec); // Sleep the task for a short amount of time
+                    // to prevent wasted resources.
   }
 }
 
