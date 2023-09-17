@@ -12,7 +12,8 @@ extern motor BackLeft;
 extern controller Controller1;
 extern inertial Inertial21;
 extern motor Intake;
-extern digital_out Catapult;
+extern motor Catapult;
+extern digital_out WingLeft;
 
 /**
  * Used to initialize code/tasks/devices added using tools in VEXcode Pro.

@@ -10,16 +10,17 @@
 // ---- START VEXCODE CONFIGURED DEVICES ----
 // Robot Configuration:
 // [Name]               [Type]        [Port(s)]
-// FrontLeft            motor         20              
-// FrontRight           motor         11              
+// FrontLeft            motor         19              
+// FrontRight           motor         15              
 // MiddleLeft           motor         13              
 // MiddleRight          motor         14              
-// BackRight            motor         15              
-// BackLeft             motor         19              
+// BackRight            motor         11              
+// BackLeft             motor         18              
 // Controller1          controller                    
 // Inertial21           inertial      21              
-// Intake               motor         2               
-// Catapult             digital_out   A               
+// Intake               motor         20              
+// Catapult             motor         16              
+// WingLeft             digital_out   A               
 // ---- END VEXCODE CONFIGURED DEVICES ----
 
 #include "vex.h"
@@ -44,14 +45,14 @@ competition Competition;
 void pre_auton(void) {
   // Initializing Robot Configuration. DO NOT REMOVE!
   vexcodeInit();
-  FrontLeft.setVelocity(10, percent);
-  MiddleLeft.setVelocity(10, percent);
-  BackLeft.setVelocity(10, percent);
-  FrontRight.setVelocity(10, percent);
-  MiddleRight.setVelocity(10, percent);
-  BackRight.setVelocity(10, percent);
-  
-  Catapult.set(bool (false));
+  FrontLeft.setVelocity(100, percent);
+  MiddleLeft.setVelocity(100, percent);
+  BackLeft.setVelocity(100, percent);
+  FrontRight.setVelocity(100, percent);
+  MiddleRight.setVelocity(100, percent);
+  BackRight.setVelocity(100, percent);
+
+
   // All activities that occur before the competition starts
   // Example: clearing encoders, setting servo positions, ...
 }
@@ -155,12 +156,13 @@ void turnPID (double targetDegrees, double Kp, double Ki, double Kd){
     
   }
 }
+*/
 
-void moveDistance(int inches){
-  double omniCircumfrence = 3.1415 * 4;
-  int greenCartridgeTicks = 900;
-  double gearRatio = 0.5;
-  float conversion = greenCartridgeTicks/omniCircumfrence * gearRatio;
+void moveDistance(double inches){
+  double omniCircumfrence = 3.1415 * 2 * 3.5;
+  int CartridgeTicks = 1800;
+  double gearRatio = 0.6;
+  float conversion = (CartridgeTicks*gearRatio)/omniCircumfrence;
 
   FrontLeft.spinFor(forward, inches * conversion, degrees);
   FrontRight.spinFor(forward, inches * conversion, degrees);
@@ -169,12 +171,145 @@ void moveDistance(int inches){
   BackLeft.spinFor(forward, inches * conversion, degrees);
   BackRight.spinFor(forward, inches * conversion, degrees);
 }
-*/
+
+void turnDegrees(double turnDegrees){
+  double omniCircumfrence = 3.1415 * 2 * 3.5;
+  int CartridgeTicks = 1800;
+  double gearRatio = 0.6;
+  float conversion = (CartridgeTicks*gearRatio)/omniCircumfrence;
+  double degreesFraction=turnDegrees/360;
+
+  FrontLeft.spinFor(fwd, degreesFraction*conversion, degrees);
+  FrontRight.spinFor(forward, degreesFraction * conversion, degrees);
+  MiddleLeft.spinFor(forward, degreesFraction * conversion, degrees);
+  MiddleRight.spinFor(forward, degreesFraction * conversion, degrees);
+  BackLeft.spinFor(forward, degreesFraction * conversion, degrees);
+  BackRight.spinFor(forward, degreesFraction * conversion, degrees);
+}
+
+
+void auton1 (){
+  /*
+  1. Intake Alliance triball
+  2. Move forward two and a half tiles
+  3. Turn 90 degrees right
+  4. Move forward a half tile
+  5. Outtake Alliance triball
+  */
+
+  Intake.spinFor(reverse, 720, degrees);
+
+  moveDistance(45);
+
+  turnDegrees(90);
+
+  moveDistance(12);
+
+  Intake.spinFor(forward, 720, degrees);
+
+  moveDistance(-10);
+
+  turnDegrees(180);
+
+  moveDistance(-12);
+
+  moveDistance(10);
+}
+ 
+void auton2(){
+    /*
+  1. Intake Alliance triball
+  2. Move forward two and a half tiles
+  3. Turn 90 degrees left
+  4. Move forward a half tile
+  5. Outtake Alliance triball
+  */
+
+  Intake.spinFor(forward, 720, degrees);
+
+  moveDistance(45);
+
+  turnDegrees(-90);
+
+  moveDistance(12);
+
+  Intake.spinFor(reverse, 720, degrees);
+
+  moveDistance(-10);
+
+  turnDegrees(180);
+
+  moveDistance(-12);
+
+  moveDistance(10);
+}
+void auton3 (){
+  /*
+  1. Intake Alliance triball
+  2. Move forward two and a half tiles
+  3. Turn 90 degrees right
+  4. Move forward a half tile
+  5. Outtake Alliance triball
+  */
+  Intake.spinFor(forward, 720, degrees);
+  moveDistance(45);
+  turnDegrees(90);
+  moveDistance(12);
+  Intake.spinFor(reverse, 720, degrees);
+  moveDistance(-10);
+  turnDegrees(180);
+  moveDistance(-12);
+  moveDistance(10);
+}
+
+void auton4(){
+  //score a preloaded triball and touch the elevation pole after (left side)
+  Intake.spinFor(forward, 720, degrees);
+  moveDistance(45);
+  turnDegrees(90);
+  moveDistance(10);
+  Intake.spinFor(reverse, 720, degrees);
+  moveDistance(-10);
+  turnDegrees(180);
+  moveDistance(-10);
+  moveDistance(10);
+  turnDegrees(-90);
+  moveDistance(45);
+  turnDegrees(90);
+  moveDistance(24);
+  turnDegrees(90);
+  moveDistance(10);
+  turnDegrees(-90);
+  moveDistance(20);
+}
+
+void auton5(){
+  //auton 4 but on the right side
+  Intake.spinFor(forward, 720, degrees);
+  moveDistance(45);
+  turnDegrees(-90);
+  moveDistance(10);
+  Intake.spinFor(reverse, 720, degrees);
+  moveDistance(-10);
+  turnDegrees(180);
+  moveDistance(-10);
+  moveDistance(10);
+  turnDegrees(90);
+  moveDistance(45);
+  turnDegrees(-90);
+  moveDistance(24);
+  turnDegrees(-90);
+  moveDistance(10);
+  turnDegrees(90);
+  moveDistance(20);
+}
 void autonomous(void) {
   // ..........................................................................
   // Insert autonomous user code here.
   // ..........................................................................
+  auton1();
 }
+
 
 /*---------------------------------------------------------------------------*/
 /*                                                                           */
@@ -199,7 +334,6 @@ void usercontrol(void) {
     BackRight.spin(fwd,rightspeed,pct);
 
 
-
     //Intake code
     Intake.setVelocity(100, percent);
     if (Controller1.ButtonR1.pressing()){
@@ -213,7 +347,19 @@ void usercontrol(void) {
     }
 
     if (Controller1.ButtonL1.pressing()){
-      Catapult.set(bool (true));
+      Catapult.spin(forward);
+
+    }
+    else{
+      Catapult.stop();
+    }
+
+    if (Controller1.ButtonDown.pressing()){
+      Catapult.spinFor(forward, 360, degrees);
+    }
+
+    if (Controller1.ButtonL2.pressing()){
+      WingLeft.set(true);
     }
 
   
