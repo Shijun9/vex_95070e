@@ -354,7 +354,7 @@ void usercontrol(void) {
       Catapult.stop();
     }
 
-    if (Controller1.ButtonUp.pressing()){
+    if (Controller1.ButtonDown.pressing()){
       Catapult.spinFor(forward, 360, degrees);
     }
 
