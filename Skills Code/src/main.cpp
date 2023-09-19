@@ -86,9 +86,108 @@ void turnDegrees(double turnDegrees){
 /*  You must modify the code to add your own robot specific commands here.   */
 /*---------------------------------------------------------------------------*/
 
-void autonomous(void) {
-  //intake and score preload triball and launch matchload triball over the goal
+void autonomous(void){
+  //
+}
 
+void place1(void) {
+  //intake and score preload triball and launch matchload triball over the goal
+  //most left position; blue side; score a preloaded triball 
+  Intake.spinFor(forward, 720, degrees);
+  moveDistance(48);
+  turnDegrees(-90);
+  moveDistance(10);
+  Intake.spinFor(reverse, 720, degrees);
+  moveDistance(-10);
+  turnDegrees(180);
+  moveDistance(-10);
+  moveDistance(10);
+  turnDegrees(90);
+  moveDistance(55);
+  turnDegrees(-90);
+  moveDistance(36);
+  turnDegrees(-90);
+  moveDistance(12);
+  moveDistance(-8);
+  turnDegrees(-90);
+  moveDistance(36);
+  turnDegrees(90);
+
+
+  Intake.spinFor(reverse, 720, degrees);
+  moveDistance(45);
+  turnDegrees(90);
+  moveDistance(12);
+  Intake.spinFor(forward, 720, degrees);
+  moveDistance(-10);
+  turnDegrees(180);
+  moveDistance(-12);
+  moveDistance(10);
+  while (true){
+    Catapult.spin(forward);
+  }
+}
+
+void moreComplicatedAuton1(void){
+  //score the perload triball
+  //then score the triball right outside the goal
+  Intake.spinFor(reverse, 720, degrees);
+  moveDistance(45);
+  turnDegrees(90);
+  moveDistance(12);
+  Intake.spinFor(forward, 720, degrees);
+  moveDistance(-10);
+  turnDegrees(180);
+  moveDistance(-12);
+  moveDistance(10);
+  turnDegrees(-90);
+  moveDistance(12);
+  turnDegrees(90);
+  moveDistance(15);
+  Intake.spinFor(forward, 720, degrees);
+  turnDegrees(180);
+  moveDistance(30);
+  Intake.spinFor(reverse, 720, degrees);
+  moveDistance(-10);
+  turnDegrees(180);
+  moveDistance(-10);
+
+ 
+}
+
+void moreComplicatedAuton2(void){
+  //score the perload triball
+  //then score the triball right outside the goal
+  //scoring the triball that was behind the other triball that we scored
+  Intake.spinFor(reverse, 720, degrees);
+  moveDistance(45);
+  turnDegrees(90);
+  moveDistance(12);
+  Intake.spinFor(forward, 720, degrees);
+  moveDistance(-10);
+  turnDegrees(180);
+  moveDistance(-12);
+  moveDistance(10);
+  turnDegrees(-90);
+  moveDistance(12);
+  turnDegrees(90);
+  moveDistance(15);
+  Intake.spinFor(forward, 720, degrees);
+  turnDegrees(180);
+  moveDistance(30);
+  Intake.spinFor(reverse, 720, degrees);
+  moveDistance(-10);
+  turnDegrees(180);
+  moveDistance(-10);
+  moveDistance(48);
+  Intake.spinFor(forward, 720, degrees);
+  moveDistance(-25);
+  turnDegrees(180);
+  moveDistance(-25);
+  Intake.spinFor(reverse, 720, degrees);
+  moveDistance(-10);
+  turnDegrees(180);
+  moveDistance(-10);
 
 }
 
