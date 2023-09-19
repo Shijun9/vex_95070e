@@ -198,21 +198,13 @@ void auton1 (){
   */
 
   Intake.spinFor(reverse, 720, degrees);
-
   moveDistance(45);
-
   turnDegrees(90);
-
   moveDistance(12);
-
   Intake.spinFor(forward, 720, degrees);
-
   moveDistance(-10);
-
   turnDegrees(180);
-
   moveDistance(-12);
-
   moveDistance(10);
 }
  
@@ -226,21 +218,13 @@ void auton2(){
   */
 
   Intake.spinFor(forward, 720, degrees);
-
   moveDistance(45);
-
   turnDegrees(-90);
-
   moveDistance(12);
-
   Intake.spinFor(reverse, 720, degrees);
-
   moveDistance(-10);
-
   turnDegrees(180);
-
   moveDistance(-12);
-
   moveDistance(10);
 }
 void auton3 (){
@@ -303,6 +287,70 @@ void auton5(){
   turnDegrees(90);
   moveDistance(20);
 }
+
+void auton6(void){
+  //score the perload triball
+  //then score the triball right outside the goal
+  Intake.spinFor(reverse, 720, degrees);
+  moveDistance(45);
+  turnDegrees(90);
+  moveDistance(12);
+  Intake.spinFor(forward, 720, degrees);
+  moveDistance(-10);
+  turnDegrees(180);
+  moveDistance(-12);
+  moveDistance(10);
+  turnDegrees(-90);
+  moveDistance(12);
+  turnDegrees(90);
+  moveDistance(15);
+  Intake.spinFor(forward, 720, degrees);
+  turnDegrees(180);
+  moveDistance(30);
+  Intake.spinFor(reverse, 720, degrees);
+  moveDistance(-10);
+  turnDegrees(180);
+  moveDistance(-10);
+
+ 
+}
+
+void auton7(void){
+  //score the perload triball
+  //then score the triball right outside the goal
+  //scoring the triball that was behind the other triball that we scored
+  Intake.spinFor(reverse, 720, degrees);
+  moveDistance(45);
+  turnDegrees(90);
+  moveDistance(12);
+  Intake.spinFor(forward, 720, degrees);
+  moveDistance(-10);
+  turnDegrees(180);
+  moveDistance(-12);
+  moveDistance(10);
+  turnDegrees(-90);
+  moveDistance(12);
+  turnDegrees(90);
+  moveDistance(15);
+  Intake.spinFor(forward, 720, degrees);
+  turnDegrees(180);
+  moveDistance(30);
+  Intake.spinFor(reverse, 720, degrees);
+  moveDistance(-10);
+  turnDegrees(180);
+  moveDistance(-10);
+  moveDistance(48);
+  Intake.spinFor(forward, 720, degrees);
+  moveDistance(-25);
+  turnDegrees(180);
+  moveDistance(-25);
+  Intake.spinFor(reverse, 720, degrees);
+  moveDistance(-10);
+  turnDegrees(180);
+  moveDistance(-10);
+
+}
+
 void autonomous(void) {
   // ..........................................................................
   // Insert autonomous user code here.
