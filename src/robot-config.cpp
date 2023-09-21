@@ -19,6 +19,7 @@ inertial Inertial21 = inertial(PORT21);
 motor Intake = motor(PORT20, ratio18_1, false);
 motor Catapult = motor(PORT16, ratio36_1, true);
 digital_out WingLeft = digital_out(Brain.ThreeWirePort.A);
+motor Elevation = motor(PORT18, ratio18_1, false);
 
 // VEXcode generated functions
 // define variable for remote controller enable/disable

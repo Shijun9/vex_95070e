@@ -52,7 +52,7 @@ void pre_auton(void) {
   MiddleRight.setVelocity(100, percent);
   BackRight.setVelocity(100, percent);
 
-
+  // Elevation.setPosition(90, degrees);
   // All activities that occur before the competition starts
   // Example: clearing encoders, setting servo positions, ...
 }
