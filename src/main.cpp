@@ -51,6 +51,8 @@ void pre_auton(void) {
   FrontRight.setVelocity(100, percent);
   MiddleRight.setVelocity(100, percent);
   BackRight.setVelocity(100, percent);
+  Elevation.setVelocity(100,percent);
+
 
   // Elevation.setPosition(90, degrees);
   // All activities that occur before the competition starts
@@ -355,7 +357,7 @@ void autonomous(void) {
   // ..........................................................................
   // Insert autonomous user code here.
   // ..........................................................................
-  auton1();
+  // auton1();
 }
 
 
@@ -403,13 +405,16 @@ void usercontrol(void) {
     }
 
     if (Controller1.ButtonDown.pressing()){
-      Catapult.spinFor(forward, 360, degrees);
+      Catapult.spinFor(forward, 1, degrees);
     }
 
     if (Controller1.ButtonL2.pressing()){
       WingLeft.set(true);
     }
-
+    //Elevation code
+    if(Controller1.ButtonUp.pressing()){
+      Elevation.spin(forward);
+    }
   
 
     wait(10, msec); // Sleep the task for a short amount of time
