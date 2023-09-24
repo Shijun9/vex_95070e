@@ -87,10 +87,6 @@ void turnDegrees(double turnDegrees){
 /*---------------------------------------------------------------------------*/
 
 void autonomous(void){
-  //
-}
-
-void place1(void) {
   //intake and score preload triball and launch matchload triball over the goal
   //most left position; blue side; score a preloaded triball 
   Intake.spinFor(forward, 720, degrees);
@@ -128,6 +124,8 @@ void place1(void) {
   }
 }
 
+  
+
 
 
 /*---------------------------------------------------------------------------*/
@@ -152,6 +150,60 @@ void usercontrol(void) {
     // update your motors, etc.
     // ........................................................................
 
+    // Driver Code: Joysticks
+
+    double rightspeed = (Controller1.Axis3.position()) + (Controller1.Axis1.position() * -1);
+    double leftspeed = (Controller1.Axis3.position()) - (Controller1.Axis1.position() * -1);
+    FrontLeft.spin(fwd,leftspeed,pct);
+    MiddleLeft.spin(fwd,leftspeed,pct);
+    BackLeft.spin(fwd,leftspeed,pct);
+    FrontRight.spin(fwd,rightspeed,pct);
+    MiddleRight.spin(fwd,rightspeed,pct);
+    BackRight.spin(fwd,rightspeed,pct);
+
+    // Intake Code: Button R1 and R2
+
+    Intake.setVelocity(100, percent);
+    if (Controller1.ButtonR1.pressing()){
+      Intake.spin(forward);
+    }
+    else if(Controller1.ButtonR2.pressing()){
+      Intake.spin(reverse);
+    }
+    else {
+      Intake.stop();
+    }
+ 
+    // Cata code: Button L1
+
+    if (Controller1.ButtonL1.pressing()){
+      Catapult.spin(forward);
+
+    }
+    else{
+      Catapult.stop();
+    }
+
+    // Cata Down: Button Down
+    if (Controller1.ButtonDown.pressing()){
+      Catapult.spinFor(forward, 1, degrees);
+    }
+
+    if (Controller1.ButtonX.pressing()){
+      WingLeft.set(true);
+    }
+
+    // Elevation Code: Button Up
+
+    if(Controller1.ButtonUp.pressing()){
+      Elevation.spin(forward);
+    }
+
+    // cata shooting for 45 seconds:
+
+    if (Controller1.ButtonX.pressing()){
+      Catapult.spinFor(forward, 45, seconds);
+    }
     wait(20, msec); // Sleep the task for a short amount of time to
                     // prevent wasted resources.
   }

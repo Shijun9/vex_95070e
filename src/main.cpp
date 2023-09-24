@@ -408,7 +408,7 @@ void usercontrol(void) {
       Catapult.spinFor(forward, 1, degrees);
     }
 
-    if (Controller1.ButtonL2.pressing()){
+    if (Controller1.ButtonX.pressing()){
       WingLeft.set(true);
     }
     //Elevation code
