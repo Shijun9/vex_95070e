@@ -150,7 +150,7 @@ void usercontrol(void) {
     // update your motors, etc.
     // ........................................................................
 
-    // Driver Code: Joysticks
+    // Driver Code: Both Joysticks
 
     double rightspeed = (Controller1.Axis3.position()) + (Controller1.Axis1.position() * -1);
     double leftspeed = (Controller1.Axis3.position()) - (Controller1.Axis1.position() * -1);
