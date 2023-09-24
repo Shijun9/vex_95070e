@@ -395,7 +395,7 @@ void usercontrol(void) {
     else {
       Intake.stop();
     }
-
+    //Cata code
     if (Controller1.ButtonL1.pressing()){
       Catapult.spin(forward);
 
@@ -403,7 +403,7 @@ void usercontrol(void) {
     else{
       Catapult.stop();
     }
-
+    // cata down
     if (Controller1.ButtonDown.pressing()){
       Catapult.spinFor(forward, 1, degrees);
     }
