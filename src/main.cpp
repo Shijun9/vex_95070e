@@ -160,33 +160,42 @@ void turnPID (double targetDegrees, double Kp, double Ki, double Kd){
 }
 */
 
+
+
 void moveDistance(double inches){
-  double omniCircumfrence = 3.1415 * 2 * 3.5;
+  double omniCircumfrence = 3.1415 * 2 * 3;//18.849
   int CartridgeTicks = 1800;
   double gearRatio = 0.6;
-  float conversion = (CartridgeTicks*gearRatio)/omniCircumfrence;
+  float conversion = (CartridgeTicks*gearRatio)/omniCircumfrence;//1080/18.849 ~ 57.29746936
 
-  FrontLeft.spinFor(forward, inches * conversion, degrees);
-  FrontRight.spinFor(forward, inches * conversion, degrees);
-  MiddleLeft.spinFor(forward, inches * conversion, degrees);
-  MiddleRight.spinFor(forward, inches * conversion, degrees);
-  BackLeft.spinFor(forward, inches * conversion, degrees);
-  BackRight.spinFor(forward, inches * conversion, degrees);
+  FrontLeft.setVelocity(100, percent);
+  FrontRight.setVelocity(100, percent);
+  MiddleLeft.setVelocity(100, percent);
+  MiddleRight.setVelocity(100, percent);
+  BackLeft.setVelocity(100, percent);
+  BackRight.setVelocity(100, percent);
+
+  FrontLeft.spinFor(forward, inches * conversion, degrees, false);
+  FrontRight.spinFor(forward, inches * conversion, degrees, false);
+  MiddleLeft.spinFor(forward, inches * conversion, degrees, false);
+  MiddleRight.spinFor(forward, inches * conversion, degrees, false);
+  BackLeft.spinFor(forward, inches * conversion, degrees, false);
+  BackRight.spinFor(forward, inches * conversion, degrees, false);
 }
 
 void turnDegrees(double turnDegrees){
-  double omniCircumfrence = 3.1415 * 2 * 3.5;
+  double omniCircumfrence = 3.1415 * 2 * 3;
   int CartridgeTicks = 1800;
   double gearRatio = 0.6;
   float conversion = (CartridgeTicks*gearRatio)/omniCircumfrence;
   double degreesFraction=turnDegrees/360;
 
   FrontLeft.spinFor(fwd, degreesFraction*conversion, degrees);
-  FrontRight.spinFor(forward, degreesFraction * conversion, degrees);
-  MiddleLeft.spinFor(forward, degreesFraction * conversion, degrees);
-  MiddleRight.spinFor(forward, degreesFraction * conversion, degrees);
-  BackLeft.spinFor(forward, degreesFraction * conversion, degrees);
-  BackRight.spinFor(forward, degreesFraction * conversion, degrees);
+  FrontRight.spinFor(forward, degreesFraction * conversion, degrees, false);
+  MiddleLeft.spinFor(forward, degreesFraction * conversion, degrees, false);
+  MiddleRight.spinFor(forward, degreesFraction * conversion, degrees, false);
+  BackLeft.spinFor(forward, degreesFraction * conversion, degrees, false);
+  BackRight.spinFor(forward, degreesFraction * conversion, degrees, false);
 }
 
 
@@ -353,13 +362,19 @@ void auton7(void){
 
 }
 
+void testAuton(void){
+  moveDistance(10);
+  wait(5,sec);
+  turnDegrees(90);  
+}
+
 void autonomous(void) {
   // ..........................................................................
   // Insert autonomous user code here.
   // ..........................................................................
-  auton1();
+  //auton1();
+  testAuton();
 }
-
 
 /*---------------------------------------------------------------------------*/
 /*                                                                           */
@@ -374,8 +389,8 @@ void autonomous(void) {
 void usercontrol(void) {
   // User control code here, inside the loop
   while (1) {
-    double rightspeed = (Controller1.Axis3.position()) + (Controller1.Axis1.position() * -1);
-    double leftspeed = (Controller1.Axis3.position()) - (Controller1.Axis1.position() * -1);
+    double rightspeed = (Controller1.Axis3.position()) + (Controller1.Axis1.position() * -0.1);
+    double leftspeed = (Controller1.Axis3.position()) - (Controller1.Axis1.position() * -0.1);
     FrontLeft.spin(fwd,leftspeed,pct);
     MiddleLeft.spin(fwd,leftspeed,pct);
     BackLeft.spin(fwd,leftspeed,pct);
