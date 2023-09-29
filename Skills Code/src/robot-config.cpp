@@ -11,7 +11,7 @@ brain  Brain;
 motor FrontLeft = motor(PORT15, ratio18_1, false);
 motor FrontRight = motor(PORT19, ratio18_1, false);
 motor MiddleLeft = motor(PORT13, ratio18_1, false);
-motor MiddleRight = motor(PORT14, ratio18_1, false);
+motor MiddleRight = motor(PORT10, ratio18_1, false);
 motor BackLeft = motor(PORT20, ratio18_1, false);
 motor BackRight = motor(PORT11, ratio18_1, false);
 inertial Inertial21 = inertial(PORT21);
