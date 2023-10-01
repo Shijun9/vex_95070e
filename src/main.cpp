@@ -41,7 +41,7 @@ competition Competition;
 /*  function is only called once after the V5 has been powered on and        */
 /*  not every time that the robot is disabled.                               */
 /*---------------------------------------------------------------------------*/
-
+int slctauton;
 void pre_auton(void) {
   // Initializing Robot Configuration. DO NOT REMOVE!
   vexcodeInit();
@@ -376,7 +376,34 @@ void autonomous(void) {
   // ..........................................................................
   // Insert autonomous user code here.
   // ..........................................................................
-  auton1();
+
+  if (slctauton == 1) {
+    auton1();
+  }
+
+  if (slctauton == 2) {
+    auton2();
+  }
+
+  if (slctauton == 3) {
+    auton3();
+  }
+
+  if (slctauton == 4) {
+    auton4();
+  }
+
+  if (slctauton == 5) {
+    auton5();
+  }
+
+  if (slctauton == 6) {
+    auton6();
+  }
+
+  if (slctauton == 7) {
+    auton7();
+  }
 }
 
 /*---------------------------------------------------------------------------*/
@@ -395,9 +422,85 @@ void unitTest (){
   }
 }
 */
+
+
+
+bool Jessica = 0;
+
+void autonslctr() {
+  int numofautons = 7;
+  if (slctauton > 7) {
+    slctauton = 1;
+  }
+  
+  else if (slctauton < 0) {
+    slctauton = numofautons;
+  }
+
+  if (Controller1.ButtonRight.pressing()) {
+    slctauton++;
+  }
+
+  else if (Controller1.ButtonLeft.pressing()) {
+    slctauton--;
+  }
+
+  if (slctauton == 1) {
+    Controller1.Screen.clearScreen();
+    Controller1.Screen.setCursor(1,1);
+    Controller1.Screen.print("Auton 1");
+    }
+
+  else if (slctauton == 2) {
+    Controller1.Screen.clearScreen();
+    Controller1.Screen.setCursor(1,1);
+    Controller1.Screen.print("Auton 2");
+  }
+
+  else if (slctauton == 3) {
+    Controller1.Screen.clearScreen();
+    Controller1.Screen.setCursor(1,1);
+    Controller1.Screen.print("Auton 3");
+  }
+
+  else if (slctauton == 4) {
+    Controller1.Screen.clearScreen();
+    Controller1.Screen.setCursor(1,1);
+    Controller1.Screen.print("Auton 4");
+  }
+
+  else if(slctauton == 5) {
+    Controller1.Screen.clearScreen();
+    Controller1.Screen.setCursor(1,1);
+    Controller1.Screen.print("Auton 5");
+  }
+
+  else if (slctauton == 6) {
+    Controller1.Screen.clearScreen();
+    Controller1.Screen.setCursor(1,1);
+    Controller1.Screen.print("Auton 6");
+  }
+
+  else if (slctauton == 7) {
+    Controller1.Screen.clearScreen();
+    Controller1.Screen.setCursor(1,1);
+    Controller1.Screen.print("Auton 7");
+  }
+
+}
+
+
 void usercontrol(void) {
   // User control code here, inside the loop
-  while (1) {
+  while(!Jessica) {
+    autonslctr();
+    if (Controller1.ButtonA.pressing()) {
+      Jessica = 1;
+    }
+  }
+
+
+  while (Jessica) {
     // unitTest();
     
     

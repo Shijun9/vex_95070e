@@ -17,6 +17,8 @@ motor BackRight = motor(PORT11, ratio18_1, false);
 inertial Inertial21 = inertial(PORT21);
 motor Intake = motor(PORT17, ratio18_1, false);
 motor Catapult = motor(PORT16, ratio18_1, true);
+motor Elevation = motor(PORT20, ratio18_1, false);
+digital_out WingLeft = digital_out(Brain.ThreeWirePort.A);
 controller Controller1 = controller(primary);
 
 // VEXcode generated functions
