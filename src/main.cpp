@@ -160,7 +160,14 @@ void turnPID (double targetDegrees, double Kp, double Ki, double Kd){
 }
 */
 
-
+void testmove(double inches){
+  //FrontLeft.spinFor(forward, inches, degrees, false);//works
+  //FrontRight.spinFor(forward, inches, degrees, false);//works
+  //MiddleLeft.spinFor(forward, inches, degrees, false);//works
+  //MiddleRight.spinFor(forward, inches, degrees, false);//doesnt work
+  BackLeft.spinFor(forward, inches, degrees, false);//
+  BackRight.spinFor(reverse, inches, degrees);//
+}
 
 void moveDistance(double inches){
   double omniCircumfrence = 3.1415 * 2 * 3;//18.849
@@ -168,19 +175,13 @@ void moveDistance(double inches){
   double gearRatio = 0.6;
   float conversion = (CartridgeTicks*gearRatio)/omniCircumfrence;//1080/18.849 ~ 57.29746936
 
-  FrontLeft.setVelocity(100, percent);
-  FrontRight.setVelocity(100, percent);
-  MiddleLeft.setVelocity(100, percent);
-  MiddleRight.setVelocity(100, percent);
-  BackLeft.setVelocity(100, percent);
-  BackRight.setVelocity(100, percent);
 
   FrontLeft.spinFor(forward, inches * conversion, degrees, false);
   FrontRight.spinFor(forward, inches * conversion, degrees, false);
   MiddleLeft.spinFor(forward, inches * conversion, degrees, false);
   MiddleRight.spinFor(forward, inches * conversion, degrees, false);
   BackLeft.spinFor(forward, inches * conversion, degrees, false);
-  BackRight.spinFor(forward, inches * conversion, degrees, false);
+  BackRight.spinFor(forward, inches * conversion, degrees);
 }
 
 void turnDegrees(double turnDegrees){
@@ -210,6 +211,7 @@ void auton1 (){
 
   Intake.spinFor(reverse, 720, degrees);
   moveDistance(45);
+
   turnDegrees(90);
   moveDistance(12);
   Intake.spinFor(forward, 720, degrees);
@@ -361,14 +363,13 @@ void auton7(void){
   moveDistance(-10);
 
 }
-
+//current test/trial: get the motors to spin and work up until simiplr to auton
+//next test/trial: make each motor spin induvidually
+//other options: put wait time to prevent overrides
 void testAuton(void){
-  FrontLeft.spinFor(500, degrees);
-  FrontRight.spinFor(500, degrees);
-  MiddleLeft.spinFor(500, degrees);
-  MiddleRight.spinFor(500, degrees);
-  BackLeft.spinFor(500, degrees);
-  BackRight.spinFor(500, degrees);
+  moveDistance(10);
+  wait(5,sec);
+  turnDegrees(90);  
 }
 
 void autonomous(void) {
