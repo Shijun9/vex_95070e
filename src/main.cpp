@@ -439,10 +439,12 @@ void autonslctr() {
 
   if (Controller1.ButtonRight.pressing()) {
     slctauton++;
+    wait(200,msec);
   }
 
   else if (Controller1.ButtonLeft.pressing()) {
     slctauton--;
+    wait(200,msec);
   }
 
   if (slctauton == 1) {
