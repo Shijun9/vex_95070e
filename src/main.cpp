@@ -376,36 +376,7 @@ void autonomous(void) {
   // ..........................................................................
   // Insert autonomous user code here.
   // ..........................................................................
-  //auton1();
-  /*
-  BackRight.spinFor(forward,1000, degrees, false);
-  MiddleRight.spinFor(forward,1000, degrees, false);
-  FrontRight.spinFor(forward,1000, degrees, false);
-  BackLeft.spinFor(forward,1000, degrees,false);
-  FrontLeft.spinFor(forward,1000, degrees,false);
-  MiddleLeft.spinFor(forward,1000, degrees,true);
-  vex::task::sleep(100);
-  MiddleRight.spinFor(forward,500, degrees, false);
-  FrontLeft.spinFor(forward,500, degrees, false);
-  BackLeft.spinFor(forward,500, degrees, true);
-  FrontRight.spinFor(forward,1000, degrees, false);
-  MiddleRight.spinFor(forward,1000, degrees, false);
-  BackRight.spinFor(forward,1000, degrees, false);
-  MiddleLeft.spinFor(forward,1000, degrees, false);
-  FrontRight.spinFor(forward,1000, degrees, false);
-  BackLeft.spinFor(forward,1000, degrees, false);
-  Intake.spinFor(reverse, 1000, degrees, true);
-  FrontRight.spinFor(reverse,1000, degrees, false);
-  MiddleRight.spinFor(reverse,1000, degrees, false);
-  BackRight.spinFor(reverse,1000, degrees, false);
-  MiddleLeft.spinFor(reverse,1000, degrees, false);
-  FrontLeft.spinFor(reverse,1000, degrees, false);
-  BackLeft.spinFor(reverse,1000, degrees); 
-  Intake.spinFor(reverse,1000,degrees,true);
-  */
-  // auton1();
-  moveDistance(10);
-  Catapult.spin(fwd,100,pct);
+  auton1();
 }
 
 /*---------------------------------------------------------------------------*/
@@ -454,6 +425,7 @@ void usercontrol(void) {
     }
     //Cata code
     if (Controller1.ButtonL1.pressing()){
+      Catapult.setStopping(coast);
       Catapult.spin(forward);
 
     }
@@ -462,6 +434,7 @@ void usercontrol(void) {
     }
     // cata down
     if (Controller1.ButtonDown.pressing()){
+      Catapult.setStopping(hold);
       Catapult.spinFor(forward, 1, degrees);
     }
 
