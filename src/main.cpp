@@ -405,7 +405,7 @@ void autonomous(void) {
   */
   // auton1();
   moveDistance(10);
-  Catapult.spinFor(100, degrees);
+  Catapult.spin(fwd,100,pct);
 }
 
 /*---------------------------------------------------------------------------*/
