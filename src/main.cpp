@@ -363,9 +363,12 @@ void auton7(void){
 }
 
 void testAuton(void){
-  moveDistance(10);
-  wait(5,sec);
-  turnDegrees(90);  
+  FrontLeft.spinFor(500, degrees);
+  FrontRight.spinFor(500, degrees);
+  MiddleLeft.spinFor(500, degrees);
+  MiddleRight.spinFor(500, degrees);
+  BackLeft.spinFor(500, degrees);
+  BackRight.spinFor(500, degrees);
 }
 
 void autonomous(void) {
@@ -373,7 +376,35 @@ void autonomous(void) {
   // Insert autonomous user code here.
   // ..........................................................................
   //auton1();
-  testAuton();
+  /*
+  BackRight.spinFor(forward,1000, degrees, false);
+  MiddleRight.spinFor(forward,1000, degrees, false);
+  FrontRight.spinFor(forward,1000, degrees, false);
+  BackLeft.spinFor(forward,1000, degrees,false);
+  FrontLeft.spinFor(forward,1000, degrees,false);
+  MiddleLeft.spinFor(forward,1000, degrees,true);
+  vex::task::sleep(100);
+  MiddleRight.spinFor(forward,500, degrees, false);
+  FrontLeft.spinFor(forward,500, degrees, false);
+  BackLeft.spinFor(forward,500, degrees, true);
+  FrontRight.spinFor(forward,1000, degrees, false);
+  MiddleRight.spinFor(forward,1000, degrees, false);
+  BackRight.spinFor(forward,1000, degrees, false);
+  MiddleLeft.spinFor(forward,1000, degrees, false);
+  FrontRight.spinFor(forward,1000, degrees, false);
+  BackLeft.spinFor(forward,1000, degrees, false);
+  Intake.spinFor(reverse, 1000, degrees, true);
+  FrontRight.spinFor(reverse,1000, degrees, false);
+  MiddleRight.spinFor(reverse,1000, degrees, false);
+  BackRight.spinFor(reverse,1000, degrees, false);
+  MiddleLeft.spinFor(reverse,1000, degrees, false);
+  FrontLeft.spinFor(reverse,1000, degrees, false);
+  BackLeft.spinFor(reverse,1000, degrees); 
+  Intake.spinFor(reverse,1000,degrees,true);
+  */
+  // auton1();
+  moveDistance(10);
+  Catapult.spinFor(100, degrees);
 }
 
 /*---------------------------------------------------------------------------*/
@@ -385,15 +416,25 @@ void autonomous(void) {
 /*                                                                           */
 /*  You must modify the code to add your own robot specific commands here.   */
 /*---------------------------------------------------------------------------*/
-
+/*
+void unitTest (){
+  while (1){
+    FrontLeft.spin(fwd);
+  }
+}
+*/
 void usercontrol(void) {
   // User control code here, inside the loop
   while (1) {
+    // unitTest();
+    
+    
     double rightspeed = (Controller1.Axis3.position()) + (Controller1.Axis1.position() * -0.1);
     double leftspeed = (Controller1.Axis3.position()) - (Controller1.Axis1.position() * -0.1);
     FrontLeft.spin(fwd,leftspeed,pct);
     MiddleLeft.spin(fwd,leftspeed,pct);
     BackLeft.spin(fwd,leftspeed,pct);
+    
     FrontRight.spin(fwd,rightspeed,pct);
     MiddleRight.spin(fwd,rightspeed,pct);
     BackRight.spin(fwd,rightspeed,pct);
@@ -430,7 +471,7 @@ void usercontrol(void) {
     if(Controller1.ButtonUp.pressing()){
       Elevation.spin(forward);
     }
-  
+    
 
     wait(10, msec); // Sleep the task for a short amount of time
                     // to prevent wasted resources.
@@ -440,16 +481,26 @@ void usercontrol(void) {
 //
 // Main will set up the competition functions and callbacks.
 //
+
+
+
 int main() {
   // Set up callbacks for autonomous and driver control periods.
+  // unitTest();
+  
   Competition.autonomous(autonomous);
   Competition.drivercontrol(usercontrol);
+  
 
   // Run the pre-autonomous function.
   pre_auton();
-
+  
   // Prevent main from exiting with an infinite loop.
   while (true) {
     wait(100, msec);
   }
+  
+ 
 }
+
+
