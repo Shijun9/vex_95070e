@@ -170,33 +170,33 @@ void testmove(double inches){
 }
 
 void moveDistance(double inches){
-  double omniCircumfrence = 3.1415 * 2 * 3;//18.849
-  int CartridgeTicks = 1800;
-  double gearRatio = 0.6;
+  double omniCircumfrence = atan(-1)*4 * 2 * 3;//18.849
+  int CartridgeTicks = 900;
+  double gearRatio = 10/6;
   float conversion = (CartridgeTicks*gearRatio)/omniCircumfrence;//1080/18.849 ~ 57.29746936
 
 
-  FrontLeft.spinFor(forward, inches * conversion, degrees, false);
-  FrontRight.spinFor(forward, inches * conversion, degrees, false);
-  MiddleLeft.spinFor(forward, inches * conversion, degrees, false);
-  MiddleRight.spinFor(forward, inches * conversion, degrees, false);
-  BackLeft.spinFor(forward, inches * conversion, degrees, false);
-  BackRight.spinFor(forward, inches * conversion, degrees);
+  FrontLeft.spinFor(forward, inches, degrees, false);
+  FrontRight.spinFor(forward, inches, degrees, false);
+  MiddleLeft.spinFor(forward, inches, degrees, false);
+  MiddleRight.spinFor(forward, inches, degrees, false);
+  BackLeft.spinFor(forward, inches, degrees, false);
+  BackRight.spinFor(forward, inches, degrees);
 }
 
 void turnDegrees(double turnDegrees){
-  double omniCircumfrence = 3.1415 * 2 * 3;
-  int CartridgeTicks = 1800;
-  double gearRatio = 0.6;
+  double omniCircumfrence = atan(-1)*4 * 2 * 3;
+  int CartridgeTicks = 900;
+  double gearRatio = 10/6;
   float conversion = (CartridgeTicks*gearRatio)/omniCircumfrence;
   double degreesFraction=turnDegrees/360;
 
-  FrontLeft.spinFor(fwd, degreesFraction*conversion, degrees);
-  FrontRight.spinFor(forward, degreesFraction * conversion, degrees, false);
-  MiddleLeft.spinFor(forward, degreesFraction * conversion, degrees, false);
-  MiddleRight.spinFor(forward, degreesFraction * conversion, degrees, false);
-  BackLeft.spinFor(forward, degreesFraction * conversion, degrees, false);
-  BackRight.spinFor(forward, degreesFraction * conversion, degrees, false);
+  FrontLeft.spinFor(fwd, turnDegrees, degrees, false);
+  FrontRight.spinFor(reverse, turnDegrees, degrees, false);
+  MiddleLeft.spinFor(fwd, turnDegrees, degrees, false);
+  MiddleRight.spinFor(reverse, turnDegrees, degrees, false);
+  BackLeft.spinFor(fwd, turnDegrees, degrees, false);
+  BackRight.spinFor(reverse, turnDegrees, degrees);
 }
 
 
@@ -209,20 +209,21 @@ void auton1 (){
   5. Outtake Alliance triball
   */
 
-  Intake.spinFor(reverse, 720, degrees);
-  moveDistance(45);
+  // Catapult.spinFor(100, degrees);
 
-  turnDegrees(90);
+  moveDistance(250);
+
+  turnDegrees(200);
   moveDistance(12);
   Intake.spinFor(forward, 720, degrees);
-  moveDistance(-10);
-  turnDegrees(180);
-  moveDistance(-12);
-  moveDistance(10);
+  // moveDistance(-10);
+  // turnDegrees(180);
+ // moveDistance(-12);
+  // moveDistance(10);
 }
  
 void auton2(){
-    /*
+  /*
   1. Intake Alliance triball
   2. Move forward two and a half tiles
   3. Turn 90 degrees left
@@ -230,16 +231,14 @@ void auton2(){
   5. Outtake Alliance triball
   */
 
-  Intake.spinFor(forward, 720, degrees);
-  moveDistance(45);
+  // Catapult.spinFor(100, degrees);
+  moveDistance(250);
+
   turnDegrees(-90);
   moveDistance(12);
-  Intake.spinFor(reverse, 720, degrees);
-  moveDistance(-10);
-  turnDegrees(180);
-  moveDistance(-12);
-  moveDistance(10);
+  Intake.spinFor(forward, 720, degrees);
 }
+
 void auton3 (){
   /*
   1. Intake Alliance triball
@@ -367,9 +366,7 @@ void auton7(void){
 //next test/trial: make each motor spin induvidually
 //other options: put wait time to prevent overrides
 void testAuton(void){
-  moveDistance(10);
-  wait(5,sec);
-  turnDegrees(90);  
+  turnDegrees(180);
 }
 
 void autonomous(void) {
@@ -429,7 +426,7 @@ bool Jessica = 0;
 
 void autonslctr() {
   int numofautons = 7;
-  if (slctauton > 7) {
+  if (slctauton > numofautons) {
     slctauton = 1;
   }
   
@@ -438,13 +435,13 @@ void autonslctr() {
   }
 
   if (Controller1.ButtonRight.pressing()) {
+    wait(1000,msec);
     slctauton++;
-    wait(200,msec);
   }
 
   else if (Controller1.ButtonLeft.pressing()) {
+    wait(1000,msec);
     slctauton--;
-    wait(200,msec);
   }
 
   if (slctauton == 1) {
@@ -499,6 +496,7 @@ void usercontrol(void) {
     if (Controller1.ButtonA.pressing()) {
       Jessica = 1;
     }
+    wait(20,msec);
   }
 
 
@@ -506,8 +504,8 @@ void usercontrol(void) {
     // unitTest();
     
     
-    double rightspeed = (Controller1.Axis3.position()) + (Controller1.Axis1.position() * -0.1);
-    double leftspeed = (Controller1.Axis3.position()) - (Controller1.Axis1.position() * -0.1);
+    double rightspeed = (Controller1.Axis3.position()) + (Controller1.Axis1.position() * -0.8);
+    double leftspeed = (Controller1.Axis3.position()) - (Controller1.Axis1.position() * -0.8);
     FrontLeft.spin(fwd,leftspeed,pct);
     MiddleLeft.spin(fwd,leftspeed,pct);
     BackLeft.spin(fwd,leftspeed,pct);
@@ -528,10 +526,11 @@ void usercontrol(void) {
     else {
       Intake.stop();
     }
-    //Cata code
-    if (Controller1.ButtonL1.pressing()){
+    //Cata 
+    
+    if (Controller1.ButtonL1.pressing()){ 
       Catapult.setStopping(coast);
-      Catapult.spin(forward);
+      Catapult.spin(forward,100,pct);
 
     }
     else{
@@ -539,7 +538,7 @@ void usercontrol(void) {
     }
     // cata down
     if (Controller1.ButtonDown.pressing()){
-      Catapult.setStopping(hold);
+      // Catapult.setStopping(hold);
       Catapult.spinFor(forward, 1, degrees);
     }
 
