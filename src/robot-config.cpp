@@ -11,15 +11,14 @@ brain  Brain;
 motor FrontLeft = motor(PORT19, ratio18_1, true);
 motor FrontRight = motor(PORT15, ratio18_1, false);
 motor MiddleLeft = motor(PORT13, ratio18_1, true);
-motor MiddleRight = motor(PORT10, ratio18_1, false);
-motor BackLeft = motor(PORT18, ratio18_1, true);
+motor MiddleRight = motor(PORT14, ratio18_1, false);
 motor BackRight = motor(PORT11, ratio18_1, false);
-inertial Inertial21 = inertial(PORT21);
-motor Intake = motor(PORT17, ratio18_1, false);
-motor Catapult = motor(PORT16, ratio36_1, true);
-motor Elevation = motor(PORT20, ratio18_1, false);
-digital_out WingLeft = digital_out(Brain.ThreeWirePort.A);
+motor BackLeft = motor(PORT18, ratio18_1, true);
 controller Controller1 = controller(primary);
+inertial Inertial21 = inertial(PORT21);
+motor Intake = motor(PORT12, ratio18_1, false);
+motor Catapult = motor(PORT16, ratio36_1, true);
+digital_out WingLeft = digital_out(Brain.ThreeWirePort.A);
 
 // VEXcode generated functions
 // define variable for remote controller enable/disable
@@ -30,6 +29,6 @@ bool RemoteControlCodeEnabled = true;
  * 
  * This should be called at the start of your int main function.
  */
-void vexcodeInit( void ) { 
+void vexcodeInit( void ) {
   // nothing to initialize
 }

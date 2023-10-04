@@ -18,7 +18,7 @@
 // BackLeft             motor         18              
 // Controller1          controller                    
 // Inertial21           inertial      21              
-// Intake               motor         20              
+// Intake               motor         12              
 // Catapult             motor         16              
 // WingLeft             digital_out   A               
 // ---- END VEXCODE CONFIGURED DEVICES ----
@@ -51,7 +51,7 @@ void pre_auton(void) {
   FrontRight.setVelocity(100, percent);
   MiddleRight.setVelocity(100, percent);
   BackRight.setVelocity(100, percent);
-  Elevation.setVelocity(100,percent);
+  // Elevation.setVelocity(100,percent);
 
 
   // Elevation.setPosition(90, degrees);
@@ -529,6 +529,7 @@ void usercontrol(void) {
     //Cata 
     
     if (Controller1.ButtonL1.pressing()){ 
+      Catapult.setMaxTorque(70, pct);
       Catapult.setStopping(coast);
       Catapult.spin(forward,100,pct);
 
@@ -546,10 +547,11 @@ void usercontrol(void) {
       WingLeft.set(true);
     }
     //Elevation code
+    /*
     if(Controller1.ButtonUp.pressing()){
       Elevation.spin(forward);
     }
-    
+    */
 
     wait(10, msec); // Sleep the task for a short amount of time
                     // to prevent wasted resources.
