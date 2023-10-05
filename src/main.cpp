@@ -12,8 +12,8 @@
 // [Name]               [Type]        [Port(s)]
 // FrontLeft            motor         19              
 // FrontRight           motor         15              
-// MiddleLeft           motor         13              
-// MiddleRight          motor         14              
+// MiddleLeft           motor         14              
+// MiddleRight          motor         10              
 // BackRight            motor         11              
 // BackLeft             motor         18              
 // Controller1          controller                    
