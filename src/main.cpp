@@ -51,6 +51,7 @@ void pre_auton(void) {
   FrontRight.setVelocity(100, percent);
   MiddleRight.setVelocity(100, percent);
   BackRight.setVelocity(100, percent);
+  Catapult.setVelocity(100, pct);
   // Elevation.setVelocity(100,percent);
 
 
@@ -176,12 +177,12 @@ void moveDistance(double inches){
   float conversion = (CartridgeTicks*gearRatio)/omniCircumfrence;//1080/18.849 ~ 57.29746936
 
 
-  FrontLeft.spinFor(forward, inches, degrees, false);
-  FrontRight.spinFor(forward, inches, degrees, false);
-  MiddleLeft.spinFor(forward, inches, degrees, false);
-  MiddleRight.spinFor(forward, inches, degrees, false);
-  BackLeft.spinFor(forward, inches, degrees, false);
-  BackRight.spinFor(forward, inches, degrees);
+  FrontLeft.spinFor(reverse, inches, degrees, false);
+  FrontRight.spinFor(reverse, inches, degrees, false);
+  MiddleLeft.spinFor(reverse, inches, degrees, false);
+  MiddleRight.spinFor(reverse, inches, degrees, false);
+  BackLeft.spinFor(reverse, inches, degrees, false);
+  BackRight.spinFor(reverse, inches, degrees);
 }
 
 void turnDegrees(double turnDegrees){
@@ -209,17 +210,17 @@ void auton1 (){
   5. Outtake Alliance triball
   */
 
-  // Catapult.spinFor(100, degrees);
 
-  moveDistance(250);
 
-  turnDegrees(200);
-  moveDistance(12);
+  moveDistance(7000);
+
+  turnDegrees(300);
+  moveDistance(1000);
   Intake.spinFor(forward, 720, degrees);
-  // moveDistance(-10);
+  moveDistance(-100);
   // turnDegrees(180);
  // moveDistance(-12);
-  // moveDistance(10);
+  // moveDistance(100);
 }
  
 void auton2(){
@@ -231,12 +232,12 @@ void auton2(){
   5. Outtake Alliance triball
   */
 
-  // Catapult.spinFor(100, degrees);
-  moveDistance(250);
+  moveDistance(5000);
 
-  turnDegrees(-90);
-  moveDistance(12);
+  turnDegrees(300);
+  moveDistance(1000);
   Intake.spinFor(forward, 720, degrees);
+  moveDistance(-1000);
 }
 
 void auton3 (){
@@ -529,9 +530,7 @@ void usercontrol(void) {
     //Cata 
     
     if (Controller1.ButtonL1.pressing()){ 
-      Catapult.setMaxTorque(70, pct);
-      Catapult.setStopping(coast);
-      Catapult.spin(forward,100,pct);
+      Catapult.spinFor(100,degrees);
 
     }
     else{
@@ -539,7 +538,6 @@ void usercontrol(void) {
     }
     // cata down
     if (Controller1.ButtonDown.pressing()){
-      // Catapult.setStopping(hold);
       Catapult.spinFor(forward, 1, degrees);
     }
 
