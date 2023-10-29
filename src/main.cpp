@@ -1,263 +1,152 @@
 // ---- START VEXCODE CONFIGURED DEVICES ----
 // Robot Configuration:
 // [Name]               [Type]        [Port(s)]
-// FrontLeft            motor         10              
-// FrontRight           motor         20              
-// MiddleLeft           motor         9               
-// MiddleRight          motor         17              
-// BackRight            motor         11              
-// BackLeft             motor         1               
+// FrontLeft            motor         1               
+// FrontRight           motor         10              
+// MiddleLeft           motor         2               
+// MiddleRight          motor         9               
+// BackRight            motor         8               
+// BackLeft             motor         3               
 // Controller1          controller                    
 // Inertial21           inertial      21              
-// Intake               motor         12              
+// Intake               motor         6               
 // Catapult             motor         16              
 // WingLeft             digital_out   A               
+// WingRight            digital_out   H               
 // ---- END VEXCODE CONFIGURED DEVICES ----
 // ---- START VEXCODE CONFIGURED DEVICES ----
 // Robot Configuration:
 // [Name]               [Type]        [Port(s)]
-// FrontLeft            motor         10              
-// FrontRight           motor         20              
-// MiddleLeft           motor         9               
-// MiddleRight          motor         17              
-// BackRight            motor         11              
-// BackLeft             motor         1               
+// FrontLeft            motor         1               
+// FrontRight           motor         10              
+// MiddleLeft           motor         2               
+// MiddleRight          motor         9               
+// BackRight            motor         8               
+// BackLeft             motor         4               
 // Controller1          controller                    
 // Inertial21           inertial      21              
-// Intake               motor         12              
+// Intake               motor         7               
 // Catapult             motor         16              
 // WingLeft             digital_out   A               
+// WingRight            digital_out   H               
 // ---- END VEXCODE CONFIGURED DEVICES ----
 // ---- START VEXCODE CONFIGURED DEVICES ----
 // Robot Configuration:
 // [Name]               [Type]        [Port(s)]
-// FrontLeft            motor         10              
-// FrontRight           motor         20              
-// MiddleLeft           motor         9               
-// MiddleRight          motor         17              
+// FrontLeft            motor         1               
+// FrontRight           motor         10              
+// MiddleLeft           motor         2               
+// MiddleRight          motor         9               
 // BackRight            motor         11              
-// BackLeft             motor         1               
+// BackLeft             motor         4               
 // Controller1          controller                    
 // Inertial21           inertial      21              
-// Intake               motor         12              
+// Intake               motor         7               
 // Catapult             motor         16              
 // WingLeft             digital_out   A               
+// WingRight            digital_out   H               
 // ---- END VEXCODE CONFIGURED DEVICES ----
 // ---- START VEXCODE CONFIGURED DEVICES ----
 // Robot Configuration:
 // [Name]               [Type]        [Port(s)]
-// FrontLeft            motor         10              
-// FrontRight           motor         20              
-// MiddleLeft           motor         9               
+// FrontLeft            motor         1               
+// FrontRight           motor         10              
+// MiddleLeft           motor         2               
 // MiddleRight          motor         17              
 // BackRight            motor         11              
-// BackLeft             motor         1               
+// BackLeft             motor         4               
 // Controller1          controller                    
 // Inertial21           inertial      21              
-// Intake               motor         12              
+// Intake               motor         7               
 // Catapult             motor         16              
 // WingLeft             digital_out   A               
+// WingRight            digital_out   H               
 // ---- END VEXCODE CONFIGURED DEVICES ----
 // ---- START VEXCODE CONFIGURED DEVICES ----
 // Robot Configuration:
 // [Name]               [Type]        [Port(s)]
-// FrontLeft            motor         10              
-// FrontRight           motor         20              
-// MiddleLeft           motor         9               
-// MiddleRight          motor         17              
-// BackRight            motor         11              
-// BackLeft             motor         1               
-// Controller1          controller                    
-// Inertial21           inertial      21              
-// Intake               motor         12              
-// Catapult             motor         16              
-// WingLeft             digital_out   A               
-// ---- END VEXCODE CONFIGURED DEVICES ----
-// ---- START VEXCODE CONFIGURED DEVICES ----
-// Robot Configuration:
-// [Name]               [Type]        [Port(s)]
-// FrontLeft            motor         10              
-// FrontRight           motor         20              
-// MiddleLeft           motor         9               
-// MiddleRight          motor         17              
-// BackRight            motor         11              
-// BackLeft             motor         1               
-// Controller1          controller                    
-// Inertial21           inertial      21              
-// Intake               motor         12              
-// Catapult             motor         16              
-// WingLeft             digital_out   A               
-// ---- END VEXCODE CONFIGURED DEVICES ----
-// ---- START VEXCODE CONFIGURED DEVICES ----
-// Robot Configuration:
-// [Name]               [Type]        [Port(s)]
-// FrontLeft            motor         10              
-// FrontRight           motor         20              
-// MiddleLeft           motor         9               
-// MiddleRight          motor         17              
-// BackRight            motor         11              
-// BackLeft             motor         1               
-// Controller1          controller                    
-// Inertial21           inertial      21              
-// Intake               motor         12              
-// Catapult             motor         16              
-// WingLeft             digital_out   A               
-// ---- END VEXCODE CONFIGURED DEVICES ----
-// ---- START VEXCODE CONFIGURED DEVICES ----
-// Robot Configuration:
-// [Name]               [Type]        [Port(s)]
-// FrontLeft            motor         10              
-// FrontRight           motor         20              
-// MiddleLeft           motor         9               
-// MiddleRight          motor         17              
-// BackRight            motor         11              
-// BackLeft             motor         1               
-// Controller1          controller                    
-// Inertial21           inertial      21              
-// Intake               motor         12              
-// Catapult             motor         16              
-// WingLeft             digital_out   A               
-// ---- END VEXCODE CONFIGURED DEVICES ----
-// ---- START VEXCODE CONFIGURED DEVICES ----
-// Robot Configuration:
-// [Name]               [Type]        [Port(s)]
-// FrontLeft            motor         10              
-// FrontRight           motor         20              
-// MiddleLeft           motor         9               
-// MiddleRight          motor         17              
-// BackRight            motor         11              
-// BackLeft             motor         1               
-// Controller1          controller                    
-// Inertial21           inertial      21              
-// Intake               motor         12              
-// Catapult             motor         16              
-// WingLeft             digital_out   A               
-// ---- END VEXCODE CONFIGURED DEVICES ----
-// ---- START VEXCODE CONFIGURED DEVICES ----
-// Robot Configuration:
-// [Name]               [Type]        [Port(s)]
-// FrontLeft            motor         10              
-// FrontRight           motor         20              
-// MiddleLeft           motor         9               
-// MiddleRight          motor         17              
-// BackRight            motor         11              
-// BackLeft             motor         1               
-// Controller1          controller                    
-// Inertial21           inertial      21              
-// Intake               motor         12              
-// Catapult             motor         16              
-// WingLeft             digital_out   A               
-// ---- END VEXCODE CONFIGURED DEVICES ----
-// ---- START VEXCODE CONFIGURED DEVICES ----
-// Robot Configuration:
-// [Name]               [Type]        [Port(s)]
-// FrontLeft            motor         10              
-// FrontRight           motor         20              
-// MiddleLeft           motor         9               
-// MiddleRight          motor         17              
-// BackRight            motor         11              
-// BackLeft             motor         1               
-// Controller1          controller                    
-// Inertial21           inertial      21              
-// Intake               motor         12              
-// Catapult             motor         16              
-// WingLeft             digital_out   A               
-// ---- END VEXCODE CONFIGURED DEVICES ----
-// ---- START VEXCODE CONFIGURED DEVICES ----
-// Robot Configuration:
-// [Name]               [Type]        [Port(s)]
-// FrontLeft            motor         10              
-// FrontRight           motor         20              
-// MiddleLeft           motor         9               
-// MiddleRight          motor         17              
-// BackRight            motor         11              
-// BackLeft             motor         1               
-// Controller1          controller                    
-// Inertial21           inertial      21              
-// Intake               motor         12              
-// Catapult             motor         16              
-// WingLeft             digital_out   A               
-// ---- END VEXCODE CONFIGURED DEVICES ----
-// ---- START VEXCODE CONFIGURED DEVICES ----
-// Robot Configuration:
-// [Name]               [Type]        [Port(s)]
-// FrontLeft            motor         10              
-// FrontRight           motor         20              
-// MiddleLeft           motor         9               
-// MiddleRight          motor         17              
-// BackRight            motor         11              
-// BackLeft             motor         1               
-// Controller1          controller                    
-// Inertial21           inertial      21              
-// Intake               motor         12              
-// Catapult             motor         16              
-// WingLeft             digital_out   A               
-// ---- END VEXCODE CONFIGURED DEVICES ----
-// ---- START VEXCODE CONFIGURED DEVICES ----
-// Robot Configuration:
-// [Name]               [Type]        [Port(s)]
-// FrontLeft            motor         10              
-// FrontRight           motor         20              
-// MiddleLeft           motor         9               
-// MiddleRight          motor         17              
-// BackRight            motor         11              
-// BackLeft             motor         1               
-// Controller1          controller                    
-// Inertial21           inertial      21              
-// Intake               motor         12              
-// Catapult             motor         16              
-// WingLeft             digital_out   A               
-// ---- END VEXCODE CONFIGURED DEVICES ----
-// ---- START VEXCODE CONFIGURED DEVICES ----
-// Robot Configuration:
-// [Name]               [Type]        [Port(s)]
-// FrontLeft            motor         10              
-// FrontRight           motor         20              
-// MiddleLeft           motor         9               
-// MiddleRight          motor         17              
-// BackRight            motor         11              
-// BackLeft             motor         1               
-// Controller1          controller                    
-// Inertial21           inertial      21              
-// Intake               motor         12              
-// Catapult             motor         16              
-// WingLeft             digital_out   A               
-// ---- END VEXCODE CONFIGURED DEVICES ----
-// ---- START VEXCODE CONFIGURED DEVICES ----
-// Robot Configuration:
-// [Name]               [Type]        [Port(s)]
-// FrontLeft            motor         19              
-// FrontRight           motor         20              
-// MiddleLeft           motor         9               
-// MiddleRight          motor         17              
-// BackRight            motor         11              
-// BackLeft             motor         1               
-// Controller1          controller                    
-// Inertial21           inertial      21              
-// Intake               motor         12              
-// Catapult             motor         16              
-// WingLeft             digital_out   A               
-// ---- END VEXCODE CONFIGURED DEVICES ----
-// ---- START VEXCODE CONFIGURED DEVICES ----
-// Robot Configuration:
-// [Name]               [Type]        [Port(s)]
-// FrontLeft            motor         19              
+// FrontLeft            motor         1               
 // FrontRight           motor         10              
 // MiddleLeft           motor         9               
 // MiddleRight          motor         17              
 // BackRight            motor         11              
-// BackLeft             motor         1               
+// BackLeft             motor         4               
 // Controller1          controller                    
 // Inertial21           inertial      21              
-// Intake               motor         12              
+// Intake               motor         7               
 // Catapult             motor         16              
 // WingLeft             digital_out   A               
+// WingRight            digital_out   H               
 // ---- END VEXCODE CONFIGURED DEVICES ----
 // ---- START VEXCODE CONFIGURED DEVICES ----
 // Robot Configuration:
 // [Name]               [Type]        [Port(s)]
-// FrontLeft            motor         20              
-// FrontRight           motor         10              
+// FrontLeft            motor         1               
+// FrontRight           motor         20              
+// MiddleLeft           motor         9               
+// MiddleRight          motor         17              
+// BackRight            motor         11              
+// BackLeft             motor         4               
+// Controller1          controller                    
+// Inertial21           inertial      21              
+// Intake               motor         7               
+// Catapult             motor         16              
+// WingLeft             digital_out   A               
+// WingRight            digital_out   H               
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// FrontLeft            motor         10              
+// FrontRight           motor         20              
+// MiddleLeft           motor         9               
+// MiddleRight          motor         17              
+// BackRight            motor         11              
+// BackLeft             motor         4               
+// Controller1          controller                    
+// Inertial21           inertial      21              
+// Intake               motor         7               
+// Catapult             motor         16              
+// WingLeft             digital_out   A               
+// WingRight            digital_out   H               
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// FrontLeft            motor         10              
+// FrontRight           motor         20              
+// MiddleLeft           motor         9               
+// MiddleRight          motor         17              
+// BackRight            motor         11              
+// BackLeft             motor         1               
+// Controller1          controller                    
+// Inertial21           inertial      21              
+// Intake               motor         7               
+// Catapult             motor         16              
+// WingLeft             digital_out   A               
+// WingRight            digital_out   H               
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// FrontLeft            motor         10              
+// FrontRight           motor         20              
+// MiddleLeft           motor         9               
+// MiddleRight          motor         17              
+// BackRight            motor         11              
+// BackLeft             motor         1               
+// Controller1          controller                    
+// Inertial21           inertial      21              
+// Intake               motor         7               
+// Catapult             motor         16              
+// WingLeft             digital_out   A               
+// WingRight            digital_out   H               
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// FrontLeft            motor         10              
+// FrontRight           motor         20              
 // MiddleLeft           motor         9               
 // MiddleRight          motor         17              
 // BackRight            motor         11              
@@ -267,12 +156,13 @@
 // Intake               motor         12              
 // Catapult             motor         16              
 // WingLeft             digital_out   A               
+// WingRight            digital_out   H               
 // ---- END VEXCODE CONFIGURED DEVICES ----
 // ---- START VEXCODE CONFIGURED DEVICES ----
 // Robot Configuration:
 // [Name]               [Type]        [Port(s)]
-// FrontLeft            motor         19              
-// FrontRight           motor         10              
+// FrontLeft            motor         10              
+// FrontRight           motor         20              
 // MiddleLeft           motor         9               
 // MiddleRight          motor         17              
 // BackRight            motor         11              
@@ -280,14 +170,15 @@
 // Controller1          controller                    
 // Inertial21           inertial      21              
 // Intake               motor         12              
-// Catapult             motor         16              
+// Catapult             motor         8               
 // WingLeft             digital_out   A               
+// WingRight            digital_out   H               
 // ---- END VEXCODE CONFIGURED DEVICES ----
 // ---- START VEXCODE CONFIGURED DEVICES ----
 // Robot Configuration:
 // [Name]               [Type]        [Port(s)]
-// FrontLeft            motor         19              
-// FrontRight           motor         15              
+// FrontLeft            motor         10              
+// FrontRight           motor         20              
 // MiddleLeft           motor         9               
 // MiddleRight          motor         17              
 // BackRight            motor         11              
@@ -295,48 +186,10 @@
 // Controller1          controller                    
 // Inertial21           inertial      21              
 // Intake               motor         12              
-// Catapult             motor         16              
+// Catapult             motor         8               
 // WingLeft             digital_out   A               
+// WingRight            digital_out   H               
 // ---- END VEXCODE CONFIGURED DEVICES ----
-// ---- START VEXCODE CONFIGURED DEVICES ----
-// Robot Configuration:
-// [Name]               [Type]        [Port(s)]
-// FrontLeft            motor         19              
-// FrontRight           motor         15              
-// MiddleLeft           motor         9               
-// MiddleRight          motor         10              
-// BackRight            motor         11              
-// BackLeft             motor         1               
-// Controller1          controller                    
-// Inertial21           inertial      21              
-// Intake               motor         12              
-// Catapult             motor         16              
-// WingLeft             digital_out   A               
-// ---- END VEXCODE CONFIGURED DEVICES ----
-// ---- START VEXCODE CONFIGURED DEVICES ----
-// Robot Configuration:
-// [Name]               [Type]        [Port(s)]
-// FrontLeft            motor         19              
-// FrontRight           motor         15              
-// MiddleLeft           motor         14              
-// MiddleRight          motor         10              
-// BackRight            motor         11              
-// BackLeft             motor         1               
-// Controller1          controller                    
-// Inertial21           inertial      21              
-// Intake               motor         12              
-// Catapult             motor         16              
-// WingLeft             digital_out   A               
-// ---- END VEXCODE CONFIGURED DEVICES ----
-/*----------------------------------------------------------------------------*/
-/*                                                                            */
-/*    Module:       main.cpp                                                  */
-/*    Author:       VEX                                                       */
-/*    Created:      Thu Sep 26 2019                                           */
-/*    Description:  Competition Template                                      */
-/*                                                                            */
-/*----------------------------------------------------------------------------*/
-
 // ---- START VEXCODE CONFIGURED DEVICES ----
 // Robot Configuration:
 // [Name]               [Type]        [Port(s)]
@@ -382,7 +235,10 @@ void pre_auton(void) {
   FrontRight.setVelocity(100, percent);
   MiddleRight.setVelocity(100, percent);
   BackRight.setVelocity(100, percent);
-  Catapult.setVelocity(100, pct);
+  Catapult.setVelocity(70, pct);
+
+  WingLeft.set(false);
+  WingRight.set(false);
   // Elevation.setVelocity(100,percent);
 
 
@@ -571,12 +427,12 @@ void auton2(){
   5. Outtake Alliance triball
   */
 
-  moveDistance(5000);
+  moveDistance(-5000);
 
   turnDegrees(300);
-  moveDistance(1000);
-  Intake.spinFor(forward, 720, degrees);
   moveDistance(-1000);
+  Intake.spinFor(forward, 720, degrees);
+  moveDistance(1000);
 }
 
 void auton3 (){
@@ -641,55 +497,68 @@ void auton5(){
 }
 
 void auton6(void){
-  //score the perload triball
-  //then score the triball right outside the goal
-  Intake.spinFor(reverse, 720, degrees);
-  moveDistance(45);
-  turnDegrees(90);
-  moveDistance(12);
-  Intake.spinFor(forward, 720, degrees);
-  moveDistance(-10);
-  turnDegrees(180);
-  moveDistance(-12);
-  moveDistance(10);
-  turnDegrees(-90);
-  moveDistance(12);
-  turnDegrees(90);
-  moveDistance(15);
-  Intake.spinFor(forward, 720, degrees);
-  turnDegrees(180);
-  moveDistance(30);
-  Intake.spinFor(reverse, 720, degrees);
-  moveDistance(-10);
-  turnDegrees(180);
-  moveDistance(-10);
-
- 
+  wait(200, msec);
+  moveDistance(382.165*2.1);
+  wait(200, msec);
+  Intake.spinFor(reverse, 540, degrees, false);
+  wait(200, msec);
+  turnDegrees(150);
+  wait(200, msec);
+  Intake.spinFor(forward, 360, degrees, false);
+  wait(200, msec);
+  moveDistance(63.695*4);
+  wait(200, msec);
+  moveDistance(-63.695*4);
+  wait(200, msec);
+  turnDegrees(270);
+  wait(200, msec);
+  moveDistance(382.165*1.3);
+  wait(200, msec);
+  Intake.spinFor(reverse, 360, degrees, true);
+  wait(200, msec);
+  moveDistance(-63.695*2.5);
+  wait(200, msec);
+  turnDegrees(260);
+  wait(200, msec);
+  moveDistance(382.165*1.5);
+  wait(200, msec);
+  /*Intake.spinFor(forward, 540, degrees, true);
+  wait(200, msec);
+  moveDistance(-382.165/2);
+  wait(200, msec);*/
+  
 }
 
 void auton7(void){
   //gets elevation triball
-  moveDistance(382.165*1.5);
+  /*Intake.spinFor(forward, 540, degrees, false);
   wait(200,msec);
-  Intake.spinFor(forward, 180, degrees, true);
+  moveDistance(382.165*1);
   wait(200, msec);
+  moveDistance(-382.165*1);
+  wait(200,msec);
   turnDegrees(-45);
   wait(200,msec);
-  moveDistance(-382.165*1.5);
-  wait(200,msec);
+  */
   //scores preload
   moveDistance(-382.165/2);
   wait(200, msec);
   turnDegrees(-100);
   wait(200, msec);
-  moveDistance(-382.165*1.2);
+  moveDistance(-382.165*0.75);
   wait(200, msec);
   turnDegrees(-100);
   wait(200, msec);
-  moveDistance(-382.165/1.5);
+  moveDistance(-382.165);
   wait(200, msec);
-  
-  //scores elevation triball
+  moveDistance(63.695*2.5);
+  wait(200, msec);
+  turnDegrees(110);
+  wait(200, msec);
+  moveDistance(63.695*2.5);
+  wait(200, msec);
+
+  /*scores elevation triball
   moveDistance(63.695*2.5);
   wait(200,msec);
   turnDegrees(440);
@@ -697,18 +566,24 @@ void auton7(void){
   Intake.spinFor(reverse, 180, degrees, false);
   wait(200,msec);
   moveDistance(-63.695*2.5);
-  wait(200,msec);
+  wait(200,msec);*/
   
   //gets middle triball
-  turnDegrees(-220);
+  turnDegrees(157);
   wait(200,msec);
-  moveDistance(382.165);
+  Intake.spin(reverse);
+  wait(700,msec);
+  moveDistance(382.165*2.1);
   wait(200,msec);
-  turnDegrees(220);
+  moveDistance(-63.695*2);
   wait(200,msec);
-  moveDistance(382.165/2);
+  turnDegrees(370);
   wait(200,msec);
-  turnDegrees(-220);
+
+  moveDistance(382.165*2);
+  wait(200,msec);
+  Intake.spinFor(forward, 540, degrees, false);
+  /*turnDegrees(-220);
   wait(200,msec);
   moveDistance(382.165*1.5);
   wait(200,msec);
@@ -725,7 +600,7 @@ void auton7(void){
   wait(200,msec);
   Intake.spinFor(reverse, 180, degrees, false);
   wait(200,msec);
-  moveDistance(382.165);
+  moveDistance(382.165);*/
     
 }
 //current test/trial: get the motors to spin and work up until simiplr to auton
@@ -844,7 +719,7 @@ void autonomous(void) {
   }
 
   if (slctauton == 4) {
-    auton4();
+    auton6();
   }
 
   if (slctauton == 5) {
@@ -926,7 +801,7 @@ void autonslctr() {
   else if (slctauton == 4) {
     Controller1.Screen.clearScreen();
     Controller1.Screen.setCursor(1,1);
-    Controller1.Screen.print("Auton 4");
+    Controller1.Screen.print("2 triball auton");
   }
 
   else if(slctauton == 5) {
@@ -1006,9 +881,14 @@ void usercontrol(void) {
     if (Controller1.ButtonDown.pressing()){
       Catapult.spinFor(forward, 1, degrees);
     }
-
+    // wing
     if (Controller1.ButtonX.pressing()){
       WingLeft.set(true);
+      WingRight.set(true);
+    }
+    else if (Controller1.ButtonY.pressing()){
+      WingLeft.set(false);
+      WingRight.set(false);
     }
     //Elevation code
     /*
