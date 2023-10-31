@@ -498,29 +498,38 @@ void auton5(){
 
 void auton6(void){
   wait(200, msec);
-  moveDistance(382.165*2.1);
+  moveDistance(382.165*3);
   wait(200, msec);
+  turnDegrees(235);
+  wait(200, msec);
+  
   Intake.spinFor(reverse, 540, degrees, false);
   wait(200, msec);
-  turnDegrees(150);
+  moveDistance(63.695*6);
   wait(200, msec);
+  moveDistance(-63.695*6);
+  wait(200, msec);
+  
   Intake.spinFor(forward, 360, degrees, false);
   wait(200, msec);
-  moveDistance(63.695*4);
-  wait(200, msec);
-  moveDistance(-63.695*4);
-  wait(200, msec);
-  turnDegrees(270);
+  turnDegrees(330);
   wait(200, msec);
   moveDistance(382.165*1.3);
   wait(200, msec);
-  Intake.spinFor(reverse, 360, degrees, true);
-  wait(200, msec);
+  
+  Intake.spinFor(forward, 900, degrees, false);
+  wait(500, msec);
   moveDistance(-63.695*2.5);
   wait(200, msec);
-  turnDegrees(260);
+  turnDegrees(490);
   wait(200, msec);
+  
+  Intake.spinFor(reverse, 900, degrees, false);
   moveDistance(382.165*1.5);
+  wait(200, msec);
+  moveDistance(-63.695*6);
+  wait(200, msec);
+  moveDistance(63.695*7);
   wait(200, msec);
   /*Intake.spinFor(forward, 540, degrees, true);
   wait(200, msec);
@@ -846,8 +855,8 @@ void usercontrol(void) {
     // unitTest();
     
     
-    double rightspeed = (Controller1.Axis3.position()) + (Controller1.Axis1.position() * -0.5);
-    double leftspeed = (Controller1.Axis3.position()) - (Controller1.Axis1.position() * -0.5);
+    double rightspeed = (Controller1.Axis3.position()) + (Controller1.Axis1.position() * -1);
+    double leftspeed = (Controller1.Axis3.position()) - (Controller1.Axis1.position() * -1);
     FrontLeft.spin(fwd,leftspeed,pct);
     MiddleLeft.spin(fwd,leftspeed,pct);
     BackLeft.spin(fwd,leftspeed,pct);
