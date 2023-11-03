@@ -497,31 +497,30 @@ void auton5(){
 }
 
 void auton6(void){
-  wait(200, msec);
+  wait(200, msec);//going to goal and turning
   moveDistance(382.165*3);
   wait(200, msec);
   turnDegrees(235);
   wait(200, msec);
   
-  Intake.spinFor(reverse, 540, degrees, false);
+  Intake.spinFor(reverse, 540, degrees, false);//outake to score triball 
   wait(200, msec);
-  moveDistance(63.695*6);
+  moveDistance(63.695*4);
   wait(200, msec);
-  moveDistance(-63.695*6);
+  moveDistance(-63.695*4);
   wait(200, msec);
-  
-  Intake.spinFor(forward, 360, degrees, false);
+
+  //turn and move to 2nd triball
+  turnDegrees(370);
   wait(200, msec);
-  turnDegrees(330);
-  wait(200, msec);
-  moveDistance(382.165*1.3);
-  wait(200, msec);
-  
   Intake.spinFor(forward, 900, degrees, false);
-  wait(500, msec);
+  wait(200, msec);
+  moveDistance(382.165*1.35);
+  wait(2, sec);
+  
   moveDistance(-63.695*2.5);
   wait(200, msec);
-  turnDegrees(490);
+  turnDegrees(450);
   wait(200, msec);
   
   Intake.spinFor(reverse, 900, degrees, false);
@@ -531,6 +530,7 @@ void auton6(void){
   wait(200, msec);
   moveDistance(63.695*7);
   wait(200, msec);
+  
   /*Intake.spinFor(forward, 540, degrees, true);
   wait(200, msec);
   moveDistance(-382.165/2);
