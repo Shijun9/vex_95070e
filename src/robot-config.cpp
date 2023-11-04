@@ -17,7 +17,7 @@ motor BackLeft = motor(PORT3, ratio18_1, true);
 controller Controller1 = controller(primary);
 inertial Inertial21 = inertial(PORT21);
 motor Intake = motor(PORT6, ratio18_1, false);
-motor Catapult = motor(PORT16, ratio36_1, false);
+motor Catapult = motor(PORT5, ratio36_1, true);
 digital_out WingLeft = digital_out(Brain.ThreeWirePort.A);
 digital_out WingRight = digital_out(Brain.ThreeWirePort.H);
 
