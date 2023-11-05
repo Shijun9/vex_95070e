@@ -308,29 +308,33 @@ void auton5(){
 
 void auton6(void){
   wait(200, msec);//going to goal and turning
-  moveDistance(382.165*3);
+  moveDistance(382.165*2.8);
   wait(200, msec);
   turnDegrees(235);
   wait(200, msec);
   
-  Intake.spinFor(reverse, 540, degrees, false);//outake to score triball 
+  Intake.spinFor(reverse, 700, degrees, false);//outake to score triball 
   wait(200, msec);
-  moveDistance(63.695*4);
+  moveDistance(63.695*2);
   wait(200, msec);
   moveDistance(-63.695*4);
   wait(200, msec);
 
   //turn and move to 2nd triball
-  turnDegrees(370);
+  turnDegrees(380);
   wait(200, msec);
-  Intake.spinFor(forward, 900, degrees, false);
-  wait(200, msec);
+  Intake.setVelocity(100, pct);
+  Intake.spin(forward);
+  wait(1, sec);
   moveDistance(382.165*1.35);
   wait(2, sec);
+  // Intake.stop();
+  wait(200,msec);
   
   moveDistance(-63.695*2.5);
   wait(200, msec);
-  turnDegrees(450);
+  turnDegrees(400);
+  Intake.stop();
   wait(200, msec);
   
   Intake.spinFor(reverse, 900, degrees, false);
@@ -671,7 +675,7 @@ void usercontrol(void) {
     //Cata 
     
     if (Controller1.ButtonL1.pressing()){ 
-      Catapult.spinFor(100,degrees);
+      Catapult.spin(fwd);
 
     }
     else{
@@ -679,7 +683,7 @@ void usercontrol(void) {
     }
     // cata down
     if (Controller1.ButtonDown.pressing()){
-      Catapult.spinFor(forward, 1, degrees);
+      Catapult.spin(forward);
     }
     // wing
     if (Controller1.ButtonX.pressing()){
