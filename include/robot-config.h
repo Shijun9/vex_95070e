@@ -10,7 +10,7 @@ extern motor MiddleRight;
 extern motor BackRight;
 extern motor BackLeft;
 extern controller Controller1;
-extern inertial Inertial21;
+extern inertial Inertial;
 extern motor Intake;
 extern motor Catapult;
 extern digital_out WingLeft;

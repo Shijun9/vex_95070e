@@ -8,12 +8,13 @@
 // BackRight            motor         8               
 // BackLeft             motor         3               
 // Controller1          controller                    
-// Inertial21           inertial      21              
+// Inertial             inertial      7               
 // Intake               motor         6               
 // Catapult             motor         5               
 // WingLeft             digital_out   A               
 // WingRight            digital_out   H               
 // ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
 
 
 #include "vex.h"
@@ -45,10 +46,18 @@ void pre_auton(void) {
   FrontRight.setVelocity(100, percent);
   MiddleRight.setVelocity(100, percent);
   BackRight.setVelocity(100, percent);
-  Catapult.setVelocity(90, pct);
+  Catapult.setVelocity(100, pct);
 
   WingLeft.set(false);
   WingRight.set(false);
+
+  Inertial.calibrate();
+
+  while (Inertial.isCalibrating()){
+    Controller1.Screen.print("DON'T MOVE!");
+  }
+
+  Controller1.Screen.clearScreen();
   // Elevation.setVelocity(100,percent);
 
 
@@ -196,13 +205,15 @@ void turnDegrees(double turnDegrees){
   double gearRatio = 10/6;
   float conversion = (CartridgeTicks*gearRatio)/omniCircumfrence;
   double degreesFraction=turnDegrees/360;
-
+  Inertial.setRotation(turnDegrees, degrees);
+  /*
   FrontLeft.spinFor(fwd, turnDegrees, degrees, false);
   FrontRight.spinFor(reverse, turnDegrees, degrees, false);
   MiddleLeft.spinFor(fwd, turnDegrees, degrees, false);
   MiddleRight.spinFor(reverse, turnDegrees, degrees, false);
   BackLeft.spinFor(fwd, turnDegrees, degrees, false);
   BackRight.spinFor(reverse, turnDegrees, degrees);
+  */
 }
 
 
@@ -321,7 +332,7 @@ void auton6(void){
   wait(200, msec);
 
   //turn and move to 2nd triball
-  turnDegrees(380);
+  turnDegrees(365);
   wait(200, msec);
   Intake.setVelocity(100, pct);
   Intake.spin(forward);
