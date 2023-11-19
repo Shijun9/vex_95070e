@@ -8,6 +8,70 @@
 // BackRight            motor         8               
 // BackLeft             motor         3               
 // Controller1          controller                    
+// Inertial             inertial      4               
+// Intake               motor         21              
+// Catapult             motor         5               
+// WingLeft             digital_out   A               
+// WingRight            digital_out   H               
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// FrontLeft            motor         1               
+// FrontRight           motor         10              
+// MiddleLeft           motor         2               
+// MiddleRight          motor         9               
+// BackRight            motor         8               
+// BackLeft             motor         3               
+// Controller1          controller                    
+// Inertial             inertial      4               
+// Intake               motor         21              
+// Catapult             motor         5               
+// WingLeft             digital_out   A               
+// WingRight            digital_out   H               
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// FrontLeft            motor         1               
+// FrontRight           motor         10              
+// MiddleLeft           motor         2               
+// MiddleRight          motor         9               
+// BackRight            motor         8               
+// BackLeft             motor         3               
+// Controller1          controller                    
+// Inertial             inertial      4               
+// Intake               motor         21              
+// Catapult             motor         5               
+// WingLeft             digital_out   A               
+// WingRight            digital_out   H               
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// FrontLeft            motor         1               
+// FrontRight           motor         10              
+// MiddleLeft           motor         2               
+// MiddleRight          motor         9               
+// BackRight            motor         8               
+// BackLeft             motor         3               
+// Controller1          controller                    
+// Inertial             inertial      7               
+// Intake               motor         21              
+// Catapult             motor         5               
+// WingLeft             digital_out   A               
+// WingRight            digital_out   H               
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// FrontLeft            motor         1               
+// FrontRight           motor         10              
+// MiddleLeft           motor         2               
+// MiddleRight          motor         9               
+// BackRight            motor         8               
+// BackLeft             motor         3               
+// Controller1          controller                    
 // Inertial             inertial      7               
 // Intake               motor         6               
 // Catapult             motor         5               
@@ -18,6 +82,7 @@
 
 
 #include "vex.h"
+#include <cmath>
 
 using namespace vex;
 
@@ -37,6 +102,11 @@ competition Competition;
 /*---------------------------------------------------------------------------*/
 int slctauton;
 //testing
+float actualHeading = Inertial.heading(degrees);
+float targetDegrees = 0;
+float targetHeading = targetDegrees;
+float error = targetHeading - actualHeading;
+float motorSpeed = error;
 void pre_auton(void) {
   // Initializing Robot Configuration. DO NOT REMOVE!
   vexcodeInit();
@@ -56,7 +126,7 @@ void pre_auton(void) {
   while (Inertial.isCalibrating()){
     Controller1.Screen.print("DON'T MOVE!");
   }
-
+  Inertial.setRotation(0, degrees);
   Controller1.Screen.clearScreen();
   // Elevation.setVelocity(100,percent);
 
@@ -199,21 +269,53 @@ void moveDistance(double inches){
   BackRight.spinFor(fwd, inches, degrees);
 }
 
-void turnDegrees(double turnDegrees){
-  double omniCircumfrence = atan(-1)*4 * 2 * 3;
-  int CartridgeTicks = 900;
-  double gearRatio = 10/6;
-  float conversion = (CartridgeTicks*gearRatio)/omniCircumfrence;
-  double degreesFraction=turnDegrees/360;
-  Inertial.setRotation(turnDegrees, degrees);
+void turnDegrees(float targetDegrees){
+  Controller1.Screen.print("turning...");
+  // wait(10, msec);
+  // double omniCircumfrence = atan(-1)*4 * 2 * 3;
+  // int CartridgeTicks = 900;
+  // double gearRatio = 10/6;
+  // float conversion = (CartridgeTicks*gearRatio)/omniCircumfrence;
+  // double degreesFraction=targetDegrees/360;
+  Inertial.calibrate();
   /*
-  FrontLeft.spinFor(fwd, turnDegrees, degrees, false);
-  FrontRight.spinFor(reverse, turnDegrees, degrees, false);
-  MiddleLeft.spinFor(fwd, turnDegrees, degrees, false);
-  MiddleRight.spinFor(reverse, turnDegrees, degrees, false);
-  BackLeft.spinFor(fwd, turnDegrees, degrees, false);
-  BackRight.spinFor(reverse, turnDegrees, degrees);
+  FrontLeft.spinFor(fwd, Inertial.rotation(degrees)+turnDegrees, degrees, false);
+  FrontRight.spinFor(reverse, Inertial.rotation(degrees)+turnDegrees, degrees, false);
+  MiddleLeft.spinFor(fwd, Inertial.rotation(degrees)+turnDegrees, degrees, false);
+  MiddleRight.spinFor(reverse, Inertial.rotation(degrees)+turnDegrees, degrees, false);
+  BackLeft.spinFor(fwd, Inertial.rotation(degrees)+turnDegrees, degrees, false);
+  BackRight.spinFor(reverse, Inertial.rotation(degrees)+turnDegrees, degrees);
   */
+  
+  float actualHeading = Inertial.heading(degrees);
+  float targetHeading = targetDegrees;
+  float error = targetHeading - actualHeading;
+  float motorSpeed = 0.4*error;
+
+  while (true){
+    actualHeading = Inertial.heading(degrees);
+    error = targetHeading - actualHeading;
+    if (error>1){
+      motorSpeed = 0.4*std::abs(error);
+    }
+    else{
+      motorSpeed = 0;
+      break;
+    }
+   
+    FrontLeft.spin(fwd, motorSpeed, pct);
+    FrontRight.spin(reverse, motorSpeed,pct);
+    MiddleLeft.spin(fwd, motorSpeed, pct);
+    MiddleRight.spin(reverse, motorSpeed, pct);
+    BackLeft.spin(fwd, motorSpeed, pct);
+    BackRight.spin(reverse, motorSpeed, pct);
+    Controller1.Screen.clearScreen();
+    Controller1.Screen.print("error =  : %f", error);
+    Controller1.Screen.setCursor(2, 1);
+    Controller1.Screen.print("Inertial heading is : %f, ", Inertial.heading());
+    wait(1, msec);
+  }
+  
 }
 
 
@@ -256,6 +358,24 @@ void auton2(){
   moveDistance(1000);
 }
 
+void lessVelocity(){
+  FrontLeft.setVelocity(80, pct);
+  FrontRight.setVelocity(80, pct);
+  MiddleLeft.setVelocity(80, pct);
+  MiddleRight.setVelocity(80, pct);
+  BackLeft.setVelocity(80, pct);
+  BackRight.setVelocity(80, pct);
+}
+
+void normalVelocity(){
+  FrontLeft.setVelocity(100, percent);
+  MiddleLeft.setVelocity(100, percent);
+  BackLeft.setVelocity(100, percent);
+  FrontRight.setVelocity(100, percent);
+  MiddleRight.setVelocity(100, percent);
+  BackRight.setVelocity(100, percent);
+}
+
 void auton3 (){
   /*
   1. Intake Alliance triball
@@ -264,15 +384,57 @@ void auton3 (){
   4. Move forward a half tile
   5. Outtake Alliance triball
   */
-  Intake.spinFor(forward, 720, degrees);
-  moveDistance(45);
-  turnDegrees(90);
-  moveDistance(12);
-  Intake.spinFor(reverse, 720, degrees);
-  moveDistance(-10);
-  turnDegrees(180);
-  moveDistance(-12);
-  moveDistance(10);
+  wait(200, msec);//going to goal and turning
+  moveDistance(382.165*2.5);
+  wait(200, msec);
+  turnDegrees(200);
+  Controller1.Screen.clearScreen();
+  Controller1.Screen.print(Inertial.rotation());
+  wait(200, msec);
+  
+  Intake.spinFor(reverse, 700, degrees, false);//outake to score triball 
+  wait(200, msec);
+  moveDistance(63.695*4);
+  wait(200, msec);
+  moveDistance(-63.695*4);
+  wait(200, msec);
+  lessVelocity();
+  //turn and move to 2nd triball
+  turnDegrees(425);
+  Controller1.Screen.clearScreen();
+  Controller1.Screen.print(Inertial.rotation());
+  wait(200, msec);
+  Intake.setVelocity(100, pct);
+  Intake.spin(forward);
+  
+  
+
+  wait(1, sec);
+  moveDistance(382.165*1.5);
+  
+  wait(2, sec);
+  // Intake.stop();
+  normalVelocity();
+  wait(200,msec);
+  
+  moveDistance(-63.695*2.5);
+  wait(200, msec);
+  turnDegrees(470);
+  Controller1.Screen.clearScreen();
+  Controller1.Screen.print(Inertial.rotation());
+  Intake.stop();
+  WingLeft.set(true);
+  WingRight.set(true);
+
+  wait(200, msec);
+  
+  Intake.spinFor(reverse, 900, degrees, false);
+  moveDistance(382.165*1.5);
+  wait(200, msec);
+  moveDistance(-63.695*6);
+  wait(200, msec);
+  moveDistance(63.695*7);
+  wait(200, msec);
 }
 
 void auton4(){
@@ -321,30 +483,45 @@ void auton6(void){
   wait(200, msec);//going to goal and turning
   moveDistance(382.165*2.8);
   wait(200, msec);
-  turnDegrees(235);
+  turnDegrees(5);
+  Controller1.Screen.clearScreen();
+  Controller1.Screen.print("The error is : %f", error);
+  wait(3,sec);
+  Controller1.Screen.print(Inertial.rotation());
   wait(200, msec);
   
   Intake.spinFor(reverse, 700, degrees, false);//outake to score triball 
   wait(200, msec);
-  moveDistance(63.695*2);
+  moveDistance(63.695*4);
   wait(200, msec);
   moveDistance(-63.695*4);
   wait(200, msec);
-
+  // lessVelocity();
   //turn and move to 2nd triball
-  turnDegrees(365);
+  turnDegrees(10);
+  Controller1.Screen.clearScreen();
+  Controller1.Screen.print("The error is : %f", error);
+  wait(3,sec);
+  Controller1.Screen.print(Inertial.rotation());
   wait(200, msec);
   Intake.setVelocity(100, pct);
   Intake.spin(forward);
+  
+  
+
   wait(1, sec);
-  moveDistance(382.165*1.35);
+  moveDistance(382.165*1.5);
+  /*
   wait(2, sec);
   // Intake.stop();
+  normalVelocity();
   wait(200,msec);
   
   moveDistance(-63.695*2.5);
   wait(200, msec);
-  turnDegrees(400);
+  turnDegrees(470);
+  Controller1.Screen.clearScreen();
+  Controller1.Screen.print(Inertial.rotation());
   Intake.stop();
   wait(200, msec);
   
@@ -355,7 +532,7 @@ void auton6(void){
   wait(200, msec);
   moveDistance(63.695*7);
   wait(200, msec);
-  
+  */
   /*Intake.spinFor(forward, 540, degrees, true);
   wait(200, msec);
   moveDistance(-382.165/2);
@@ -444,7 +621,7 @@ void testAuton(void){
   //move 1 tile ~ 382.165 degrees input
   //63.695 degrees for 1 inch
   //220 degrees for 90 degree rotation
-  // moveDistance(382.165);
+  // moveDistance(382.165)
   // wait(200, msec);
   // Intake.spin(forward);//up to here its good but then it doesnt go all the way in
   // wait(200, msec);
