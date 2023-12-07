@@ -470,13 +470,17 @@ void auton6(void){
   
   Intake.spinFor(reverse, 700, degrees, false);//outake to score triball 
  // wait(200, msec);
-  moveDistance(63.695*4);
+  moveDistance(63.695*5);
+ // wait(200, msec);
+  moveDistance(-63.695*5);
+  //wait(200, msec);
+  moveDistance(63.695*5);
  // wait(200, msec);
   moveDistance(-63.695*5);
   //wait(200, msec);
   
   //turn and move to 2nd triball
-  turnDegrees(240);
+  turnDegrees(230);
   Controller1.Screen.clearScreen();
   Controller1.Screen.print("The error is : %f", error);
  // wait(200, msec);
@@ -484,24 +488,20 @@ void auton6(void){
  // wait(200, msec);
   Intake.setVelocity(100, pct);
   Intake.spin(forward);
-  
-  
-
-  wait(1, sec);
+  wait(200, msec);
   moveDistance(382.165*1.5);
-  
-  
-  wait(2, sec);
-  // Intake.stop();
+  wait(1, sec);
+  Intake.stop();
   normalVelocity();
   wait(200,msec);
-  
-  moveDistance(-63.695*2.5);
+  moveDistance(63.695*5);
   wait(200, msec);
-  turnDegrees(90);
+  moveDistance(63.695*-5);
+  wait(200, msec);
+  turnDegrees(70);
   Controller1.Screen.clearScreen();
   Controller1.Screen.print(Inertial.rotation());
-  Intake.stop();
+  
   wait(200, msec);
   
   Intake.spinFor(reverse, 900, degrees, false);
