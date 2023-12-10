@@ -51,7 +51,7 @@ void pre_auton(void) {
   FrontRight.setVelocity(100, percent);
   MiddleRight.setVelocity(100, percent);
   BackRight.setVelocity(100, percent);
-  Catapult.setVelocity(85, pct);
+  Catapult.setVelocity(80, pct);
 
   WingLeft.set(false);
   WingRight.set(false);
@@ -328,7 +328,7 @@ void auton2(){
 
   moveDistance(-5000);
 
-  turnDegrees(300);
+  //turnDegrees(300);
   moveDistance(-1000);
   Intake.spinFor(forward, 720, degrees);
   moveDistance(1000);
@@ -458,7 +458,7 @@ void auton6(void){
  // turnPID(90);
  //wait(1, sec);
  //moveDistance(100);
-  moveDistance(382.165*2.5);
+  moveDistance(382.165*2.6);
  // wait(200, msec);
   normalVelocity();
   turnDegrees(90);
@@ -470,17 +470,17 @@ void auton6(void){
   
   Intake.spinFor(reverse, 700, degrees, false);//outake to score triball 
  // wait(200, msec);
-  moveDistance(63.695*5);
+  moveDistance(63.695*4);
  // wait(200, msec);
   moveDistance(-63.695*5);
   //wait(200, msec);
   moveDistance(63.695*5);
  // wait(200, msec);
-  moveDistance(-63.695*5);
+  moveDistance(-63.695*4);         
   //wait(200, msec);
   
   //turn and move to 2nd triball
-  turnDegrees(230);
+  turnDegrees(235);
   Controller1.Screen.clearScreen();
   Controller1.Screen.print("The error is : %f", error);
  // wait(200, msec);
@@ -489,16 +489,16 @@ void auton6(void){
   Intake.setVelocity(100, pct);
   Intake.spin(forward);
   wait(200, msec);
-  moveDistance(382.165*1.5);
+  moveDistance(382.165*1.6);
   wait(1, sec);
-  Intake.stop();
   normalVelocity();
   wait(200,msec);
   moveDistance(63.695*5);
   wait(200, msec);
   moveDistance(63.695*-5);
   wait(200, msec);
-  turnDegrees(70);
+  Intake.stop();
+  turnDegrees(60);
   Controller1.Screen.clearScreen();
   Controller1.Screen.print(Inertial.rotation());
   
@@ -511,7 +511,7 @@ void auton6(void){
   wait(200, msec);
   moveDistance(63.695*7);
   wait(200, msec);
-  
+  moveDistance(-63.695*6);
   /*Intake.spinFor(forward, 540, degrees, true);
   wait(200, msec);
   moveDistance(-382.165/2);
@@ -604,40 +604,38 @@ void testAuton(void){
   // wait(200, msec);
   // Intake.spin(forward);//up to here its good but then it doesnt go all the way in
   // wait(200, msec);
-  moveDistance(-382.165/2);
+  moveDistance(-382.165*0.7);
   //weird
   
   wait(200, msec);
-  // WingLeft.value(0);
+  WingRight.set(true);
  // moveDistance(-63.695*2);
-  turnDegrees(100);
+  turnPID(45);
   wait(200, msec);
   moveDistance(-382.165*1.2);
   wait(200, msec);
-  turnDegrees(100);
+  turnPID(90);
   wait(200, msec);
   moveDistance(-63.695*3);
   wait(200, msec);
+  WingRight.set(false);
 
   moveDistance(382.165/2);
   wait(200, msec);
-  turnDegrees(-95);
-  wait(200, msec);
-  moveDistance(382.165*1.5);
-  wait(200, msec);
-
-  moveDistance(-127.39);
+  turnPID(45); 
   wait(200, msec);
   moveDistance(382.165);
   wait(200, msec);
-  turnDegrees(440);
+  turnPID(0);
   wait(200, msec);
+
+  
   Intake.spinFor(reverse, 540, degrees, true);
   wait(200, msec);
   moveDistance(382.165);
   wait(200, msec);
-  moveDistance(191.0825);
-  wait(200, msec); 
+ // moveDistance(191.0825);
+  //wait(200, msec); 
   
 
  
