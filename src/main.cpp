@@ -8,6 +8,22 @@
 // BackRight            motor         8               
 // BackLeft             motor         3               
 // Controller1          controller                    
+// Inertial             inertial      4               
+// Intake               motor         20              
+// Catapult             motor         5               
+// WingLeft             digital_out   A               
+// WingRight            digital_out   H               
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// FrontLeft            motor         1               
+// FrontRight           motor         10              
+// MiddleLeft           motor         2               
+// MiddleRight          motor         9               
+// BackRight            motor         8               
+// BackLeft             motor         3               
+// Controller1          controller                    
 // Inertial             inertial      7               
 // Intake               motor         6               
 // Catapult             motor         5               
@@ -52,6 +68,7 @@ void pre_auton(void) {
   MiddleRight.setVelocity(100, percent);
   BackRight.setVelocity(100, percent);
   Catapult.setVelocity(80, pct);
+  Intake.setVelocity(80, pct);
 
   WingLeft.set(false);
   WingRight.set(false);
@@ -328,10 +345,17 @@ void auton2(){
 
   moveDistance(-5000);
 
-  //turnDegrees(300);
-  moveDistance(-1000);
-  Intake.spinFor(forward, 720, degrees);
-  moveDistance(1000);
+
+}
+
+void openWings(){
+  WingRight.set(true);
+  WingLeft.set(true);
+}
+
+void closeWings(){
+  WingRight.set(false);
+  WingLeft.set(false);
 }
 
 void lessVelocity(){
@@ -520,83 +544,80 @@ void auton6(void){
 }
 
 void auton7(void){
-  //gets elevation triball
-  /*Intake.spinFor(forward, 540, degrees, false);
-  wait(200,msec);
-  moveDistance(382.165*1);
-  wait(200, msec);
-  moveDistance(-382.165*1);
-  wait(200,msec);
-  turnDegrees(-45);
-  wait(200,msec);
-  */
-  //scores preload
-  moveDistance(-382.165/2);
-  wait(200, msec);
-  turnDegrees(-100);
-  wait(200, msec);
-  moveDistance(-382.165*0.75);
-  wait(200, msec);
-  turnDegrees(-100);
-  wait(200, msec);
-  moveDistance(-382.165);
-  wait(200, msec);
-  moveDistance(63.695*2.5);
-  wait(200, msec);
-  turnDegrees(110);
-  wait(200, msec);
-  moveDistance(63.695*2.5);
-  wait(200, msec);
-
-  /*scores elevation triball
-  moveDistance(63.695*2.5);
-  wait(200,msec);
-  turnDegrees(440);
-  wait(200,msec);
-  Intake.spinFor(reverse, 180, degrees, false);
-  wait(200,msec);
-  moveDistance(-63.695*2.5);
-  wait(200,msec);*/
-  
-  //gets middle triball
-  turnDegrees(157);
-  wait(200,msec);
+  moveDistance(382.165*3);
+ // wait(200, msec);
+  normalVelocity();
+  turnPID(90);
+  Controller1.Screen.clearScreen();
+  Controller1.Screen.print("The error is : %f", error);
+  wait(100, msec);
+  Controller1.Screen.print(Inertial.rotation());
+  wait(100, msec);
+  Intake.setVelocity(100, pct);
+  Intake.spinFor(reverse, 900, degrees, false);//outake to score triball 
+ 
+ // wait(200, msec);
+  moveDistance(63.695*6);  
+  wait(500, msec);
+  moveDistance(-63.695*5);         
+  //wait(200, msec);
+  Intake.stop();
+  wait(100, msec);
+  //turn and move to 2nd triball
+  turnDegrees(287);
+  Controller1.Screen.clearScreen();
+  Controller1.Screen.print("The error is : %f", error);
+ // wait(200, msec);
+  Controller1.Screen.print(Inertial.rotation());
+ // wait(200, msec);
+  Intake.setVelocity(100, pct);
+  Intake.spin(forward);
+  wait(100, msec);
+  moveDistance(382.165*0.75);//go to 2nd triball
+  wait(0.5, sec);
+  normalVelocity();
+  wait(100, msec);
+  moveDistance(63.695*-1);//move wawy so dont hit wall
+  wait(100, msec);
+  Intake.stop();
+  turnPID(97);//turn toward goal
+  wait (100,msec);
   Intake.spin(reverse);
-  wait(700,msec);
-  moveDistance(382.165*2.1);
-  wait(200,msec);
-  moveDistance(-63.695*2);
-  wait(200,msec);
-  turnDegrees(370);
-  wait(200,msec);
-
-  moveDistance(382.165*2);
-  wait(200,msec);
-  Intake.spinFor(forward, 540, degrees, false);
-  /*turnDegrees(-220);
-  wait(200,msec);
+  
   moveDistance(382.165*1.5);
-  wait(200,msec);
-  Intake.spinFor(forward, 180, degrees, true);
-  wait(200,msec);
-  //scores middle triball
-  moveDistance(-63.695*2.5);
-  wait(200,msec);
-  turnDegrees(220);
-  wait(200,msec);
-  moveDistance(63.695*2.5);
-  wait(200,msec);
-  turnDegrees(220);
-  wait(200,msec);
-  Intake.spinFor(reverse, 180, degrees, false);
-  wait(200,msec);
-  moveDistance(382.165);*/
+  wait (100,msec);
+  Intake.stop();
+  wait(100, msec);
+  moveDistance(-63.695*3);
+  wait(100, msec);
+  //go to 3rd triball section
+  turnPID(230);//turn to 3rd triball
+  
+  wait(100, msec);
+  Intake.spin(fwd);//nom
+  moveDistance(382.165*1.8);//go to 3rd triball
+  wait(500, msec);
+  Intake.stop();
+  Controller1.Screen.clearScreen();
+  Controller1.Screen.print(Inertial.rotation());
+  
+  turnDegrees(60);
+  wait(100, msec);
+  Intake.spinFor(reverse, 900, degrees, false);
+  wait(100, msec);
+  moveDistance(382.165*2.5);
+  moveDistance(382.165*-1);
+  moveDistance(382.165*1.5);
+  moveDistance(-63.695*4);
+  
+  
+ 
     
 }
 //current test/trial: get the motors to spin and work up until simiplr to auton
 //next test/trial: make each motor spin induvidually
 //other options: put wait time to prevent overrides
-void testAuton(void){
+void testAuton(){
   //move 1 tile ~ 382.165 degrees input
   //63.695 degrees for 1 inch
   //220 degrees for 90 degree rotation
@@ -604,37 +625,43 @@ void testAuton(void){
   // wait(200, msec);
   // Intake.spin(forward);//up to here its good but then it doesnt go all the way in
   // wait(200, msec);
-  moveDistance(-382.165*0.7);
-  //weird
-  
+  moveDistance(-382.165*0.6);
   wait(200, msec);
-  WingRight.set(true);
  // moveDistance(-63.695*2);
   turnPID(45);
   wait(200, msec);
-  moveDistance(-382.165*1.2);
+  moveDistance(-382.165*1.3);
   wait(200, msec);
   turnPID(90);
   wait(200, msec);
   moveDistance(-63.695*3);
   wait(200, msec);
-  WingRight.set(false);
+  
 
-  moveDistance(382.165/2);
+  moveDistance(382.165/2.2);
   wait(200, msec);
   turnPID(45); 
   wait(200, msec);
-  moveDistance(382.165);
+  moveDistance(63.695);
   wait(200, msec);
+  openWings();
+  wait (1.5,sec);
+  
+  moveDistance(382.165*1.4);
+  wait(200, msec);
+  moveDistance(63.695);
+  wait(200, msec);
+  closeWings();
   turnPID(0);
   wait(200, msec);
 
   
-  Intake.spinFor(reverse, 540, degrees, true);
+  
   wait(200, msec);
-  moveDistance(382.165);
+  moveDistance(382.165*1.2);
   wait(200, msec);
  // moveDistance(191.0825);
+ Intake.spinFor(reverse, 540, degrees, true);
   //wait(200, msec); 
   
 
