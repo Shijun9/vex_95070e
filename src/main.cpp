@@ -304,7 +304,7 @@ void turnPID (float targetDegrees){
     BackRight.spin(reverse, motorSpeed, pct);
     BackLeft.spin(fwd, motorSpeed, pct);
     lastError = error;
-    wait (20, msec);
+    wait (25, msec);
 
   }
 
@@ -482,7 +482,7 @@ void auton6(void){
  // turnPID(90);
  //wait(1, sec);
  //moveDistance(100);
-  moveDistance(382.165*2.6);
+  moveDistance(382.165*2.8);
  // wait(200, msec);
   normalVelocity();
   turnDegrees(90);
@@ -492,7 +492,7 @@ void auton6(void){
   Controller1.Screen.print(Inertial.rotation());
   //wait(200, msec);
   
-  Intake.spinFor(reverse, 700, degrees, false);//outake to score triball 
+  Intake.spinFor(reverse, 1500, degrees, false);//outake to score triball 
  // wait(200, msec);
   moveDistance(63.695*4);
  // wait(200, msec);
@@ -517,19 +517,19 @@ void auton6(void){
   wait(1, sec);
   normalVelocity();
   wait(200,msec);
-  moveDistance(63.695*5);
+ //  moveDistance(63.695*5);
   wait(200, msec);
-  moveDistance(63.695*-5);
+  moveDistance(63.695*-3);
   wait(200, msec);
   Intake.stop();
-  turnDegrees(60);
+  turnDegrees(100);
   Controller1.Screen.clearScreen();
   Controller1.Screen.print(Inertial.rotation());
   
   wait(200, msec);
   
   Intake.spinFor(reverse, 900, degrees, false);
-  moveDistance(382.165*1.5);
+  moveDistance(382.165*1.3);
   wait(200, msec);
   moveDistance(-63.695*6);
   wait(200, msec);
@@ -544,27 +544,30 @@ void auton6(void){
 }
 
 void auton7(void){
-  moveDistance(382.165*3);
+  moveDistance(382.165*2.5);
  // wait(200, msec);
   normalVelocity();
-  turnPID(90);
+  turnPID(80);
   Controller1.Screen.clearScreen();
   Controller1.Screen.print("The error is : %f", error);
   wait(100, msec);
   Controller1.Screen.print(Inertial.rotation());
   wait(100, msec);
   Intake.setVelocity(100, pct);
-  Intake.spinFor(reverse, 900, degrees, false);//outake to score triball 
+  Intake.spinFor(reverse, 1500, degrees, false);//outake to score triball 
  
  // wait(200, msec);
-  moveDistance(63.695*6);  
+  moveDistance(63.695*3.5);  
   wait(500, msec);
-  moveDistance(-63.695*5);         
+  moveDistance(-63.695*5);
+           
   //wait(200, msec);
   Intake.stop();
   wait(100, msec);
   //turn and move to 2nd triball
-  turnDegrees(287);
+  turnDegrees(270);
+  moveDistance(0.5);
+  turnDegrees(291);
   Controller1.Screen.clearScreen();
   Controller1.Screen.print("The error is : %f", error);
  // wait(200, msec);
@@ -573,16 +576,21 @@ void auton7(void){
   Intake.setVelocity(100, pct);
   Intake.spin(forward);
   wait(100, msec);
-  moveDistance(382.165*0.75);//go to 2nd triball
+  moveDistance(382.165*0.6);//go to 2nd triball
   wait(0.5, sec);
   normalVelocity();
   wait(100, msec);
-  moveDistance(63.695*-1);//move wawy so dont hit wall
-  wait(100, msec);
   Intake.stop();
+  //moveDistance(63.695*-0.1);//move wawy so dont hit wall
+  turnPID(270);
+  WingLeft.set(true);
+  moveDistance(-600);
+  wait(100, msec);
+
   turnPID(97);//turn toward goal
   wait (100,msec);
-  Intake.spin(reverse);
+  Intake.setVelocity(100, pct);
+  Intake.spinFor(reverse, 1500, degrees, false);
   
   moveDistance(382.165*1.5);
   wait (100,msec);
@@ -591,6 +599,8 @@ void auton7(void){
   moveDistance(-63.695*3);
   wait(100, msec);
   //go to 3rd triball section
+  
+  /*
   turnPID(230);//turn to 3rd triball
   
   wait(100, msec);
@@ -601,7 +611,7 @@ void auton7(void){
   Controller1.Screen.clearScreen();
   Controller1.Screen.print(Inertial.rotation());
   
-  turnDegrees(60);
+  turnDegrees(10);
   wait(100, msec);
   Intake.spinFor(reverse, 900, degrees, false);
   wait(100, msec);
@@ -609,7 +619,7 @@ void auton7(void){
   moveDistance(382.165*-1);
   moveDistance(382.165*1.5);
   moveDistance(-63.695*4);
-  
+  */
   
  
     
