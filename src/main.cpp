@@ -234,9 +234,12 @@ BackRight.spinFor(reverse, Inertial.rotation(degrees)+turnDegrees, degrees);
 // float conversion = (CartridgeTicks*gearRatio)/omniCircumfrence;
 // double degreesFraction=targetDegrees/360;
 */
+
 float kp = 0.6;
 float ki = 0;
 float kd = 0.5;
+
+
 void turnDegrees(float targetDegrees){
   Controller1.Screen.print("turning...");
   
@@ -277,6 +280,65 @@ void turnDegrees(float targetDegrees){
   }
   
 }
+/*          NOTES
+have a way of caltulating heading so it turns in the moroe efficient direction - basic casework maybe
+find way of going over 0
+clockwise is positive, counterclockwise is negative
+
+static double Turnerror (double targetdegrees){
+int throughZeroDirection;
+doiuble smallerDegree = std::min(targetdegrees, inertial.heading)
+double largerDegree = std::max (targetdegreees, inertial.heading)
+
+if (smallerDegree == target){
+  throughZeroDirection = 1;
+}
+else {
+  throughzeroDirection = -1;
+}
+
+if  (largerDegree - sallerdegree > 180){
+  return throughZerodirection * (360 - largerdegree + smallerdegree)
+}
+else{
+  return tartgetdegrees - ineritla.heading
+}
+}
+
+added - add minimum speed; like is motorspeed less than 5, make it spin a 5
+
+done - change fabs(error)>1 to fabs(error) >3 in if statement
+
+maybe retune it; incrasase kp until fluctuates, then change kd until it stops (repeat until cant no more)
+integral if there is a stready state; propbabbly not necesary - after comp
+
+*/
+/*
+double turnError (double targetDegrees){
+
+  int throughZeroDirection;
+
+  double smallerDegree = std::min(targetDegrees, Inertial.heading());
+  double largerDegree = std::max (targetDegrees, Inertial.heading());
+
+  if (smallerDegree == targetDegrees){
+    throughZeroDirection = 1;
+  }
+
+  else {
+    throughZeroDirection = -1;
+  }
+
+  if  (largerDegree - smallerDegree > 180){
+    return throughZeroDirection * (360 - largerDegree + smallerDegree);
+  }
+
+  else {
+    return targetDegrees - Inertial.heading();
+  }
+
+}
+*/
 
 void turnPID (float targetDegrees){
   float integral = 0;
@@ -297,6 +359,12 @@ void turnPID (float targetDegrees){
       return;
     }
     motorSpeed = error * kp + integral * ki + (error - lastError) * kd;
+    /*while (fabs (error) > 3   <-- while motors are spinning ){
+      if (motorSpeed < 5){
+      motorSpeed = 5;
+      }
+    }
+    */
     FrontLeft.spin(fwd, motorSpeed, pct);
     FrontRight.spin(reverse, motorSpeed, pct);
     MiddleLeft.spin(fwd, motorSpeed, pct);
@@ -304,7 +372,7 @@ void turnPID (float targetDegrees){
     BackRight.spin(reverse, motorSpeed, pct);
     BackLeft.spin(fwd, motorSpeed, pct);
     lastError = error;
-    wait (25, msec);
+    wait (20, msec);
 
   }
 
@@ -482,7 +550,7 @@ void auton6(void){
  // turnPID(90);
  //wait(1, sec);
  //moveDistance(100);
-  moveDistance(382.165*2.8);
+  moveDistance(382.165*2.5);
  // wait(200, msec);
   normalVelocity();
   turnDegrees(90);
@@ -544,7 +612,7 @@ void auton6(void){
 }
 
 void auton7(void){
-  moveDistance(382.165*2.5);
+  moveDistance(382.165*2.35);
  // wait(200, msec);
   normalVelocity();
   turnPID(80);
@@ -557,17 +625,18 @@ void auton7(void){
   Intake.spinFor(reverse, 1500, degrees, false);//outake to score triball 
  
  // wait(200, msec);
-  moveDistance(63.695*3.5);  
+  moveDistance(63.695*2.5);  
   wait(500, msec);
-  moveDistance(-63.695*5);
+  moveDistance(-63.695*4);
            
   //wait(200, msec);
   Intake.stop();
   wait(100, msec);
   //turn and move to 2nd triball
-  turnDegrees(270);
+  lessVelocity();
+  turnDegrees(270);//turn to center spot
   moveDistance(0.5);
-  turnDegrees(291);
+  turnDegrees(291);//faces 2nd triball
   Controller1.Screen.clearScreen();
   Controller1.Screen.print("The error is : %f", error);
  // wait(200, msec);
@@ -576,28 +645,31 @@ void auton7(void){
   Intake.setVelocity(100, pct);
   Intake.spin(forward);
   wait(100, msec);
-  moveDistance(382.165*0.6);//go to 2nd triball
+  moveDistance(382.165*0.8);//go to 2nd triball
   wait(0.5, sec);
   normalVelocity();
   wait(100, msec);
   Intake.stop();
   //moveDistance(63.695*-0.1);//move wawy so dont hit wall
-  turnPID(270);
+  turnPID(270);//face away from goal
   WingLeft.set(true);
-  moveDistance(-600);
+  moveDistance(-600);//push 3rd triball into goal with wing
   wait(100, msec);
-
+  moveDistance(63.695*3);
+  wait(100, msec);
   turnPID(97);//turn toward goal
   wait (100,msec);
   Intake.setVelocity(100, pct);
   Intake.spinFor(reverse, 1500, degrees, false);
   
-  moveDistance(382.165*1.5);
-  wait (100,msec);
-  Intake.stop();
+  moveDistance(63.695*3);
   wait(100, msec);
   moveDistance(-63.695*3);
   wait(100, msec);
+  Intake.stop();
+  moveDistance(63.695*4.5);
+  wait(100, msec);
+  moveDistance(-63.695*3);
   //go to 3rd triball section
   
   /*
