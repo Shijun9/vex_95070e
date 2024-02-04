@@ -78,6 +78,8 @@ void pre_auton(void) {
   while (Inertial.isCalibrating()){
     Controller1.Screen.print("DON'T MOVE!");
   }
+  Controller1.rumble(rumblePulse);
+  
   Inertial.setHeading(0, degrees);
   Controller1.Screen.clearScreen();
   // Elevation.setVelocity(100,percent);
@@ -433,6 +435,28 @@ void turnPID (float targetDegrees){
 
 }
 
+
+void Right(double angle) {
+  Inertial.setRotation(0,deg);
+  error = angle;
+  while (error > fabs(Inertial.rotation())) {
+    double motorSpeed = (error * 0.1) + 5;
+    FrontLeft.spin(fwd, motorSpeed, pct);
+    FrontRight.spin(reverse, motorSpeed, pct);
+    MiddleLeft.spin(fwd, motorSpeed, pct);
+    MiddleRight.spin(reverse, motorSpeed, pct);
+    BackRight.spin(reverse, motorSpeed, pct);
+    BackLeft.spin(fwd, motorSpeed, pct);
+    error = fabs(Inertial.rotation());
+  }
+  FrontLeft.stop(brake);
+  FrontRight.stop(brake);
+  MiddleLeft.stop(brake);
+  MiddleRight.stop(brake);
+  BackLeft.stop(brake);
+  BackRight.stop(brake);
+}
+
 void drivePID(double targetdegrees) {
   double error = targetdegrees;
   double integral = 0;
@@ -715,10 +739,11 @@ void auton6(void){
 }
 
 void auton7(void){
-  moveDistance(382.165*2.35);
+  Right(90);
+  /*moveDistance(382.165*2.35);
  // wait(200, msec);
   normalVelocity();
-  turnPID(80);
+  Right(80);
   Controller1.Screen.clearScreen();
   // Controller1.Screen.print("The error is : %f", error);
   wait(100, msec);
@@ -773,7 +798,7 @@ void auton7(void){
   Intake.stop();
   moveDistance(63.695*4.5);
   wait(100, msec);
-  moveDistance(-63.695*3);
+  moveDistance(-63.695*3);*/
   //go to 3rd triball section
   
   /*
@@ -950,7 +975,7 @@ void autonomous(void) {
   // ..........................................................................
   // Insert autonomous user code here.
   // ..........................................................................
-
+  
   if (slctauton == 1) {
     auton2();
   }
