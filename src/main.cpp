@@ -67,7 +67,7 @@ void pre_auton(void) {
   FrontRight.setVelocity(100, percent);
   MiddleRight.setVelocity(100, percent);
   BackRight.setVelocity(100, percent);
-  Catapult.setVelocity(80, pct);
+  Catapult.setVelocity(90, pct);
   Intake.setVelocity(80, pct);
 
   WingLeft.set(false);
@@ -340,16 +340,41 @@ double turnError (double targetDegrees){
 }
 */
 
-void turnPID (float targetDegrees){
+void turnPID_broken (float targetDegrees){
   float integral = 0;
-  float error = targetDegrees - Inertial.heading(degrees);
+  
   float derivative = 0;
   float lastError = error;
   float motorSpeed = 0;
+  float turnDegrees = 0;
+  float error = turnDegrees;
+     
+  /*
+  if (targetDegrees - Inertial.heading() > 180){
+    turnDegrees = (targetDegrees - Inertial.heading()) - 360;
+  }
+  else if (targetDegrees - Inertial.heading() < -180){
+    turnDegrees = (targetDegrees - Inertial.heading()) + 360;
+  }
+  else {
+    turnDegrees = targetDegrees - Inertial.heading();
+  }
+  */
+  
+
+
   while (fabs(error) > 1){
-    error = targetDegrees - Inertial.heading(degrees);
+    error = turnDegrees - Inertial.heading(degrees);
     integral += error;
-    if (fabs(error) < 1){
+
+    Controller1.Screen.setCursor(1, 1);
+    Controller1.Screen.print("error: %f", error);
+    Controller1.Screen.setCursor(1, 2);
+    Controller1.Screen.print("heading: %f", Inertial.heading(degrees));
+    Controller1.Screen.setCursor(1, 3);
+    Controller1.Screen.print("rotation: %f", Inertial.rotation());
+    
+    if (fabs(error) < 3){
       FrontLeft.stop();
       FrontRight.stop();
       MiddleLeft.stop();
@@ -359,12 +384,8 @@ void turnPID (float targetDegrees){
       return;
     }
     motorSpeed = error * kp + integral * ki + (error - lastError) * kd;
-    /*while (fabs (error) > 3   <-- while motors are spinning ){
-      if (motorSpeed < 5){
-      motorSpeed = 5;
-      }
-    }
-    */
+    Controller1.Screen.print("motor speed: %f", motorSpeed);
+
     FrontLeft.spin(fwd, motorSpeed, pct);
     FrontRight.spin(reverse, motorSpeed, pct);
     MiddleLeft.spin(fwd, motorSpeed, pct);
@@ -379,6 +400,87 @@ void turnPID (float targetDegrees){
 
 }
 
+void turnPID (float targetDegrees){
+  float integral = 0;
+  float error = targetDegrees - Inertial.heading(degrees);
+  float derivative = 0;
+  float lastError = error;
+  float motorSpeed = 0;
+  while (fabs(error) > 1){
+    error = targetDegrees - Inertial.heading(degrees);
+    integral += error;
+    if (fabs(error) < 3){
+      FrontLeft.stop();
+      FrontRight.stop();
+      MiddleLeft.stop();
+      MiddleRight.stop();
+      BackRight.stop();
+      BackLeft.stop();
+      return;
+    }
+    motorSpeed = error * kp + integral * ki + (error - lastError) * kd;
+    FrontLeft.spin(fwd, motorSpeed, pct);
+    FrontRight.spin(reverse, motorSpeed, pct);
+    MiddleLeft.spin(fwd, motorSpeed, pct);
+    MiddleRight.spin(reverse, motorSpeed, pct);
+    BackRight.spin(reverse, motorSpeed, pct);
+    BackLeft.spin(fwd, motorSpeed, pct);
+    lastError = error;
+    wait (20, msec);
+
+  }
+
+
+}
+
+void drivePID(double targetdegrees) {
+  double error = targetdegrees;
+  double integral = 0;
+  double lasterror = error;
+  // tare
+
+
+  while (true) {
+    if (fabs(error) < 3) {
+      integral += error;
+    }
+    double measureddegrees = Inertial.heading();
+    error = targetdegrees - measureddegrees;
+
+    //Controller1.Screen.setCursor(1, 1);
+    
+    Controller1.Screen.print("error: %f", error);
+    Controller1.Screen.newLine();
+   // Controller1.Screen.setCursor(1, 2);
+    Controller1.Screen.print("heading: %f", Inertial.heading(degrees));
+    Controller1.Screen.newLine();
+   // Controller1.Screen.setCursor(1, 3);
+    Controller1.Screen.print("rotation: %f", Inertial.rotation());
+
+    // turn forward pid distance, if at target, pid should stop
+    FrontLeft.spinFor(reverse, error * kp + integral * ki + (error - lasterror) * kd, degrees);
+    MiddleLeft.spinFor(reverse, error * kp + integral * ki + (error - lasterror) * kd, degrees);
+    BackLeft.spinFor(reverse, error * kp + integral * ki + (error - lasterror) * kd, degrees);
+    FrontRight.spinFor(forward, error * kp + integral * ki + (error - lasterror) * kd, degrees);
+    MiddleRight.spinFor(forward, error * kp + integral * ki + (error - lasterror) * kd, degrees);
+    BackRight.spinFor(forward, error * kp + integral * ki + (error - lasterror) * kd, degrees);
+
+
+    if (error < 3) {
+      FrontLeft.stop();
+      MiddleLeft.stop();
+      BackLeft.stop();
+      FrontRight.stop();
+      MiddleRight.stop();
+      BackRight.stop();
+    }
+
+
+    // rightdrive.move_velocity(error * kp + integral * ki +(error - lasterror) * kd);
+    lasterror = error;
+    wait(10, msec);
+  }
+}
 
 void auton1 (){
   /*
@@ -553,10 +655,11 @@ void auton6(void){
   moveDistance(382.165*2.5);
  // wait(200, msec);
   normalVelocity();
-  turnDegrees(90);
+  turnPID(180);
   Controller1.Screen.clearScreen();
   Controller1.Screen.print("The error is : %f", error);
  // wait(200, msec);
+  Controller1.Screen.print(Inertial.heading());
   Controller1.Screen.print(Inertial.rotation());
   //wait(200, msec);
   
@@ -572,7 +675,7 @@ void auton6(void){
   //wait(200, msec);
   
   //turn and move to 2nd triball
-  turnDegrees(235);
+  turnPID(315);
   Controller1.Screen.clearScreen();
   Controller1.Screen.print("The error is : %f", error);
  // wait(200, msec);
@@ -590,7 +693,7 @@ void auton6(void){
   moveDistance(63.695*-3);
   wait(200, msec);
   Intake.stop();
-  turnDegrees(100);
+  turnPID(190);
   Controller1.Screen.clearScreen();
   Controller1.Screen.print(Inertial.rotation());
   
@@ -617,9 +720,10 @@ void auton7(void){
   normalVelocity();
   turnPID(80);
   Controller1.Screen.clearScreen();
-  Controller1.Screen.print("The error is : %f", error);
+  // Controller1.Screen.print("The error is : %f", error);
   wait(100, msec);
   Controller1.Screen.print(Inertial.rotation());
+  Controller1.Screen.print(Inertial.heading());
   wait(100, msec);
   Intake.setVelocity(100, pct);
   Intake.spinFor(reverse, 1500, degrees, false);//outake to score triball 
@@ -634,11 +738,11 @@ void auton7(void){
   wait(100, msec);
   //turn and move to 2nd triball
   lessVelocity();
-  turnDegrees(270);//turn to center spot
+  turnPID(1);//turn to center spot
   moveDistance(0.5);
-  turnDegrees(291);//faces 2nd triball
-  Controller1.Screen.clearScreen();
-  Controller1.Screen.print("The error is : %f", error);
+  turnPID(21);//faces 2nd triball
+  // Controller1.Screen.clearScreen();
+  // Controller1.Screen.print("The error is : %f", error);
  // wait(200, msec);
   Controller1.Screen.print(Inertial.rotation());
  // wait(200, msec);
@@ -651,13 +755,13 @@ void auton7(void){
   wait(100, msec);
   Intake.stop();
   //moveDistance(63.695*-0.1);//move wawy so dont hit wall
-  turnPID(270);//face away from goal
+  turnPID(360);//face away from goal
   WingLeft.set(true);
   moveDistance(-600);//push 3rd triball into goal with wing
   wait(100, msec);
   moveDistance(63.695*3);
   wait(100, msec);
-  turnPID(97);//turn toward goal
+  turnPID(187);//turn toward goal
   wait (100,msec);
   Intake.setVelocity(100, pct);
   Intake.spinFor(reverse, 1500, degrees, false);
@@ -694,6 +798,69 @@ void auton7(void){
   */
   
  
+    
+}
+
+void betterAuton(void){
+  moveDistance(382.165*2.35);
+ // wait(200, msec);
+  normalVelocity();
+  turnPID(80);
+  Controller1.Screen.clearScreen();
+  // Controller1.Screen.print("The error is : %f", error);
+  wait(100, msec);
+  Controller1.Screen.print(Inertial.rotation());
+  Controller1.Screen.print(Inertial.heading());
+  wait(100, msec);
+  Intake.setVelocity(100, pct);
+  Intake.spinFor(reverse, 1500, degrees, false);//outake to score triball 
+ 
+ // wait(200, msec);
+  moveDistance(63.695*2.5);  
+  wait(500, msec);
+  moveDistance(-63.695*4);
+           
+  //wait(200, msec);
+  Intake.stop();
+  wait(100, msec);
+  //turn and move to 2nd triball
+  lessVelocity();
+  turnPID(1);//turn to center spot
+  moveDistance(0.5);
+  turnPID(21);//faces 2nd triball
+  // Controller1.Screen.clearScreen();
+  // Controller1.Screen.print("The error is : %f", error);
+ // wait(200, msec);
+  Controller1.Screen.print(Inertial.rotation());
+ // wait(200, msec);
+  Intake.setVelocity(100, pct);
+  Intake.spin(forward);
+  wait(100, msec);
+  moveDistance(382.165*0.8);//go to 2nd triball
+  wait(0.5, sec);
+  normalVelocity();
+  wait(100, msec);
+  Intake.stop();
+  //moveDistance(63.695*-0.1);//move wawy so dont hit wall
+  turnPID(360);//face away from goal
+  WingLeft.set(true);
+  moveDistance(-600);//push 3rd triball into goal with wing
+  wait(100, msec);
+  moveDistance(63.695*3);
+  wait(100, msec);
+  turnPID(187);//turn toward goal
+  wait (100,msec);
+  Intake.setVelocity(100, pct);
+  Intake.spinFor(reverse, 1500, degrees, false);
+  
+  moveDistance(63.695*3);
+  wait(100, msec);
+  moveDistance(-63.695*3);
+  wait(100, msec);
+  Intake.stop();
+  moveDistance(63.695*4.5);
+  wait(100, msec);
+  moveDistance(-63.695*3); 
     
 }
 //current test/trial: get the motors to spin and work up until simiplr to auton
@@ -793,7 +960,7 @@ void autonomous(void) {
   }
 
   if (slctauton == 3) {
-    auton7();
+    betterAuton();
   }
 
   if (slctauton == 4) {
