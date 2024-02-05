@@ -630,7 +630,7 @@ void auton3 (){
 }
 
 void auton4(){
-  //score a preloaded triball and touch the elevation pole after (left side)
+  //score a preloaded triball and touch the elevation pole after (left side) hi
   Intake.spinFor(forward, 720, degrees);
   moveDistance(45);
   turnDegrees(90);
@@ -739,8 +739,8 @@ void auton6(void){
 }
 
 void auton7(void){
-  Right(90);
-  /*moveDistance(382.165*2.35);
+  // Right(90);
+  moveDistance(382.165*2.35);
  // wait(200, msec);
   normalVelocity();
   Right(80);
@@ -798,7 +798,7 @@ void auton7(void){
   Intake.stop();
   moveDistance(63.695*4.5);
   wait(100, msec);
-  moveDistance(-63.695*3);*/
+  moveDistance(-63.695*3);
   //go to 3rd triball section
   
   /*
@@ -975,9 +975,8 @@ void autonomous(void) {
   // ..........................................................................
   // Insert autonomous user code here.
   // ..........................................................................
-  Right(90);
 
-  /*if (slctauton == 1) {
+  if (slctauton == 1) {
     auton2();
   }
 
@@ -1007,7 +1006,7 @@ void autonomous(void) {
 
   if (slctauton == 8){
     auton1();
-  }*/
+  }
 }
 
 /*---------------------------------------------------------------------------*/
