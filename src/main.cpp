@@ -1,35 +1,20 @@
 // ---- START VEXCODE CONFIGURED DEVICES ----
 // Robot Configuration:
 // [Name]               [Type]        [Port(s)]
-// FrontLeft            motor         1               
-// FrontRight           motor         10              
-// MiddleLeft           motor         2               
+// FrontLeft            motor         20              
+// FrontRight           motor         11              
+// MiddleLeft           motor         19              
 // MiddleRight          motor         9               
-// BackRight            motor         8               
-// BackLeft             motor         3               
+// BackRight            motor         1               
+// BackLeft             motor         10              
 // Controller1          controller                    
 // Inertial             inertial      4               
-// Intake               motor         20              
+// Intake               motor         18              
 // Catapult             motor         5               
 // WingLeft             digital_out   A               
 // WingRight            digital_out   H               
 // ---- END VEXCODE CONFIGURED DEVICES ----
-// ---- START VEXCODE CONFIGURED DEVICES ----
-// Robot Configuration:
-// [Name]               [Type]        [Port(s)]
-// FrontLeft            motor         1               
-// FrontRight           motor         10              
-// MiddleLeft           motor         2               
-// MiddleRight          motor         9               
-// BackRight            motor         8               
-// BackLeft             motor         3               
-// Controller1          controller                    
-// Inertial             inertial      7               
-// Intake               motor         6               
-// Catapult             motor         5               
-// WingLeft             digital_out   A               
-// WingRight            digital_out   H               
-// ---- END VEXCODE CONFIGURED DEVICES ----
+
 
 
 #include "vex.h"
@@ -61,12 +46,12 @@ float motorSpeed = error;
 void pre_auton(void) {
   // Initializing Robot Configuration. DO NOT REMOVE!
   vexcodeInit();
-  FrontLeft.setVelocity(100, percent);
-  MiddleLeft.setVelocity(100, percent);
-  BackLeft.setVelocity(100, percent);
-  FrontRight.setVelocity(100, percent);
-  MiddleRight.setVelocity(100, percent);
-  BackRight.setVelocity(100, percent);
+  FrontLeft.setVelocity(80, percent);
+  MiddleLeft.setVelocity(80, percent);
+  BackLeft.setVelocity(80, percent);
+  FrontRight.setVelocity(80, percent);
+  MiddleRight.setVelocity(80, percent);
+  BackRight.setVelocity(80, percent);
   Catapult.setVelocity(90, pct);
   Intake.setVelocity(80, pct);
 
@@ -78,7 +63,7 @@ void pre_auton(void) {
   while (Inertial.isCalibrating()){
     Controller1.Screen.print("DON'T MOVE!");
   }
-  Controller1.rumble(rumblePulse);
+  // Controller1.rumble(rumblePulse);
   
   Inertial.setHeading(0, degrees);
   Controller1.Screen.clearScreen();
@@ -342,66 +327,6 @@ double turnError (double targetDegrees){
 }
 */
 
-void turnPID_broken (float targetDegrees){
-  float integral = 0;
-  
-  float derivative = 0;
-  float lastError = error;
-  float motorSpeed = 0;
-  float turnDegrees = 0;
-  float error = turnDegrees;
-     
-  /*
-  if (targetDegrees - Inertial.heading() > 180){
-    turnDegrees = (targetDegrees - Inertial.heading()) - 360;
-  }
-  else if (targetDegrees - Inertial.heading() < -180){
-    turnDegrees = (targetDegrees - Inertial.heading()) + 360;
-  }
-  else {
-    turnDegrees = targetDegrees - Inertial.heading();
-  }
-  */
-  
-
-
-  while (fabs(error) > 1){
-    error = turnDegrees - Inertial.heading(degrees);
-    integral += error;
-
-    Controller1.Screen.setCursor(1, 1);
-    Controller1.Screen.print("error: %f", error);
-    Controller1.Screen.setCursor(1, 2);
-    Controller1.Screen.print("heading: %f", Inertial.heading(degrees));
-    Controller1.Screen.setCursor(1, 3);
-    Controller1.Screen.print("rotation: %f", Inertial.rotation());
-    
-    if (fabs(error) < 3){
-      FrontLeft.stop();
-      FrontRight.stop();
-      MiddleLeft.stop();
-      MiddleRight.stop();
-      BackRight.stop();
-      BackLeft.stop();
-      return;
-    }
-    motorSpeed = error * kp + integral * ki + (error - lastError) * kd;
-    Controller1.Screen.print("motor speed: %f", motorSpeed);
-
-    FrontLeft.spin(fwd, motorSpeed, pct);
-    FrontRight.spin(reverse, motorSpeed, pct);
-    MiddleLeft.spin(fwd, motorSpeed, pct);
-    MiddleRight.spin(reverse, motorSpeed, pct);
-    BackRight.spin(reverse, motorSpeed, pct);
-    BackLeft.spin(fwd, motorSpeed, pct);
-    lastError = error;
-    wait (20, msec);
-
-  }
-
-
-}
-
 void turnPID (float targetDegrees){
   float integral = 0;
   float error = targetDegrees - Inertial.heading(degrees);
@@ -537,8 +462,8 @@ void auton2(){
   5. Outtake Alliance triball
   */
 
-  moveDistance(-5000);
-
+  moveDistance(-1400);
+  moveDistance(300);
 
 }
 
@@ -1103,6 +1028,12 @@ void autonslctr() {
 
 void usercontrol(void) {
   // User control code here, inside the loop
+  FrontLeft.setVelocity(100, percent);
+  MiddleLeft.setVelocity(100, percent);
+  BackLeft.setVelocity(100, percent);
+  FrontRight.setVelocity(100, percent);
+  MiddleRight.setVelocity(100, percent);
+  BackRight.setVelocity(100, percent);
   while(!Jessica) {
     autonslctr();
     if (Controller1.ButtonA.pressing()) {
