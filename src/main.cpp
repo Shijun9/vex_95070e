@@ -14,6 +14,214 @@
 // WingLeft             digital_out   A               
 // WingRight            digital_out   H               
 // ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// FrontLeft            motor         20              
+// FrontRight           motor         11              
+// MiddleLeft           motor         19              
+// MiddleRight          motor         9               
+// BackRight            motor         1               
+// BackLeft             motor         10              
+// Controller1          controller                    
+// Inertial             inertial      4               
+// Intake               motor         18              
+// Catapult             motor         5               
+// WingLeft             digital_out   A               
+// WingRight            digital_out   H               
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// FrontLeft            motor         20              
+// FrontRight           motor         11              
+// MiddleLeft           motor         19              
+// MiddleRight          motor         9               
+// BackRight            motor         1               
+// BackLeft             motor         10              
+// Controller1          controller                    
+// Inertial             inertial      4               
+// Intake               motor         18              
+// Catapult             motor         5               
+// WingLeft             digital_out   A               
+// WingRight            digital_out   H               
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// FrontLeft            motor         20              
+// FrontRight           motor         11              
+// MiddleLeft           motor         19              
+// MiddleRight          motor         9               
+// BackRight            motor         1               
+// BackLeft             motor         10              
+// Controller1          controller                    
+// Inertial             inertial      4               
+// Intake               motor         18              
+// Catapult             motor         5               
+// WingLeft             digital_out   A               
+// WingRight            digital_out   H               
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// FrontLeft            motor         20              
+// FrontRight           motor         11              
+// MiddleLeft           motor         19              
+// MiddleRight          motor         9               
+// BackRight            motor         1               
+// BackLeft             motor         10              
+// Controller1          controller                    
+// Inertial             inertial      4               
+// Intake               motor         18              
+// Catapult             motor         5               
+// WingLeft             digital_out   A               
+// WingRight            digital_out   H               
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// FrontLeft            motor         20              
+// FrontRight           motor         11              
+// MiddleLeft           motor         19              
+// MiddleRight          motor         9               
+// BackRight            motor         1               
+// BackLeft             motor         10              
+// Controller1          controller                    
+// Inertial             inertial      4               
+// Intake               motor         18              
+// Catapult             motor         5               
+// WingLeft             digital_out   A               
+// WingRight            digital_out   H               
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// FrontLeft            motor         20              
+// FrontRight           motor         11              
+// MiddleLeft           motor         19              
+// MiddleRight          motor         9               
+// BackRight            motor         1               
+// BackLeft             motor         10              
+// Controller1          controller                    
+// Inertial             inertial      4               
+// Intake               motor         18              
+// Catapult             motor         5               
+// WingLeft             digital_out   A               
+// WingRight            digital_out   H               
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// FrontLeft            motor         20              
+// FrontRight           motor         11              
+// MiddleLeft           motor         19              
+// MiddleRight          motor         9               
+// BackRight            motor         1               
+// BackLeft             motor         10              
+// Controller1          controller                    
+// Inertial             inertial      4               
+// Intake               motor         18              
+// Catapult             motor         5               
+// WingLeft             digital_out   A               
+// WingRight            digital_out   H               
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// FrontLeft            motor         20              
+// FrontRight           motor         11              
+// MiddleLeft           motor         19              
+// MiddleRight          motor         9               
+// BackRight            motor         1               
+// BackLeft             motor         10              
+// Controller1          controller                    
+// Inertial             inertial      4               
+// Intake               motor         18              
+// Catapult             motor         5               
+// WingLeft             digital_out   A               
+// WingRight            digital_out   H               
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// FrontLeft            motor         20              
+// FrontRight           motor         11              
+// MiddleLeft           motor         19              
+// MiddleRight          motor         9               
+// BackRight            motor         1               
+// BackLeft             motor         10              
+// Controller1          controller                    
+// Inertial             inertial      4               
+// Intake               motor         18              
+// Catapult             motor         5               
+// WingLeft             digital_out   A               
+// WingRight            digital_out   H               
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// FrontLeft            motor         20              
+// FrontRight           motor         11              
+// MiddleLeft           motor         19              
+// MiddleRight          motor         9               
+// BackRight            motor         1               
+// BackLeft             motor         10              
+// Controller1          controller                    
+// Inertial             inertial      4               
+// Intake               motor         18              
+// Catapult             motor         5               
+// WingLeft             digital_out   A               
+// WingRight            digital_out   H               
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// FrontLeft            motor         20              
+// FrontRight           motor         11              
+// MiddleLeft           motor         19              
+// MiddleRight          motor         9               
+// BackRight            motor         1               
+// BackLeft             motor         10              
+// Controller1          controller                    
+// Inertial             inertial      4               
+// Intake               motor         18              
+// Catapult             motor         5               
+// WingLeft             digital_out   A               
+// WingRight            digital_out   H               
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// FrontLeft            motor         20              
+// FrontRight           motor         11              
+// MiddleLeft           motor         19              
+// MiddleRight          motor         9               
+// BackRight            motor         1               
+// BackLeft             motor         10              
+// Controller1          controller                    
+// Inertial             inertial      4               
+// Intake               motor         18              
+// Catapult             motor         5               
+// WingLeft             digital_out   A               
+// WingRight            digital_out   H               
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// FrontRight            motor         20              
+// FrontLeft           motor         11              
+// MiddleLeft           motor         19              
+// MiddleRight          motor         9               
+// BackRight            motor         1               
+// BackLeft             motor         10              
+// Controller1          controller                    
+// Inertial             inertial      4               
+// Intake               motor         18              
+// Catapult             motor         5               
+// WingLeft             digital_out   A               
+// WingRight            digital_out   H               
+// ---- END VEXCODE CONFIGURED DEVICES ----
 
 
 
@@ -31,7 +239,7 @@ competition Competition;
 /*                          Pre-Autonomous Functions                         */
 /*                                                                           */
 /*  You may want to perform some actions before the competition starts.      */
-/*  Do them in the following function.  You must return from this function   */
+/*  Do them in the following function.  You must return FrontRightom this function   */
 /*  or the autonomous and usercontrol tasks will not be started.  This       */
 /*  function is only called once after the V5 has been powered on and        */
 /*  not every time that the robot is disabled.                               */
@@ -46,10 +254,10 @@ float motorSpeed = error;
 void pre_auton(void) {
   // Initializing Robot Configuration. DO NOT REMOVE!
   vexcodeInit();
-  FrontLeft.setVelocity(80, percent);
+  FrontRight.setVelocity(80, percent);
   MiddleLeft.setVelocity(80, percent);
   BackLeft.setVelocity(80, percent);
-  FrontRight.setVelocity(80, percent);
+  FrontLeft.setVelocity(80, percent);
   MiddleRight.setVelocity(80, percent);
   BackRight.setVelocity(80, percent);
   Catapult.setVelocity(90, pct);
@@ -91,7 +299,7 @@ void drivePID (double targetInches, double Kp, double Ki, double Kd) {
   double lastError = error;
 
   while (true) {
-    double measuredInches = 4 * 3.1415 * ((FrontLeft.position(degrees) + FrontRight.position(degrees) + MiddleLeft.position(degrees) + MiddleRight.position(degrees) + BackLeft.position(degrees) + BackRight.position(degrees))/6)/900;
+    double measuredInches = 4 * 3.1415 * ((FrontRight.position(degrees) + FrontLeft.position(degrees) + MiddleLeft.position(degrees) + MiddleRight.position(degrees) + BackLeft.position(degrees) + BackRight.position(degrees))/6)/900;
     error = targetInches - measuredInches;
     integral += error;
 
@@ -101,24 +309,24 @@ void drivePID (double targetInches, double Kp, double Ki, double Kd) {
 
     float velocity = error * Kp + integral * Ki + (error - lastError) * Kd;
 
-    FrontLeft.setVelocity(velocity, percent);
     FrontRight.setVelocity(velocity, percent);
+    FrontLeft.setVelocity(velocity, percent);
     MiddleLeft.setVelocity(velocity, percent);
     MiddleRight.setVelocity(velocity, percent);
     BackLeft.setVelocity(velocity, percent);
     BackRight.setVelocity(velocity, percent);
 
     if (targetInches > 0) {
-      FrontLeft.spin(forward);
       FrontRight.spin(forward);
+      FrontLeft.spin(forward);
       MiddleLeft.spin(forward);
       MiddleRight.spin(forward);
       BackLeft.spin(forward);
       BackRight.spin(forward);
     }
     else{
-      FrontLeft.spin(reverse);
       FrontRight.spin(reverse);
+      FrontLeft.spin(reverse);
       MiddleLeft.spin(reverse);
       MiddleRight.spin(reverse);
       BackLeft.spin(reverse);
@@ -144,26 +352,26 @@ void turnPID (double targetDegrees, double Kp, double Ki, double Kd){
       integral = 0;
     }
 
-    FrontLeft.setVelocity(error * Kp + integral * Ki + (lastError - error) * Kd, percent);
+    FrontRight.setVelocity(error * Kp + integral * Ki + (lastError - error) * Kd, percent);
     MiddleLeft.setVelocity(error * Kp + integral * Ki + (lastError - error) * Kd, percent);
     BackLeft.setVelocity(error * Kp + integral * Ki + (lastError - error) * Kd, percent);
-    FrontRight.setVelocity(error * Kp + integral * Ki + (lastError - error) * Kd, percent);
+    FrontLeft.setVelocity(error * Kp + integral * Ki + (lastError - error) * Kd, percent);
     MiddleRight.setVelocity(error * Kp + integral * Ki + (lastError - error) * Kd, percent);
     BackRight.setVelocity(error * Kp + integral * Ki + (lastError - error) * Kd, percent);
 
     if (targetDegrees < 0){
-      FrontLeft.spin(forward);
+      FrontRight.spin(forward);
       MiddleLeft.spin(forward);
       BackLeft.spin(forward);
-      FrontRight.spin(reverse);
+      FrontLeft.spin(reverse);
       MiddleRight.spin(reverse);
       BackRight.spin(reverse);
     }
     else{
-      FrontLeft.spin(reverse);
+      FrontRight.spin(reverse);
       MiddleLeft.spin(reverse);
       BackLeft.spin(reverse);
-      FrontRight.spin(forward);
+      FrontLeft.spin(forward);
       MiddleRight.spin(forward);
       BackRight.spin(forward);
     }
@@ -177,8 +385,8 @@ void turnPID (double targetDegrees, double Kp, double Ki, double Kd){
 */
 
 void testmove(double inches){
-  //FrontLeft.spinFor(forward, inches, degrees, false);//works
   //FrontRight.spinFor(forward, inches, degrees, false);//works
+  //FrontLeft.spinFor(forward, inches, degrees, false);//works
   //MiddleLeft.spinFor(forward, inches, degrees, false);//works
   //MiddleRight.spinFor(forward, inches, degrees, false);//doesnt work
   BackLeft.spinFor(forward, inches, degrees, false);//
@@ -186,10 +394,10 @@ void testmove(double inches){
 }
 
 void moveDistance(double inches){
-  double omniCircumfrence = atan(-1)*4 * 2 * 3;//18.849
+  double omniCircumFrontRightence = atan(-1)*4 * 2 * 3;//18.849
   int CartridgeTicks = 900;
   double gearRatio = 10/6;
-  float conversion = (CartridgeTicks*gearRatio)/omniCircumfrence;//1080/18.849 ~ 57.29746936
+  float conversion = (CartridgeTicks*gearRatio)/omniCircumFrontRightence;//1080/18.849 ~ 57.29746936
   //360 degrees 
   //9.42 in 1 fulll rotation
   //36-tooth
@@ -200,26 +408,26 @@ void moveDistance(double inches){
   //each tile is 24 in long
   //move 1 tile ~ 1528.66 degrees input
 
-  FrontLeft.spinFor(fwd, inches, degrees, false);
   FrontRight.spinFor(fwd, inches, degrees, false);
+  FrontLeft.spinFor(fwd, inches, degrees, false);
   MiddleLeft.spinFor(fwd, inches, degrees, false);
   MiddleRight.spinFor(fwd, inches, degrees, false);
   BackLeft.spinFor(fwd, inches, degrees, false);
   BackRight.spinFor(fwd, inches, degrees);
 }
 /*
-FrontLeft.spinFor(fwd, Inertial.rotation(degrees)+turnDegrees, degrees, false);
-FrontRight.spinFor(reverse, Inertial.rotation(degrees)+turnDegrees, degrees, false);
+FrontRight.spinFor(fwd, Inertial.rotation(degrees)+turnDegrees, degrees, false);
+FrontLeft.spinFor(reverse, Inertial.rotation(degrees)+turnDegrees, degrees, false);
 MiddleLeft.spinFor(fwd, Inertial.rotation(degrees)+turnDegrees, degrees, false);
 MiddleRight.spinFor(reverse, Inertial.rotation(degrees)+turnDegrees, degrees, false);
 BackLeft.spinFor(fwd, Inertial.rotation(degrees)+turnDegrees, degrees, false);
 BackRight.spinFor(reverse, Inertial.rotation(degrees)+turnDegrees, degrees);
 // wait(10, msec);
-// double omniCircumfrence = atan(-1)*4 * 2 * 3;
+// double omniCircumFrontRightence = atan(-1)*4 * 2 * 3;
 // int CartridgeTicks = 900;
 // double gearRatio = 10/6;
-// float conversion = (CartridgeTicks*gearRatio)/omniCircumfrence;
-// double degreesFraction=targetDegrees/360;
+// float conversion = (CartridgeTicks*gearRatio)/omniCircumFrontRightence;
+// double degreesFrontRightaction=targetDegrees/360;
 */
 
 float kp = 0.6;
@@ -242,20 +450,20 @@ void turnDegrees(float targetDegrees){
    
     while (fabs(error)>2){
       actualHeading = Inertial.heading(degrees);
-     error = targetHeading - actualHeading;
+      error = targetHeading - actualHeading;
       motorSpeed = kp*error;
-      FrontLeft.spin(fwd, motorSpeed, pct);
-      FrontRight.spin(reverse, motorSpeed,pct);
-     MiddleLeft.spin(fwd, motorSpeed, pct);
-     MiddleRight.spin(reverse, motorSpeed, pct);
-     BackLeft.spin(fwd, motorSpeed, pct);
-     BackRight.spin(reverse, motorSpeed, pct);
-     Controller1.Screen.clearScreen();
-     Controller1.Screen.setCursor(1, 1);
-     Controller1.Screen.print("error =  : %f", error);
-     Controller1.Screen.setCursor(2, 1);
-     Controller1.Screen.print("Inertial heading is : %f, ", Inertial.heading());
-     wait (15, msec);
+      FrontRight.spin(fwd, motorSpeed, pct);
+      FrontLeft.spin(reverse, motorSpeed,pct);
+      MiddleLeft.spin(fwd, motorSpeed, pct);
+      MiddleRight.spin(reverse, motorSpeed, pct);
+      BackLeft.spin(fwd, motorSpeed, pct);
+      BackRight.spin(reverse, motorSpeed, pct);
+      Controller1.Screen.clearScreen();
+      Controller1.Screen.setCursor(1, 1);
+      Controller1.Screen.print("error =  : %f", error);
+      Controller1.Screen.setCursor(2, 1);
+      Controller1.Screen.print("Inertial heading is : %f, ", Inertial.heading());
+      wait (15, msec);
      
     }
     return;
@@ -296,7 +504,7 @@ added - add minimum speed; like is motorspeed less than 5, make it spin a 5
 
 done - change fabs(error)>1 to fabs(error) >3 in if statement
 
-maybe retune it; incrasase kp until fluctuates, then change kd until it stops (repeat until cant no more)
+maybe retune it; incrasase kp until FrontRightuctuates, then change kd until it stops (repeat until cant no more)
 integral if there is a stready state; propbabbly not necesary - after comp
 
 */
@@ -337,8 +545,8 @@ void turnPID (float targetDegrees){
     error = targetDegrees - Inertial.heading(degrees);
     integral += error;
     if (fabs(error) < 3){
-      FrontLeft.stop();
       FrontRight.stop();
+      FrontLeft.stop();
       MiddleLeft.stop();
       MiddleRight.stop();
       BackRight.stop();
@@ -346,8 +554,8 @@ void turnPID (float targetDegrees){
       return;
     }
     motorSpeed = error * kp + integral * ki + (error - lastError) * kd;
-    FrontLeft.spin(fwd, motorSpeed, pct);
     FrontRight.spin(reverse, motorSpeed, pct);
+    FrontLeft.spin(fwd, motorSpeed, pct);
     MiddleLeft.spin(fwd, motorSpeed, pct);
     MiddleRight.spin(reverse, motorSpeed, pct);
     BackRight.spin(reverse, motorSpeed, pct);
@@ -363,19 +571,20 @@ void turnPID (float targetDegrees){
 
 void Right(double angle) {
   Inertial.setRotation(0,deg);
+  float measuredDegrees = (BackLeft.rotation(degrees) + BackRight.rotation(degrees))/2;
   error = angle;
-  while (error > fabs(Inertial.rotation())) {
+  while (error > fabs(measuredDegrees)) {
     double motorSpeed = (error * 0.1) + 5;
-    FrontLeft.spin(fwd, motorSpeed, pct);
-    FrontRight.spin(reverse, motorSpeed, pct);
+    FrontRight.spin(fwd, motorSpeed, pct);
+    FrontLeft.spin(reverse, motorSpeed, pct);
     MiddleLeft.spin(fwd, motorSpeed, pct);
     MiddleRight.spin(reverse, motorSpeed, pct);
     BackRight.spin(reverse, motorSpeed, pct);
     BackLeft.spin(fwd, motorSpeed, pct);
-    error = fabs(Inertial.rotation());
+    error = fabs(measuredDegrees);
   }
-  FrontLeft.stop(brake);
   FrontRight.stop(brake);
+  FrontLeft.stop(brake);
   MiddleLeft.stop(brake);
   MiddleRight.stop(brake);
   BackLeft.stop(brake);
@@ -390,44 +599,30 @@ void drivePID(double targetdegrees) {
 
 
   while (true) {
-    if (fabs(error) < 3) {
+    if (fabs(error) < 30 && integral < 300) {
       integral += error;
     }
-    double measureddegrees = Inertial.heading();
+    double measureddegrees = (BackLeft.rotation(degrees) + BackRight.rotation(degrees)) / 2;
     error = targetdegrees - measureddegrees;
 
-    //Controller1.Screen.setCursor(1, 1);
-    
-    Controller1.Screen.print("error: %f", error);
-    Controller1.Screen.newLine();
-   // Controller1.Screen.setCursor(1, 2);
-    Controller1.Screen.print("heading: %f", Inertial.heading(degrees));
-    Controller1.Screen.newLine();
-   // Controller1.Screen.setCursor(1, 3);
-    Controller1.Screen.print("rotation: %f", Inertial.rotation());
 
     // turn forward pid distance, if at target, pid should stop
-    FrontLeft.spinFor(reverse, error * kp + integral * ki + (error - lasterror) * kd, degrees);
-    MiddleLeft.spinFor(reverse, error * kp + integral * ki + (error - lasterror) * kd, degrees);
-    BackLeft.spinFor(reverse, error * kp + integral * ki + (error - lasterror) * kd, degrees);
-    FrontRight.spinFor(forward, error * kp + integral * ki + (error - lasterror) * kd, degrees);
-    MiddleRight.spinFor(forward, error * kp + integral * ki + (error - lasterror) * kd, degrees);
-    BackRight.spinFor(forward, error * kp + integral * ki + (error - lasterror) * kd, degrees);
+    FrontLeft.spinFor(forward, error * kp + integral * ki + (error - lasterror) * kd, degrees);
+    MiddleLeft.spinFor(forward, error * kp + integral * ki + (error - lasterror) * kd, degrees);
+    BackLeft.spinFor(forward, error * kp + integral * ki + (error - lasterror) * kd, degrees);
+    FrontRight.spinFor(reverse, error * kp + integral * ki + (error - lasterror) * kd, degrees);
+    MiddleRight.spinFor(reverse, error * kp + integral * ki + (error - lasterror) * kd, degrees);
+    BackRight.spinFor(reverse, error * kp + integral * ki + (error - lasterror) * kd, degrees);
 
 
-    if (error < 3) {
-      FrontLeft.stop();
-      MiddleLeft.stop();
+    if (error < 15) {
+      FrontRight.stop();
+      MiddleRight.stop();
       BackLeft.stop();
       FrontRight.stop();
       MiddleRight.stop();
       BackRight.stop();
     }
-
-
-    // rightdrive.move_velocity(error * kp + integral * ki +(error - lasterror) * kd);
-    lasterror = error;
-    wait(10, msec);
   }
 }
 
@@ -478,8 +673,8 @@ void closeWings(){
 }
 
 void lessVelocity(){
-  FrontLeft.setVelocity(80, pct);
   FrontRight.setVelocity(80, pct);
+  FrontLeft.setVelocity(80, pct);
   MiddleLeft.setVelocity(80, pct);
   MiddleRight.setVelocity(80, pct);
   BackLeft.setVelocity(80, pct);
@@ -487,10 +682,10 @@ void lessVelocity(){
 }
 
 void normalVelocity(){
-  FrontLeft.setVelocity(100, percent);
+  FrontRight.setVelocity(100, percent);
   MiddleLeft.setVelocity(100, percent);
   BackLeft.setVelocity(100, percent);
-  FrontRight.setVelocity(100, percent);
+  FrontLeft.setVelocity(100, percent);
   MiddleRight.setVelocity(100, percent);
   BackRight.setVelocity(100, percent);
 }
@@ -668,7 +863,7 @@ void auton7(void){
   moveDistance(382.165*2.35);
  // wait(200, msec);
   normalVelocity();
-  Right(80);
+  Right(800);
   Controller1.Screen.clearScreen();
   // Controller1.Screen.print("The error is : %f", error);
   wait(100, msec);
@@ -705,7 +900,7 @@ void auton7(void){
   wait(100, msec);
   Intake.stop();
   //moveDistance(63.695*-0.1);//move wawy so dont hit wall
-  turnPID(360);//face away from goal
+  turnPID(360);//face away FrontRightom goal
   WingLeft.set(true);
   moveDistance(-600);//push 3rd triball into goal with wing
   wait(100, msec);
@@ -792,7 +987,7 @@ void betterAuton(void){
   wait(100, msec);
   Intake.stop();
   //moveDistance(63.695*-0.1);//move wawy so dont hit wall
-  turnPID(360);//face away from goal
+  turnPID(360);//face away FrontRightom goal
   WingLeft.set(true);
   moveDistance(-600);//push 3rd triball into goal with wing
   wait(100, msec);
@@ -946,7 +1141,7 @@ void autonomous(void) {
 /*
 void unitTest (){
   while (1){
-    FrontLeft.spin(fwd);
+    FrontRight.spin(fwd);
   }
 }
 */
@@ -1028,10 +1223,10 @@ void autonslctr() {
 
 void usercontrol(void) {
   // User control code here, inside the loop
-  FrontLeft.setVelocity(100, percent);
+  FrontRight.setVelocity(100, percent);
   MiddleLeft.setVelocity(100, percent);
   BackLeft.setVelocity(100, percent);
-  FrontRight.setVelocity(100, percent);
+  FrontLeft.setVelocity(100, percent);
   MiddleRight.setVelocity(100, percent);
   BackRight.setVelocity(100, percent);
   while(!Jessica) {
@@ -1120,7 +1315,7 @@ int main() {
   // Run the pre-autonomous function.
   pre_auton();
   
-  // Prevent main from exiting with an infinite loop.
+  // Prevent main FrontRightom exiting with an infinite loop.
   while (true) {
     wait(100, msec);
   }
