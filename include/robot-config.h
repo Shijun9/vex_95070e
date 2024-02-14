@@ -9,6 +9,8 @@ extern motor MiddleLeft;
 extern motor MiddleRight;
 extern motor BackRight;
 extern motor BackLeft;
+extern motor_group L;
+extern motor_group R;
 extern controller Controller1;
 extern inertial Inertial;
 extern motor Intake;

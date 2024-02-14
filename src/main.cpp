@@ -1,15 +1,47 @@
 // ---- START VEXCODE CONFIGURED DEVICES ----
 // Robot Configuration:
 // [Name]               [Type]        [Port(s)]
-// FrontLeft            motor         1               
-// FrontRight           motor         10              
-// MiddleLeft           motor         2               
+// FrontLeft            motor         20              
+// FrontRight           motor         11              
+// MiddleLeft           motor         19              
 // MiddleRight          motor         9               
-// BackRight            motor         8               
-// BackLeft             motor         3               
+// BackRight            motor         1               
+// BackLeft             motor         10              
 // Controller1          controller                    
 // Inertial             inertial      4               
-// Intake               motor         20              
+// Intake               motor         18              
+// Catapult             motor         5               
+// WingLeft             digital_out   A               
+// WingRight            digital_out   H               
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// FrontLeft            motor         20              
+// FrontRight           motor         11              
+// MiddleLeft           motor         19              
+// MiddleRight          motor         9               
+// BackRight            motor         1               
+// BackLeft             motor         10              
+// Controller1          controller                    
+// Inertial             inertial      7               
+// Intake               motor         18              
+// Catapult             motor         5               
+// WingLeft             digital_out   A               
+// WingRight            digital_out   H               
+// ---- END VEXCODE CONFIGURED DEVICES ----
+// ---- START VEXCODE CONFIGURED DEVICES ----
+// Robot Configuration:
+// [Name]               [Type]        [Port(s)]
+// FrontLeft            motor         20              
+// FrontRight           motor         11              
+// MiddleLeft           motor         19              
+// MiddleRight          motor         9               
+// BackRight            motor         1               
+// BackLeft             motor         10              
+// Controller1          controller                    
+// Inertial             inertial      2               
+// Intake               motor         18              
 // Catapult             motor         5               
 // WingLeft             digital_out   A               
 // WingRight            digital_out   H               
@@ -24,8 +56,8 @@
 // BackRight            motor         8               
 // BackLeft             motor         3               
 // Controller1          controller                    
-// Inertial             inertial      7               
-// Intake               motor         6               
+// Inertial             inertial      4               
+// Intake               motor         20              
 // Catapult             motor         5               
 // WingLeft             digital_out   A               
 // WingRight            digital_out   H               
@@ -34,9 +66,8 @@
 
 #include "vex.h"
 #include <cmath>
-
 using namespace vex;
-
+#include <iostream>
 // A global instance of competition
 competition Competition;
 
@@ -78,7 +109,7 @@ void pre_auton(void) {
   while (Inertial.isCalibrating()){
     Controller1.Screen.print("DON'T MOVE!");
   }
-  Controller1.rumble(rumblePulse);
+ // Controller1.rumble(rumblePulse);
   
   Inertial.setHeading(0, degrees);
   Controller1.Screen.clearScreen();
@@ -242,7 +273,29 @@ float ki = 0;
 float kd = 0.5;
 
 
-void turnDegrees(float targetDegrees){
+void turnDegrees(double targetDegrees){
+  double omniCircumfrence = atan(-1)*4 * 2 * 3;//18.849
+  int CartridgeTicks = 900;
+  double gearRatio = 10/6;
+  float conversion = (CartridgeTicks*gearRatio)/omniCircumfrence;//1080/18.849 ~ 57.29746936
+  //360 degrees 
+  //9.42 in 1 fulll rotation
+  //36-tooth
+  //60-tooth
+  //36:60 ~ 1:0.6
+  //360 degrees - 0.6
+  //5.652 inches per 360 degrees input
+  //each tile is 24 in long
+  //move 1 tile ~ 1528.66 degrees input
+
+  FrontLeft.spinFor(fwd, targetDegrees, degrees, false);
+  FrontRight.spinFor(reverse, targetDegrees, degrees, false);
+  MiddleLeft.spinFor(fwd, targetDegrees, degrees, false);
+  MiddleRight.spinFor(reverse, targetDegrees, degrees, false);
+  BackLeft.spinFor(fwd, targetDegrees, degrees, false);
+  BackRight.spinFor(reverse, targetDegrees, degrees);
+ 
+  /*
   Controller1.Screen.print("turning...");
   
   // Inertial.calibrate();
@@ -280,7 +333,7 @@ void turnDegrees(float targetDegrees){
   
     
   }
-  
+  */
 }
 /*          NOTES
 have a way of caltulating heading so it turns in the moroe efficient direction - basic casework maybe
@@ -438,23 +491,24 @@ void turnPID (float targetDegrees){
 
 void Right(double angle) {
   Inertial.setRotation(0,deg);
-  error = angle;
-  while (error > fabs(Inertial.rotation())) {
-    double motorSpeed = (error * 0.1) + 5;
-    FrontLeft.spin(fwd, motorSpeed, pct);
-    FrontRight.spin(reverse, motorSpeed, pct);
-    MiddleLeft.spin(fwd, motorSpeed, pct);
-    MiddleRight.spin(reverse, motorSpeed, pct);
-    BackRight.spin(reverse, motorSpeed, pct);
-    BackLeft.spin(fwd, motorSpeed, pct);
-    error = fabs(Inertial.rotation());
+  while (fabs(Inertial.rotation()) < angle) {
+    double error = angle - fabs(Inertial.rotation());
+    L.spin(forward, error * 0.1 + 5, pct);
+    R.spin(reverse, error * 0.1 + 5, pct);
   }
-  FrontLeft.stop(brake);
-  FrontRight.stop(brake);
-  MiddleLeft.stop(brake);
-  MiddleRight.stop(brake);
-  BackLeft.stop(brake);
-  BackRight.stop(brake);
+  L.stop(brake);
+  R.stop(brake);
+}
+
+void Left(double angle) {
+  Inertial.setRotation(0,deg);
+  while (fabs(Inertial.rotation()) < angle) {
+    double error = angle - fabs(Inertial.rotation());
+    L.spin(reverse, error * 0.1 + 5, pct);
+    R.spin(forward, error * 0.1 + 5, pct);
+  }
+  L.stop(brake);
+  R.stop(brake);
 }
 
 void drivePID(double targetdegrees) {
@@ -538,7 +592,7 @@ void auton2(){
   */
 
   moveDistance(-5000);
-
+  moveDistance(300);
 
 }
 
@@ -739,11 +793,15 @@ void auton6(void){
 }
 
 void auton7(void){
+
+  //input 235 = 90 degrees turnnig
+
   // Right(90);
-  moveDistance(382.165*2.35);
- // wait(200, msec);
+  moveDistance(382.165*2.3); // fwd
+  wait(200, msec);
   normalVelocity();
-  Right(80);
+  turnDegrees(235); 
+  
   Controller1.Screen.clearScreen();
   // Controller1.Screen.print("The error is : %f", error);
   wait(100, msec);
@@ -753,43 +811,45 @@ void auton7(void){
   Intake.setVelocity(100, pct);
   Intake.spinFor(reverse, 1500, degrees, false);//outake to score triball 
  
- // wait(200, msec);
-  moveDistance(63.695*2.5);  
+  wait(200, msec);
+  moveDistance(63.695*2); //63.695 increase this one
   wait(500, msec);
-  moveDistance(-63.695*4);
+  moveDistance(-63.695);// old was 63.595
            
   //wait(200, msec);
   Intake.stop();
   wait(100, msec);
   //turn and move to 2nd triball
   lessVelocity();
-  turnPID(1);//turn to center spot
-  moveDistance(0.5);
-  turnPID(21);//faces 2nd triball
+  turnDegrees(352.5);//turn to center spot
+  moveDistance(63.695*4);
+  turnDegrees(246);//faces 2nd triball
   // Controller1.Screen.clearScreen();
   // Controller1.Screen.print("The error is : %f", error);
  // wait(200, msec);
+ 
   Controller1.Screen.print(Inertial.rotation());
  // wait(200, msec);
   Intake.setVelocity(100, pct);
   Intake.spin(forward);
   wait(100, msec);
-  moveDistance(382.165*0.8);//go to 2nd triball
+  moveDistance(382.165*1.25);//go to 2nd triball
   wait(0.5, sec);
+  
   normalVelocity();
   wait(100, msec);
   Intake.stop();
-  //moveDistance(63.695*-0.1);//move wawy so dont hit wall
-  turnPID(360);//face away from goal
+  moveDistance(-63.695);//move wawy so dont hit wall
+  turnDegrees(-125);//face away from goal
   WingLeft.set(true);
-  moveDistance(-600);//push 3rd triball into goal with wing
+  moveDistance(-382.165*1.5);//push 3rd triball into goal with wing
   wait(100, msec);
   moveDistance(63.695*3);
   wait(100, msec);
-  turnPID(187);//turn toward goal
-  wait (100,msec);
+  turnDegrees(506);//turn toward goal
+  wait (100, msec);
   Intake.setVelocity(100, pct);
-  Intake.spinFor(reverse, 1500, degrees, false);
+  Intake.spinFor(reverse, 1800, degrees, false);
   
   moveDistance(63.695*3);
   wait(100, msec);
@@ -800,6 +860,7 @@ void auton7(void){
   wait(100, msec);
   moveDistance(-63.695*3);
   //go to 3rd triball section
+  
   
   /*
   turnPID(230);//turn to 3rd triball
@@ -975,7 +1036,6 @@ void autonomous(void) {
   // ..........................................................................
   // Insert autonomous user code here.
   // ..........................................................................
-
   if (slctauton == 1) {
     auton2();
   }
@@ -985,7 +1045,7 @@ void autonomous(void) {
   }
 
   if (slctauton == 3) {
-    betterAuton();
+    auton7();
   }
 
   if (slctauton == 4) {
