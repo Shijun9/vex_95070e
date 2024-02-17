@@ -834,81 +834,19 @@ void betterAuton(void){
 //next test/trial: make each motor spin induvidually
 //other options: put wait time to prevent overrides
 void testAuton(){
-  //move 1 tile ~ 382.165 degrees input
-  //63.695 degrees for 1 inch
-  //220 degrees for 90 degree rotation
-  // moveDistance(382.165)
-  // wait(200, msec);
-  // Intake.spin(forward);//up to here its good but then it doesnt go all the way in
-  // wait(200, msec);
-  moveDistance(-382.165*0.6);
-  wait(200, msec);
- // moveDistance(-63.695*2);
-  turnPID(45);
-  wait(200, msec);
-  moveDistance(-382.165*1.3);
-  wait(200, msec);
-  turnPID(90);
-  wait(200, msec);
   moveDistance(-63.695*3);
-  wait(200, msec);
+  Right(30);
+  moveDistance(-63.695*2);
   
-
-  moveDistance(382.165/2.2);
-  wait(200, msec);
-  turnPID(45); 
-  wait(200, msec);
-  moveDistance(63.695);
-  wait(200, msec);
-  openWings();
-  wait (1.5,sec);
+  WingRight.set(true);
+  WingLeft.set(true);
+  moveDistance(63.695*2.5);
+  WingLeft.set(false);
+  WingRight.set(false);
   
-  moveDistance(382.165*1.4);
-  wait(200, msec);
-  moveDistance(63.695);
-  wait(200, msec);
-  closeWings();
-  turnPID(0);
-  wait(200, msec);
-
+  Left(30);
+  moveDistance(63.695*3);
   
-  
-  wait(200, msec);
-  moveDistance(382.165*1.2);
-  wait(200, msec);
- // moveDistance(191.0825);
- Intake.spinFor(reverse, 540, degrees, true);
-  //wait(200, msec); 
-  
-
- 
-
-
-
-  /*this may need tweaking cuz it might move the triball whilst turning
-  moveDistance(-382.17);//6 inches
-  wait(50,msec);
-  turnDegrees(220);
-  Intake.spinFor(forward, 540, degrees, true);
-  wait(50, msec);
-
-  
-  moveDistance(63.695);
-  wait(50, msec);
-  moveDistance(-63.695);
-  wait(50, msec);
-  turnDegrees(-200);
-  wait(50, msec);
-  moveDistance(573.25);
-
-  wait(50, msec);
-  
-  
-  //outake into goal hopefully
-  Intake.spinFor(reverse, 540, degrees, true);
-  wait(50, msec);
-  moveDistance(127.39);
-  */
 }
 
 
@@ -995,7 +933,7 @@ void autonslctr() {
     Controller1.Screen.clearScreen();
     Controller1.Screen.setCursor(1,1);
     Controller1.Screen.print("1 triball auton");
-    }
+  }
 
   else if (slctauton == 2) {
     Controller1.Screen.clearScreen();
