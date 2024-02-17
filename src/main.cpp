@@ -662,7 +662,7 @@ void auton7(void){
   Intake.spinFor(reverse, 1500, degrees, false);//outake to score triball 
   
   wait(200, msec);
-  moveDistance(63.695*2.3); //63.695 increase this one
+  moveDistance(63.695*2.4); //63.695 increase this one
   wait(500, msec);
   
   moveDistance(-63.695*1.3);// old was 63.595
@@ -672,27 +672,31 @@ void auton7(void){
   wait(100, msec);
   //turn and move to 2nd triball
   lessVelocity();
-  Left(120);//turn to center spot
+  Right(120);//turn to center spot
+  moveDistance(63.695*3.7);
+  Right(95);
   
   wait(200, msec);
   Intake.spinFor(fwd, 1500, degrees, false);
-  moveDistance(63.695*3);
+  moveDistance(63.695*3.4);
   Intake.setVelocity(100, pct);
   Intake.spinFor(fwd, 1500, degrees, false);//outake to score triball 
-  moveDistance(-63.695);
+  moveDistance(63.695*3.3);
   wait(1000, msec);
-  Left(45);
+  
+  Left(30);
   wait(200, msec);
   WingLeft.set(true);
   WingRight.set(true);
-  moveDistance(-63.695*2);
+  moveDistance(-63.695*6);
+  /*
   wait(250,msec);
   moveDistance(63.695*1.5);
   wait(250,msec);
   Left(180);
   moveDistance(63.695*2);
   moveDistance(-63.695*1.5);
-
+  */
 
   /*
   wait(200, msec);
@@ -834,18 +838,22 @@ void betterAuton(void){
 //next test/trial: make each motor spin induvidually
 //other options: put wait time to prevent overrides
 void testAuton(){
-  moveDistance(-63.695*3);
-  Right(30);
-  moveDistance(-63.695*2);
-  
+  // moveDistance(-63.695*3);
+  // Right(30);
   WingRight.set(true);
   WingLeft.set(true);
-  moveDistance(63.695*2.5);
+  moveDistance(-63.695*4);
+  wait(500, msec);
   WingLeft.set(false);
   WingRight.set(false);
+
+  moveDistance(63.695*5);
   
   Left(30);
-  moveDistance(63.695*3);
+
+  moveDistance(63.695*9.65);
+  Intake.setVelocity(100, pct);
+  Intake.spinFor(reverse, 1500, degrees, false);//outake to score triball 
   
 }
 
