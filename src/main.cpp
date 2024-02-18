@@ -343,8 +343,8 @@ void Right(double angle) {
   Inertial.setRotation(0,deg);
   while (fabs(Inertial.rotation()) < angle) {
     double error = angle - fabs(Inertial.rotation());
-    L.spin(forward, error * 0.25 + 5, pct);
-    R.spin(reverse, error * 0.25 + 5, pct);
+    L.spin(forward, error * 0.35 + 5, pct);
+    R.spin(reverse, error * 0.35 + 5, pct);
   }
   L.stop(brake);
   R.stop(brake);
@@ -355,8 +355,8 @@ void Left(double angle) {
   while (fabs(Inertial.rotation()) < angle) {
     lastHeading=Inertial.rotation();
     double error = angle - fabs(Inertial.rotation());
-    L.spin(reverse, error * 0.25 + 5, pct);
-    R.spin(forward, error * 0.25 + 5, pct);
+    L.spin(reverse, error * 0.35 + 5, pct);
+    R.spin(forward, error * 0.35 + 5, pct);
   }
   L.stop(brake);
   R.stop(brake);
@@ -678,7 +678,7 @@ void auton7(void){
   
   wait(200, msec);
   Intake.spinFor(fwd, 1500, degrees, false);
-  moveDistance(63.695*3.4);
+  moveDistance(63.695*4);
   Intake.setVelocity(100, pct);
   Intake.spinFor(fwd, 1500, degrees, false);//outake to score triball 
   moveDistance(63.695*3.3);
@@ -688,15 +688,21 @@ void auton7(void){
   wait(200, msec);
   WingLeft.set(true);
   WingRight.set(true);
-  moveDistance(-63.695*6);
-  /*
+  wait(200, msec);
+  moveDistance(-63.695*8);
+
+  WingLeft.set(false);
+  WingRight.set(false);
   wait(250,msec);
   moveDistance(63.695*1.5);
   wait(250,msec);
   Left(180);
+  Intake.setVelocity(100, pct);
+  Intake.spinFor(reverse, 1500, degrees, false);
+  wait(200, msec);
   moveDistance(63.695*2);
   moveDistance(-63.695*1.5);
-  */
+  
 
   /*
   wait(200, msec);
