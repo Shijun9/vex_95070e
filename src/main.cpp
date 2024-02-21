@@ -14,214 +14,6 @@
 // WingLeft             digital_out   A               
 // WingRight            digital_out   H               
 // ---- END VEXCODE CONFIGURED DEVICES ----
-// ---- START VEXCODE CONFIGURED DEVICES ----
-// Robot Configuration:
-// [Name]               [Type]        [Port(s)]
-// FrontLeft            motor         20              
-// FrontRight           motor         11              
-// MiddleLeft           motor         19              
-// MiddleRight          motor         9               
-// BackRight            motor         1               
-// BackLeft             motor         10              
-// Controller1          controller                    
-// Inertial             inertial      4               
-// Intake               motor         18              
-// Catapult             motor         5               
-// WingLeft             digital_out   A               
-// WingRight            digital_out   H               
-// ---- END VEXCODE CONFIGURED DEVICES ----
-// ---- START VEXCODE CONFIGURED DEVICES ----
-// Robot Configuration:
-// [Name]               [Type]        [Port(s)]
-// FrontLeft            motor         20              
-// FrontRight           motor         11              
-// MiddleLeft           motor         19              
-// MiddleRight          motor         9               
-// BackRight            motor         1               
-// BackLeft             motor         10              
-// Controller1          controller                    
-// Inertial             inertial      4               
-// Intake               motor         18              
-// Catapult             motor         5               
-// WingLeft             digital_out   A               
-// WingRight            digital_out   H               
-// ---- END VEXCODE CONFIGURED DEVICES ----
-// ---- START VEXCODE CONFIGURED DEVICES ----
-// Robot Configuration:
-// [Name]               [Type]        [Port(s)]
-// FrontLeft            motor         20              
-// FrontRight           motor         11              
-// MiddleLeft           motor         19              
-// MiddleRight          motor         9               
-// BackRight            motor         1               
-// BackLeft             motor         10              
-// Controller1          controller                    
-// Inertial             inertial      4               
-// Intake               motor         18              
-// Catapult             motor         5               
-// WingLeft             digital_out   A               
-// WingRight            digital_out   H               
-// ---- END VEXCODE CONFIGURED DEVICES ----
-// ---- START VEXCODE CONFIGURED DEVICES ----
-// Robot Configuration:
-// [Name]               [Type]        [Port(s)]
-// FrontLeft            motor         20              
-// FrontRight           motor         11              
-// MiddleLeft           motor         19              
-// MiddleRight          motor         9               
-// BackRight            motor         1               
-// BackLeft             motor         10              
-// Controller1          controller                    
-// Inertial             inertial      4               
-// Intake               motor         18              
-// Catapult             motor         5               
-// WingLeft             digital_out   A               
-// WingRight            digital_out   H               
-// ---- END VEXCODE CONFIGURED DEVICES ----
-// ---- START VEXCODE CONFIGURED DEVICES ----
-// Robot Configuration:
-// [Name]               [Type]        [Port(s)]
-// FrontLeft            motor         20              
-// FrontRight           motor         11              
-// MiddleLeft           motor         19              
-// MiddleRight          motor         9               
-// BackRight            motor         1               
-// BackLeft             motor         10              
-// Controller1          controller                    
-// Inertial             inertial      4               
-// Intake               motor         18              
-// Catapult             motor         5               
-// WingLeft             digital_out   A               
-// WingRight            digital_out   H               
-// ---- END VEXCODE CONFIGURED DEVICES ----
-// ---- START VEXCODE CONFIGURED DEVICES ----
-// Robot Configuration:
-// [Name]               [Type]        [Port(s)]
-// FrontLeft            motor         20              
-// FrontRight           motor         11              
-// MiddleLeft           motor         19              
-// MiddleRight          motor         9               
-// BackRight            motor         1               
-// BackLeft             motor         10              
-// Controller1          controller                    
-// Inertial             inertial      4               
-// Intake               motor         18              
-// Catapult             motor         5               
-// WingLeft             digital_out   A               
-// WingRight            digital_out   H               
-// ---- END VEXCODE CONFIGURED DEVICES ----
-// ---- START VEXCODE CONFIGURED DEVICES ----
-// Robot Configuration:
-// [Name]               [Type]        [Port(s)]
-// FrontLeft            motor         20              
-// FrontRight           motor         11              
-// MiddleLeft           motor         19              
-// MiddleRight          motor         9               
-// BackRight            motor         1               
-// BackLeft             motor         10              
-// Controller1          controller                    
-// Inertial             inertial      4               
-// Intake               motor         18              
-// Catapult             motor         5               
-// WingLeft             digital_out   A               
-// WingRight            digital_out   H               
-// ---- END VEXCODE CONFIGURED DEVICES ----
-// ---- START VEXCODE CONFIGURED DEVICES ----
-// Robot Configuration:
-// [Name]               [Type]        [Port(s)]
-// FrontLeft            motor         20              
-// FrontRight           motor         11              
-// MiddleLeft           motor         19              
-// MiddleRight          motor         9               
-// BackRight            motor         1               
-// BackLeft             motor         10              
-// Controller1          controller                    
-// Inertial             inertial      4               
-// Intake               motor         18              
-// Catapult             motor         5               
-// WingLeft             digital_out   A               
-// WingRight            digital_out   H               
-// ---- END VEXCODE CONFIGURED DEVICES ----
-// ---- START VEXCODE CONFIGURED DEVICES ----
-// Robot Configuration:
-// [Name]               [Type]        [Port(s)]
-// FrontLeft            motor         20              
-// FrontRight           motor         11              
-// MiddleLeft           motor         19              
-// MiddleRight          motor         9               
-// BackRight            motor         1               
-// BackLeft             motor         10              
-// Controller1          controller                    
-// Inertial             inertial      4               
-// Intake               motor         18              
-// Catapult             motor         5               
-// WingLeft             digital_out   A               
-// WingRight            digital_out   H               
-// ---- END VEXCODE CONFIGURED DEVICES ----
-// ---- START VEXCODE CONFIGURED DEVICES ----
-// Robot Configuration:
-// [Name]               [Type]        [Port(s)]
-// FrontLeft            motor         20              
-// FrontRight           motor         11              
-// MiddleLeft           motor         19              
-// MiddleRight          motor         9               
-// BackRight            motor         1               
-// BackLeft             motor         10              
-// Controller1          controller                    
-// Inertial             inertial      4               
-// Intake               motor         18              
-// Catapult             motor         5               
-// WingLeft             digital_out   A               
-// WingRight            digital_out   H               
-// ---- END VEXCODE CONFIGURED DEVICES ----
-// ---- START VEXCODE CONFIGURED DEVICES ----
-// Robot Configuration:
-// [Name]               [Type]        [Port(s)]
-// FrontLeft            motor         20              
-// FrontRight           motor         11              
-// MiddleLeft           motor         19              
-// MiddleRight          motor         9               
-// BackRight            motor         1               
-// BackLeft             motor         10              
-// Controller1          controller                    
-// Inertial             inertial      4               
-// Intake               motor         18              
-// Catapult             motor         5               
-// WingLeft             digital_out   A               
-// WingRight            digital_out   H               
-// ---- END VEXCODE CONFIGURED DEVICES ----
-// ---- START VEXCODE CONFIGURED DEVICES ----
-// Robot Configuration:
-// [Name]               [Type]        [Port(s)]
-// FrontLeft            motor         20              
-// FrontRight           motor         11              
-// MiddleLeft           motor         19              
-// MiddleRight          motor         9               
-// BackRight            motor         1               
-// BackLeft             motor         10              
-// Controller1          controller                    
-// Inertial             inertial      4               
-// Intake               motor         18              
-// Catapult             motor         5               
-// WingLeft             digital_out   A               
-// WingRight            digital_out   H               
-// ---- END VEXCODE CONFIGURED DEVICES ----
-// ---- START VEXCODE CONFIGURED DEVICES ----
-// Robot Configuration:
-// [Name]               [Type]        [Port(s)]
-// FrontRight            motor         20              
-// FrontLeft           motor         11              
-// MiddleLeft           motor         19              
-// MiddleRight          motor         9               
-// BackRight            motor         1               
-// BackLeft             motor         10              
-// Controller1          controller                    
-// Inertial             inertial      4               
-// Intake               motor         18              
-// Catapult             motor         5               
-// WingLeft             digital_out   A               
-// WingRight            digital_out   H               
-// ---- END VEXCODE CONFIGURED DEVICES ----
 
 
 
@@ -254,13 +46,14 @@ float motorSpeed = error;
 void pre_auton(void) {
   // Initializing Robot Configuration. DO NOT REMOVE!
   vexcodeInit();
-  FrontRight.setVelocity(80, percent);
-  MiddleLeft.setVelocity(80, percent);
-  BackLeft.setVelocity(80, percent);
-  FrontLeft.setVelocity(80, percent);
-  MiddleRight.setVelocity(80, percent);
-  BackRight.setVelocity(80, percent);
-  Catapult.setVelocity(90, pct);
+  int driveSpeed = 30;
+  FrontRight.setVelocity(driveSpeed, percent);
+  MiddleLeft.setVelocity(driveSpeed, percent);
+  BackLeft.setVelocity(driveSpeed, percent);
+  FrontLeft.setVelocity(driveSpeed, percent);
+  MiddleRight.setVelocity(driveSpeed, percent);
+  BackRight.setVelocity(driveSpeed, percent);
+  Catapult.setVelocity(80, pct);
   Intake.setVelocity(80, pct);
 
   WingLeft.set(false);
@@ -292,97 +85,7 @@ void pre_auton(void) {
 /*                                                                           */
 /*  You must modify the code to add your own robot specific commands here.   */
 /*---------------------------------------------------------------------------*/
-/*
-void drivePID (double targetInches, double Kp, double Ki, double Kd) {
-  double error = targetInches;
-  double integral = 0;
-  double lastError = error;
 
-  while (true) {
-    double measuredInches = 4 * 3.1415 * ((FrontRight.position(degrees) + FrontLeft.position(degrees) + MiddleLeft.position(degrees) + MiddleRight.position(degrees) + BackLeft.position(degrees) + BackRight.position(degrees))/6)/900;
-    error = targetInches - measuredInches;
-    integral += error;
-
-    if (fabs(error) > 3){
-      integral = 0;
-    }
-
-    float velocity = error * Kp + integral * Ki + (error - lastError) * Kd;
-
-    FrontRight.setVelocity(velocity, percent);
-    FrontLeft.setVelocity(velocity, percent);
-    MiddleLeft.setVelocity(velocity, percent);
-    MiddleRight.setVelocity(velocity, percent);
-    BackLeft.setVelocity(velocity, percent);
-    BackRight.setVelocity(velocity, percent);
-
-    if (targetInches > 0) {
-      FrontRight.spin(forward);
-      FrontLeft.spin(forward);
-      MiddleLeft.spin(forward);
-      MiddleRight.spin(forward);
-      BackLeft.spin(forward);
-      BackRight.spin(forward);
-    }
-    else{
-      FrontRight.spin(reverse);
-      FrontLeft.spin(reverse);
-      MiddleLeft.spin(reverse);
-      MiddleRight.spin(reverse);
-      BackLeft.spin(reverse);
-      BackRight.spin(reverse); 
-    }
-
-    lastError = error;
-  }
-}
-
-void turnPID (double targetDegrees, double Kp, double Ki, double Kd){
-  double error = targetDegrees;
-  double integral = 0;
-  double lastError = error;
-
-  Inertial.calibrate();
-
-  while (fabs(error) > 1){
-    error = targetDegrees - Inertial.heading(degrees);
-    integral += error;
-
-    if (fabs(error) > 300) {
-      integral = 0;
-    }
-
-    FrontRight.setVelocity(error * Kp + integral * Ki + (lastError - error) * Kd, percent);
-    MiddleLeft.setVelocity(error * Kp + integral * Ki + (lastError - error) * Kd, percent);
-    BackLeft.setVelocity(error * Kp + integral * Ki + (lastError - error) * Kd, percent);
-    FrontLeft.setVelocity(error * Kp + integral * Ki + (lastError - error) * Kd, percent);
-    MiddleRight.setVelocity(error * Kp + integral * Ki + (lastError - error) * Kd, percent);
-    BackRight.setVelocity(error * Kp + integral * Ki + (lastError - error) * Kd, percent);
-
-    if (targetDegrees < 0){
-      FrontRight.spin(forward);
-      MiddleLeft.spin(forward);
-      BackLeft.spin(forward);
-      FrontLeft.spin(reverse);
-      MiddleRight.spin(reverse);
-      BackRight.spin(reverse);
-    }
-    else{
-      FrontRight.spin(reverse);
-      MiddleLeft.spin(reverse);
-      BackLeft.spin(reverse);
-      FrontLeft.spin(forward);
-      MiddleRight.spin(forward);
-      BackRight.spin(forward);
-    }
-
-
-    lastError = error;
-    wait(0.01, seconds);
-    
-  }
-}
-*/
 
 void testmove(double inches){
   //FrontRight.spinFor(forward, inches, degrees, false);//works
@@ -571,24 +274,25 @@ void turnPID (float targetDegrees){
 
 void Right(double angle) {
   Inertial.setRotation(0,deg);
-  float measuredDegrees = (BackLeft.rotation(degrees) + BackRight.rotation(degrees))/2;
-  error = angle;
-  while (error > fabs(measuredDegrees)) {
-    double motorSpeed = (error * 0.1) + 5;
-    FrontRight.spin(fwd, motorSpeed, pct);
-    FrontLeft.spin(reverse, motorSpeed, pct);
-    MiddleLeft.spin(fwd, motorSpeed, pct);
-    MiddleRight.spin(reverse, motorSpeed, pct);
-    BackRight.spin(reverse, motorSpeed, pct);
-    BackLeft.spin(fwd, motorSpeed, pct);
-    error = fabs(measuredDegrees);
+  while (fabs(Inertial.rotation()) < angle) {
+    double error = angle - fabs(Inertial.rotation());
+    L.spin(forward, error * 0.4 + 5, pct);
+    R.spin(reverse, error * 0.4 + 5, pct);
   }
-  FrontRight.stop(brake);
-  FrontLeft.stop(brake);
-  MiddleLeft.stop(brake);
-  MiddleRight.stop(brake);
-  BackLeft.stop(brake);
-  BackRight.stop(brake);
+  L.stop(brake);
+  R.stop(brake);
+}
+
+void Left(double angle) {
+  Inertial.setRotation(0,deg);
+  while (fabs(Inertial.rotation()) < angle) {
+    // lastHeading=Inertial.rotation();
+    double error = angle - fabs(Inertial.rotation());
+    L.spin(reverse, error * 0.4 + 5, pct);
+    R.spin(forward, error * 0.4 + 5, pct);
+  }
+  L.stop(brake);
+  R.stop(brake);
 }
 
 void drivePID(double targetdegrees) {
@@ -861,12 +565,16 @@ void auton6(void){
 void auton7(void){
   // Right(90);
   moveDistance(382.165*2.35);
- // wait(200, msec);
+  wait(200, msec);
+
+ 
   normalVelocity();
-  Right(800);
-  Controller1.Screen.clearScreen();
+  Right(80);
+  
+ // Controller1.Screen.clearScreen();
   // Controller1.Screen.print("The error is : %f", error);
   wait(100, msec);
+  
   Controller1.Screen.print(Inertial.rotation());
   Controller1.Screen.print(Inertial.heading());
   wait(100, msec);
@@ -874,7 +582,8 @@ void auton7(void){
   Intake.spinFor(reverse, 1500, degrees, false);//outake to score triball 
  
  // wait(200, msec);
-  moveDistance(63.695*2.5);  
+  moveDistance(63.695*2.5); 
+  /* 
   wait(500, msec);
   moveDistance(-63.695*4);
            
@@ -920,7 +629,8 @@ void auton7(void){
   wait(100, msec);
   moveDistance(-63.695*3);
   //go to 3rd triball section
-  
+  */
+
   /*
   turnPID(230);//turn to 3rd triball
   
@@ -1105,7 +815,7 @@ void autonomous(void) {
   }
 
   if (slctauton == 3) {
-    betterAuton();
+    auton7();
   }
 
   if (slctauton == 4) {
