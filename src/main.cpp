@@ -721,74 +721,22 @@ void testAuton(){
   // wait(200, msec);
   // Intake.spin(forward);//up to here its good but then it doesnt go all the way in
   // wait(200, msec);
-  moveDistance(-382.165*0.6);
-  wait(200, msec);
- // moveDistance(-63.695*2);
-  turnPID(45);
-  wait(200, msec);
-  moveDistance(-382.165*1.3);
-  wait(200, msec);
-  turnPID(90);
-  wait(200, msec);
-  moveDistance(-63.695*3);
-  wait(200, msec);
-  
+  WingRight.set(true);
+  WingLeft.set(true);
+  moveDistance(-63.695*4);
+  wait(500, msec);
+  WingLeft.set(false);
+  WingRight.set(false);
 
-  moveDistance(382.165/2.2);
-  wait(200, msec);
-  turnPID(45); 
-  wait(200, msec);
-  moveDistance(63.695);
-  wait(200, msec);
-  openWings();
-  wait (1.5,sec);
+  moveDistance(63.695*5);
   
-  moveDistance(382.165*1.4);
-  wait(200, msec);
-  moveDistance(63.695);
-  wait(200, msec);
-  closeWings();
-  turnPID(0);
-  wait(200, msec);
+  Left(30);
 
+  moveDistance(63.695*9.65);
+  Intake.setVelocity(100, pct);
+  Intake.spinFor(reverse, 1500, degrees, false);
   
   
-  wait(200, msec);
-  moveDistance(382.165*1.2);
-  wait(200, msec);
- // moveDistance(191.0825);
- Intake.spinFor(reverse, 540, degrees, true);
-  //wait(200, msec); 
-  
-
- 
-
-
-
-  /*this may need tweaking cuz it might move the triball whilst turning
-  moveDistance(-382.17);//6 inches
-  wait(50,msec);
-  turnDegrees(220);
-  Intake.spinFor(forward, 540, degrees, true);
-  wait(50, msec);
-
-  
-  moveDistance(63.695);
-  wait(50, msec);
-  moveDistance(-63.695);
-  wait(50, msec);
-  turnDegrees(-200);
-  wait(50, msec);
-  moveDistance(573.25);
-
-  wait(50, msec);
-  
-  
-  //outake into goal hopefully
-  Intake.spinFor(reverse, 540, degrees, true);
-  wait(50, msec);
-  moveDistance(127.39);
-  */
 }
 
 
