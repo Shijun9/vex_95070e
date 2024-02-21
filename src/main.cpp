@@ -276,8 +276,8 @@ void Right(double angle) {
   Inertial.setRotation(0,deg);
   while (fabs(Inertial.rotation()) < angle) {
     double error = angle - fabs(Inertial.rotation());
-    L.spin(forward, error * 0.4 + 5, pct);
-    R.spin(reverse, error * 0.4 + 5, pct);
+    L.spin(forward, error * 0.4, pct);
+    R.spin(reverse, error * 0.4, pct);
   }
   L.stop(brake);
   R.stop(brake);
@@ -288,8 +288,8 @@ void Left(double angle) {
   while (fabs(Inertial.rotation()) < angle) {
     // lastHeading=Inertial.rotation();
     double error = angle - fabs(Inertial.rotation());
-    L.spin(reverse, error * 0.4 + 5, pct);
-    R.spin(forward, error * 0.4 + 5, pct);
+    L.spin(reverse, error * 0.4, pct);
+    R.spin(forward, error * 0.4, pct);
   }
   L.stop(brake);
   R.stop(brake);
@@ -564,57 +564,31 @@ void auton6(void){
 
 void auton7(void){
   // Right(90);
-  moveDistance(382.165*2.35);
+  moveDistance(382.165*2.2); // fwd
   wait(200, msec);
-
- 
-  normalVelocity();
-  Right(80);
+  // normalVelocity();
+  Right(80); 
   
- // Controller1.Screen.clearScreen();
+  Controller1.Screen.clearScreen();
   // Controller1.Screen.print("The error is : %f", error);
   wait(100, msec);
-  
   Controller1.Screen.print(Inertial.rotation());
   Controller1.Screen.print(Inertial.heading());
   wait(100, msec);
-  Intake.setVelocity(100, pct);
-  Intake.spinFor(reverse, 1500, degrees, false);//outake to score triball 
- 
- // wait(200, msec);
-  moveDistance(63.695*2.5); 
-   
-  wait(500, msec);
-  moveDistance(-63.695*4);
-           
-  //wait(200, msec);
-  Intake.stop();
-  wait(100, msec);
-  //turn and move to 2nd triball
-  lessVelocity();
-  turnPID(1);//turn to center spot
-  moveDistance(0.5);
-  turnPID(21);//faces 2nd triball
-  // Controller1.Screen.clearScreen();
-  // Controller1.Screen.print("The error is : %f", error);
- // wait(200, msec);
-  Controller1.Screen.print(Inertial.rotation());
- // wait(200, msec);
-  wait(100,msec);
   Intake.setVelocity(100, pct);
   Intake.spinFor(reverse, 1500, degrees, false);//outake to score triball 
   
   wait(200, msec);
   moveDistance(63.695*2.4); //63.695 increase this one
   wait(500, msec);
-  /*
+  
   moveDistance(-63.695*1.3);// old was 63.595
           
   //wait(200, msec);
   Intake.stop();
   wait(100, msec);
   //turn and move to 2nd triball
-  // lessVelocity();
+  lessVelocity();
   Right(120);//turn to center spot
   moveDistance(63.695*3.7);
   Right(95);
@@ -624,6 +598,7 @@ void auton7(void){
   moveDistance(63.695*4);
   Intake.setVelocity(100, pct);
   Intake.spinFor(fwd, 1500, degrees, false);//outake to score triball 
+  
   moveDistance(63.695*3.3);
   wait(1000, msec);
   
@@ -646,7 +621,7 @@ void auton7(void){
   moveDistance(63.695*2);
   moveDistance(-63.695*1.5);
   //go to 3rd triball section
-  */
+  
 
   /*
   turnPID(230);//turn to 3rd triball
