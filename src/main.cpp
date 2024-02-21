@@ -583,7 +583,7 @@ void auton7(void){
  
  // wait(200, msec);
   moveDistance(63.695*2.5); 
-  /* 
+   
   wait(500, msec);
   moveDistance(-63.695*4);
            
@@ -600,34 +600,51 @@ void auton7(void){
  // wait(200, msec);
   Controller1.Screen.print(Inertial.rotation());
  // wait(200, msec);
+  wait(100,msec);
   Intake.setVelocity(100, pct);
-  Intake.spin(forward);
-  wait(100, msec);
-  moveDistance(382.165*0.8);//go to 2nd triball
-  wait(0.5, sec);
-  normalVelocity();
-  wait(100, msec);
+  Intake.spinFor(reverse, 1500, degrees, false);//outake to score triball 
+  
+  wait(200, msec);
+  moveDistance(63.695*2.4); //63.695 increase this one
+  wait(500, msec);
+  /*
+  moveDistance(-63.695*1.3);// old was 63.595
+          
+  //wait(200, msec);
   Intake.stop();
-  //moveDistance(63.695*-0.1);//move wawy so dont hit wall
-  turnPID(360);//face away FrontRightom goal
+  wait(100, msec);
+  //turn and move to 2nd triball
+  // lessVelocity();
+  Right(120);//turn to center spot
+  moveDistance(63.695*3.7);
+  Right(95);
+  
+  wait(200, msec);
+  Intake.spinFor(fwd, 1500, degrees, false);
+  moveDistance(63.695*4);
+  Intake.setVelocity(100, pct);
+  Intake.spinFor(fwd, 1500, degrees, false);//outake to score triball 
+  moveDistance(63.695*3.3);
+  wait(1000, msec);
+  
+  Left(30);
+  wait(200, msec);
   WingLeft.set(true);
-  moveDistance(-600);//push 3rd triball into goal with wing
-  wait(100, msec);
-  moveDistance(63.695*3);
-  wait(100, msec);
-  turnPID(187);//turn toward goal
-  wait (100,msec);
+  WingRight.set(true);
+  wait(200, msec);
+  moveDistance(-63.695*8);
+
+  WingLeft.set(false);
+  WingRight.set(false);
+  wait(250,msec);
+  moveDistance(63.695*1.5);
+  wait(250,msec);
+  Left(180);
   Intake.setVelocity(100, pct);
   Intake.spinFor(reverse, 1500, degrees, false);
-  
-  moveDistance(63.695*3);
-  wait(100, msec);
-  moveDistance(-63.695*3);
-  wait(100, msec);
-  Intake.stop();
-  moveDistance(63.695*4.5);
-  wait(100, msec);
-  moveDistance(-63.695*3);
+  wait(200, msec);
+  moveDistance(63.695*2);
+  moveDistance(-63.695*1.5);
   //go to 3rd triball section
   */
 
