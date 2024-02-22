@@ -46,7 +46,7 @@ float motorSpeed = error;
 void pre_auton(void) {
   // Initializing Robot Configuration. DO NOT REMOVE!
   vexcodeInit();
-  int driveSpeed = 30;
+  int driveSpeed = 25;
   FrontRight.setVelocity(driveSpeed, percent);
   MiddleLeft.setVelocity(driveSpeed, percent);
   BackLeft.setVelocity(driveSpeed, percent);
@@ -564,7 +564,7 @@ void auton6(void){
 
 void auton7(void){
   // Right(90);
-  moveDistance(382.165*2.2); // fwd
+  moveDistance(382.165*4); // fwd
   wait(200, msec);
   // normalVelocity();
   Right(80); 
@@ -576,13 +576,13 @@ void auton7(void){
   Controller1.Screen.print(Inertial.heading());
   wait(100, msec);
   Intake.setVelocity(100, pct);
-  Intake.spinFor(reverse, 1500, degrees, false);//outake to score triball 
+  Intake.spinFor(reverse, 1500, degrees, false);//outake to score first triball 
   
   wait(200, msec);
   moveDistance(63.695*2.4); //63.695 increase this one
   wait(500, msec);
   
-  moveDistance(-63.695*1.3);// old was 63.595
+  moveDistance(-63.695*1.3);// old was 63.595 // after scroing first triball
           
   //wait(200, msec);
   Intake.stop();
@@ -590,18 +590,18 @@ void auton7(void){
   //turn and move to 2nd triball
   lessVelocity();
   Right(120);//turn to center spot
-  moveDistance(63.695*3.7);
+  moveDistance(63.695*4);
   Right(95);
   
   wait(200, msec);
   Intake.spinFor(fwd, 1500, degrees, false);
-  moveDistance(63.695*4);
+  moveDistance(63.695*5);
   Intake.setVelocity(100, pct);
   Intake.spinFor(fwd, 1500, degrees, false);//outake to score triball 
-  
+
   moveDistance(63.695*3.3);
   wait(1000, msec);
-  
+  /*
   Left(30);
   wait(200, msec);
   WingLeft.set(true);
@@ -621,7 +621,7 @@ void auton7(void){
   moveDistance(63.695*2);
   moveDistance(-63.695*1.5);
   //go to 3rd triball section
-  
+  */
 
   /*
   turnPID(230);//turn to 3rd triball
@@ -728,11 +728,11 @@ void testAuton(){
   WingLeft.set(false);
   WingRight.set(false);
 
-  moveDistance(63.695*5);
+  moveDistance(63.695*5.25);
   
-  Left(30);
+  Left(36);
 
-  moveDistance(63.695*9.65);
+  moveDistance(63.695*20);
   Intake.setVelocity(100, pct);
   Intake.spinFor(reverse, 1500, degrees, false);
   
