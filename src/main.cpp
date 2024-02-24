@@ -564,7 +564,7 @@ void auton6(void){
 
 void auton7(void){
   // Right(90);
-  moveDistance(382.165*4); // fwd
+  moveDistance(382.165*4.15); // fwd
   wait(200, msec);
   // normalVelocity();
   Right(80); 
@@ -590,7 +590,7 @@ void auton7(void){
   //turn and move to 2nd triball
   lessVelocity();
   Right(120);//turn to center spot
-  moveDistance(63.695*4);
+  moveDistance(63.695*4.2);//1st distance of V-shape
   Right(95); // decrease angle
   
   wait(200, msec);
@@ -599,15 +599,17 @@ void auton7(void){
   Intake.setVelocity(100, pct);
   Intake.spinFor(fwd, 1500, degrees, false);//outake to score triball 
 
-  moveDistance(63.695*3.3); 
+  moveDistance(63.695*5.5); 
   wait(1000, msec);
-  /*
+  
   Left(30);
   wait(200, msec);
   WingLeft.set(true);
   WingRight.set(true);
   wait(200, msec);
-  moveDistance(-63.695*8);
+  moveDistance(-63.695*15);
+  moveDistance(63.695*5);
+  moveDistance(-63.695*4);
 
   WingLeft.set(false);
   WingRight.set(false);
@@ -618,10 +620,10 @@ void auton7(void){
   Intake.setVelocity(100, pct);
   Intake.spinFor(reverse, 1500, degrees, false);
   wait(200, msec);
-  moveDistance(63.695*2);
-  moveDistance(-63.695*1.5);
+  moveDistance(63.695*5);
+  moveDistance(-63.695*4);
   //go to 3rd triball section
-  */
+  
 
   /*
   turnPID(230);//turn to 3rd triball
