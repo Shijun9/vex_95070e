@@ -591,15 +591,15 @@ void auton7(void){
   lessVelocity();
   Right(120);//turn to center spot
   moveDistance(63.695*4);
-  Right(95);
+  Right(95); // decrease angle
   
   wait(200, msec);
   Intake.spinFor(fwd, 1500, degrees, false);
-  moveDistance(63.695*5);
+  moveDistance(63.695*5); // increase distance
   Intake.setVelocity(100, pct);
   Intake.spinFor(fwd, 1500, degrees, false);//outake to score triball 
 
-  moveDistance(63.695*3.3);
+  moveDistance(63.695*3.3); 
   wait(1000, msec);
   /*
   Left(30);
