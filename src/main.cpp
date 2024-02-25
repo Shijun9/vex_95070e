@@ -46,14 +46,14 @@ float motorSpeed = error;
 void pre_auton(void) {
   // Initializing Robot Configuration. DO NOT REMOVE!
   vexcodeInit();
-  int driveSpeed = 25;
+  int driveSpeed = 35;
   FrontRight.setVelocity(driveSpeed, percent);
   MiddleLeft.setVelocity(driveSpeed, percent);
   BackLeft.setVelocity(driveSpeed, percent);
   FrontLeft.setVelocity(driveSpeed, percent);
   MiddleRight.setVelocity(driveSpeed, percent);
   BackRight.setVelocity(driveSpeed, percent);
-  Catapult.setVelocity(80, pct);
+  Catapult.setVelocity(62, pct);
   Intake.setVelocity(80, pct);
 
   WingLeft.set(false);
@@ -547,7 +547,7 @@ void auton6(void){
   
   wait(200, msec);
   
-  Intake.spinFor(reverse, 900, degrees, false);
+  Intake.spinFor(reverse, 1500, degrees, false);
   moveDistance(382.165*1.3);
   wait(200, msec);
   moveDistance(-63.695*6);
@@ -564,7 +564,7 @@ void auton6(void){
 
 void auton7(void){
   // Right(90);
-  moveDistance(382.165*4.15); // fwd
+  moveDistance(382.165*4.1); // fwd
   wait(200, msec);
   // normalVelocity();
   Right(80); 
@@ -582,25 +582,23 @@ void auton7(void){
   moveDistance(63.695*2.4); //63.695 increase this one
   wait(500, msec);
   
-  moveDistance(-63.695*1.3);// old was 63.595 // after scroing first triball
+  moveDistance(-63.695*1.4);// old was 63.595 // after scroing first triball
           
   //wait(200, msec);
   Intake.stop();
   wait(100, msec);
   //turn and move to 2nd triball
-  lessVelocity();
+  //lessVelocity();
   Right(120);//turn to center spot
-  moveDistance(63.695*4.2);//1st distance of V-shape
-  Right(95); // decrease angle
+  moveDistance(63.695*6);//1st distance of V-shape
+  Right(87); 
   
   wait(200, msec);
-  Intake.spinFor(fwd, 1500, degrees, false);
-  moveDistance(63.695*5); // increase distance
   Intake.setVelocity(100, pct);
   Intake.spinFor(fwd, 1500, degrees, false);//outake to score triball 
 
-  moveDistance(63.695*5.5); 
-  wait(1000, msec);
+  moveDistance(63.695*10.5); 
+  wait(1000, msec); // end of V-shape
   
   Left(30);
   wait(200, msec);
@@ -611,20 +609,21 @@ void auton7(void){
   moveDistance(63.695*5);
   moveDistance(-63.695*4);
 
+  wait(250,msec); // end of pushing second triball into goal with wings
+  
+  moveDistance(63.695*2);
   WingLeft.set(false);
   WingRight.set(false);
-  wait(250,msec);
-  moveDistance(63.695*1.5);
   wait(250,msec);
   Left(180);
   Intake.setVelocity(100, pct);
   Intake.spinFor(reverse, 1500, degrees, false);
   wait(200, msec);
-  moveDistance(63.695*5);
+  moveDistance(63.695*8);
   moveDistance(-63.695*4);
   //go to 3rd triball section
   
-
+  
   /*
   turnPID(230);//turn to 3rd triball
   
@@ -733,10 +732,10 @@ void testAuton(){
   moveDistance(63.695*5.25);
   
   Left(36);
-
-  moveDistance(63.695*20);
   Intake.setVelocity(100, pct);
   Intake.spinFor(reverse, 1500, degrees, false);
+  moveDistance(63.695*23);
+  
   
   
 }
@@ -906,7 +905,7 @@ void usercontrol(void) {
 
 
     //Intake code
-    Intake.setVelocity(200, percent);
+    Intake.setVelocity(100, percent);
     if (Controller1.ButtonR1.pressing()){
       Intake.spin(forward);
     }
