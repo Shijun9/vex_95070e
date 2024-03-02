@@ -46,7 +46,7 @@ float motorSpeed = error;
 void pre_auton(void) {
   // Initializing Robot Configuration. DO NOT REMOVE!
   vexcodeInit();
-  int driveSpeed = 35;
+  int driveSpeed = 50;
   FrontRight.setVelocity(driveSpeed, percent);
   MiddleLeft.setVelocity(driveSpeed, percent);
   BackLeft.setVelocity(driveSpeed, percent);
@@ -54,7 +54,7 @@ void pre_auton(void) {
   MiddleRight.setVelocity(driveSpeed, percent);
   BackRight.setVelocity(driveSpeed, percent);
   Catapult.setVelocity(62, pct);
-  Intake.setVelocity(80, pct);
+  Intake.setVelocity(100, pct);
 
   WingLeft.set(false);
   WingRight.set(false);
@@ -564,7 +564,7 @@ void auton6(void){
 
 void auton7(void){
   // Right(90);
-  moveDistance(382.165*4.1); // fwd
+  moveDistance(382.165*4.3); // fwd
   wait(200, msec);
   // normalVelocity();
   Right(80); 
@@ -590,14 +590,14 @@ void auton7(void){
   //turn and move to 2nd triball
   //lessVelocity();
   Right(120);//turn to center spot
-  moveDistance(63.695*6);//1st distance of V-shape
-  Right(87); 
+  moveDistance(63.695*5);//1st distance of V-shape
+  Right(95); 
   
   wait(200, msec);
   Intake.setVelocity(100, pct);
   Intake.spinFor(fwd, 1500, degrees, false);//outake to score triball 
 
-  moveDistance(63.695*10.5); 
+  moveDistance(63.695*16); 
   wait(1000, msec); // end of V-shape
   
   Left(30);
@@ -605,7 +605,7 @@ void auton7(void){
   WingLeft.set(true);
   WingRight.set(true);
   wait(200, msec);
-  moveDistance(-63.695*15);
+  moveDistance(-63.695*20);
   moveDistance(63.695*5);
   moveDistance(-63.695*4);
 
@@ -619,7 +619,7 @@ void auton7(void){
   Intake.setVelocity(100, pct);
   Intake.spinFor(reverse, 1500, degrees, false);
   wait(200, msec);
-  moveDistance(63.695*8);
+  moveDistance(63.695*6);
   moveDistance(-63.695*4);
   //go to 3rd triball section
   
@@ -731,10 +731,10 @@ void testAuton(){
 
   moveDistance(63.695*5.25);
   
-  Left(36);
+  Left(40);
   Intake.setVelocity(100, pct);
   Intake.spinFor(reverse, 1500, degrees, false);
-  moveDistance(63.695*23);
+  moveDistance(63.695*26);
   
   
   
@@ -874,12 +874,7 @@ void autonslctr() {
 
 void usercontrol(void) {
   // User control code here, inside the loop
-  FrontRight.setVelocity(100, percent);
-  MiddleLeft.setVelocity(100, percent);
-  BackLeft.setVelocity(100, percent);
-  FrontLeft.setVelocity(100, percent);
-  MiddleRight.setVelocity(100, percent);
-  BackRight.setVelocity(100, percent);
+  
   while(!Jessica) {
     autonslctr();
     if (Controller1.ButtonA.pressing()) {
@@ -891,7 +886,12 @@ void usercontrol(void) {
 
   while (Jessica) {
     // unitTest();
-    
+    FrontRight.setVelocity(100, percent);
+    MiddleLeft.setVelocity(100, percent);
+    BackLeft.setVelocity(100, percent);
+    FrontLeft.setVelocity(100, percent);
+    MiddleRight.setVelocity(100, percent);
+    BackRight.setVelocity(100, percent);
     
     double rightspeed = (Controller1.Axis3.position()) + (Controller1.Axis1.position() * -1);
     double leftspeed = (Controller1.Axis3.position()) - (Controller1.Axis1.position() * -1);
@@ -905,11 +905,12 @@ void usercontrol(void) {
 
 
     //Intake code
-    Intake.setVelocity(100, percent);
     if (Controller1.ButtonR1.pressing()){
+      Intake.setVelocity(100, percent);
       Intake.spin(forward);
     }
     else if(Controller1.ButtonR2.pressing()){
+      Intake.setVelocity(100, percent);
       Intake.spin(reverse);
     }
     else {
