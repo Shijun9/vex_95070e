@@ -53,7 +53,7 @@ void pre_auton(void) {
   FrontLeft.setVelocity(driveSpeed, percent);
   MiddleRight.setVelocity(driveSpeed, percent);
   BackRight.setVelocity(driveSpeed, percent);
-  Catapult.setVelocity(62, pct);
+  Catapult.setVelocity(50, pct);
   Intake.setVelocity(100, pct);
 
   WingLeft.set(false);
@@ -582,7 +582,7 @@ void auton7(void){
   moveDistance(63.695*2.4); //63.695 increase this one
   wait(500, msec);
   
-  moveDistance(-63.695*1.4);// old was 63.595 // after scroing first triball
+  moveDistance(-63.695*2);// old was 63.595 // after scroing first triball
           
   //wait(200, msec);
   Intake.stop();
@@ -591,16 +591,16 @@ void auton7(void){
   //lessVelocity();
   Right(120);//turn to center spot
   moveDistance(63.695*5);//1st distance of V-shape
-  Right(95); 
+  Right(93); 
   
   wait(200, msec);
   Intake.setVelocity(100, pct);
   Intake.spinFor(fwd, 1500, degrees, false);//outake to score triball 
 
-  moveDistance(63.695*16); 
+  moveDistance(63.695*15.5); 
   wait(1000, msec); // end of V-shape
   
-  Left(30);
+  Left(40);
   wait(200, msec);
   WingLeft.set(true);
   WingRight.set(true);
@@ -611,7 +611,7 @@ void auton7(void){
 
   wait(250,msec); // end of pushing second triball into goal with wings
   
-  moveDistance(63.695*2);
+  moveDistance(63.695*3);
   WingLeft.set(false);
   WingRight.set(false);
   wait(250,msec);
@@ -620,6 +620,8 @@ void auton7(void){
   Intake.spinFor(reverse, 1500, degrees, false);
   wait(200, msec);
   moveDistance(63.695*6);
+  moveDistance(-63.695*4);
+  moveDistance(63.695*3);
   moveDistance(-63.695*4);
   //go to 3rd triball section
   
@@ -937,6 +939,13 @@ void usercontrol(void) {
     else if (Controller1.ButtonY.pressing()){
       WingLeft.set(false);
       WingRight.set(false);
+    }
+
+    if (Controller1.ButtonA.pressing()){
+      FrontWing.set(true);
+    }
+    else if (Controller1.ButtonB.pressing()){
+      FrontWing.set(false);
     }
     //Elevation code
     /*

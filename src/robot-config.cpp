@@ -19,9 +19,10 @@ motor_group R = motor_group(FrontRight, MiddleRight, BackRight);
 controller Controller1 = controller(primary);
 inertial Inertial = inertial(PORT15);
 motor Intake = motor(PORT18, ratio18_1, false);
-motor Catapult = motor(PORT12, ratio36_1, false);
+motor Catapult = motor(PORT12, ratio36_1, true);
 digital_out WingLeft = digital_out(Brain.ThreeWirePort.A);
 digital_out WingRight = digital_out(Brain.ThreeWirePort.H);
+digital_out FrontWing = digital_out(Brain.ThreeWirePort.G);
 
 // VEXcode generated functions
 // define variable for remote controller enable/disable
